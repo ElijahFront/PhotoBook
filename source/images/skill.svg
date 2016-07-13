@@ -1,4 +1,0 @@
-<svg class="circle circle__html5" width="120" height="120">
-    <circle r="50" cx="-60" cy="60"></circle>
-    <circle style="stroke-dasharray: 70px 314px" r="50" cx="-60" cy="60"></circle>
-</svg>

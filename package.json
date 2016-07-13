@@ -1,7 +1,7 @@
 {
-  "name": "loftschool-builder",
+  "name": "PhotoBook",
   "version": "1.0.0",
-  "author": "a.kalin",
+  "author": "Ilya",
   "license": "ISC",
   "scripts": {
     "postinstall": "bower install"
@@ -35,7 +35,7 @@
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/ElijahFront/loftshool-builder/issues"
+    "url": "https://github.com/ElijahFront/PhotoBook/issues"
   },
-  "homepage": "https://github.com/ElijahFront/loftshool-builder#readme"
+  "homepage": "https://github.com/ElijahFront/PhotoBook#readme"
 }

@@ -1,4 +1,4 @@
-# Loftshool builder
+# PhotoBook
 
 Getting started:
 
