@@ -1,0 +1,60 @@
+@import "common/fonts";
+@import 'common/_mixins';
+$lightblue: rgba(0, 76, 209, 0.7);
+$blue: rgb(0, 76, 209);
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@import "common/preloader";
+@import "common/menu";
+@import 'common/mountains-welcome.scss';
+@import "common/footer.scss";
+@import "block-info.scss";
+@import 'block-login';
+@import "about";
+@import "works";
+@import "preloader";
+@import "blog";
+@import "skill";
+
+@media all and (min-width: 768px) and (min-height: 1024px){
+  //.block{
+  //  margin-top: 275px;
+  //}
+}
+
+@media all and  (min-width: 1200px){
+  .block, .block-login{
+    //margin-top: 143px;
+  }
+
+}
+@media all and (min-width: 1800px){
+  .block{
+    //margin-top: 248px;
+  }
+  .mountains{
+    max-height: 270px;
+  }
+}
+
+
+.linked-in{
+  fill: $lightblue;
+}
+.github-svg{
+  fill: $lightblue;
+}
+.vk-svg{
+  fill: $lightblue;
+}
+
+.tapped{
+  display: none;
+}

@@ -1,0 +1,23 @@
+@mixin tablet(){
+  @media all and (max-width:768px){
+    @content
+  }
+};
+
+@mixin phone(){
+  @media all and (max-width:480px){
+    @content
+  }
+}
+@mixin points($scr){
+  @media all and (max-width: $scr + 'px') {
+    @content
+  }
+}
+
+@mixin skill($skillName,$skillLevel){
+  .circle__#{$skillName} {
+    stroke-dasharray: #{($skillLevel*314)/100}px 314px;
+  }
+}
+
