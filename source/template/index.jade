@@ -1,9 +1,31 @@
-doctype html
-html.index-html(lang='ru-RU')
-  -var pageTitle = 'PhotoBook'
-  include common/_head
-  body
-    <!--[if lt IE 7]>
-    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
-    <![endif]-->
-    h1 Our project!
+include common/_main
+		.wraper_login
+			
+				.paralax
+					img.instead_paralax(src='./assets/img/paralax/instead.jpg' alt='картинка вместо паралакса')
+								
+									
+				.content
+					.main_content
+						.hello
+							h1.hello_title Добро пожаловать
+							p.hello_text Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+								
+						form.login
+							.login__input
+								input#email(name='email' type='email' placeholder='Электронная почта')
+								.login__icon
+							.login__input
+								input#pass(name='pass' type='password' placeholder='пароль')
+								.login__icon
+							a.login__forgot(http='#' ) Забыли пароль?
+							button#login_btn.login__button Войти
+							.login__text Нет аккаунта?
+								a.login__reg(href='#') Зарегистрироваться
+
+					footer.footer 
+						.footer_title 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
+
+include common/_scripts
+//- scripts(src='./assets/js/parallax.min.js' defer)
+//- scripts(src='./assets/js/main.js' defer)
