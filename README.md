@@ -1,4 +1,4 @@
-# PhotoBook & Zar
+# PhotoBook Front-End
 
 ####Getting started:
 
