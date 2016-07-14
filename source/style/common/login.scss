@@ -1,0 +1,55 @@
+.wraper_login {
+	min-height: 100%;
+	overflow: hidden;
+	
+}
+.content {
+	display:flex;
+	flex-direction: column;
+	// align-content: center;
+	align-items: center;
+
+	// justify-content: center;
+	// flex-wrap: wrap;
+	min-height: 100vh;
+	z-index: 3;
+	color: #fff;
+
+}
+.main_content {
+	flex:1;
+	z-index: 3;
+	// align-self: center;	
+}
+.hello {
+	width: 550px;
+}
+
+.footer {
+	height: 70px;
+	z-index: 3;
+}
+
+.login {
+	display: none;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #fff;
+	width: 280px;
+}
+.login_active {
+	display: block;
+}
+
+.login__text {
+	color: #323232;
+	font-size: 14px;
+}
+.login__title {
+	color: #000;
+}
+.login__link {
+	color: #28bbf0;
+	font-family: 'proxima_nova_ltsemibold';
+	font-size: 14px;
+}
