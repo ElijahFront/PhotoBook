@@ -1,4 +1,4 @@
-# PhotoBook
+# PhotoBook & Zar
 
 ###Getting started:
 
