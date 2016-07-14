@@ -1,6 +1,6 @@
 # PhotoBook
 
-Getting started:
+####Getting started:
 
 1. `clone` this repo
 2. `cd path/to/builder`
