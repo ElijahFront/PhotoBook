@@ -1,0 +1,23 @@
+.edit
+	.edit__header
+		.edit__user
+			.edit__user__avatar
+				img.user__avatar__img(src='./assets/img/users/us.jpg')
+
+				.user__avatar__mask
+					i.fa.fa-camera.fa-4x
+					span Изменить фото 
+
+			.edit__user__info
+				input.edit__user__input(type='text' value='Антон Черепов')
+				textarea.edit__user__textarea(type='text' value='Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.')   
+				.socials 
+					include ./_socials
+
+		a.edit__backgraund(href='#') Изменить фон
+			i.fa.fa-camera
+
+	.edit__btn_block
+		button.edit__btn(type='button') Отменить
+		button.edit__btn(type='button') Сохранить
+		

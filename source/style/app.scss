@@ -2,6 +2,8 @@
 @import 'common/paralax';
 @import 'common/login';
 @import 'common/main';
+@import 'common/slider';
+@import 'common/edit_header';
 
 
 html{
@@ -46,5 +48,17 @@ input {
  	font-family: 'pantonbold';
  	color: #323232;
  }
+ .social__link {
+ 	font-size: 0;
 
+ }
+ .social__block {
+ 	display: flex;
+ 	justify-content: flex-start;
+	
+ }
+ .social__item {
+ 	margin-right: 10px;
+ 	align-self: flex-start;
+ }
 

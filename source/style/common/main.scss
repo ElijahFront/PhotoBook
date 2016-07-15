@@ -4,9 +4,8 @@
 
 }
 
-
-
 .main_content{
+	display: flex;
 	flex: 1;
 }
 
@@ -30,7 +29,7 @@
 //==========header================
 .header {
 	width: 100%;
-	min-height: 300px;
+	min-height: 240px;
 	background-color: rgba(#dedede,.5);
 	display: flex;
 	flex-direction: column;

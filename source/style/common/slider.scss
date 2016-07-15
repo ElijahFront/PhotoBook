@@ -1,0 +1,41 @@
+.view_photo {
+	display: flex;
+	z-index: 3;
+	background-color: rgba(#000,.9);
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.slider{
+	max-width: 980px;
+	background-color: #fff;
+
+}
+
+.photos__wrap {
+	width: 980px;
+	height: 655px;
+}
+.photo {
+	width: 100%;
+	height: 100%;
+}
+
+.user_com {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.user__ava {
+display: block;
+	 width: 50px;
+}
+
+.user__name_c {
+	color: #323232;
+	font-family: 'pantonbold';
+}

@@ -1,0 +1,19 @@
+header.header
+	.header__content
+		.user
+			.user__avatar
+				img.user__avatar__img(src='./assets/img/users/us.jpg')
+			.user__name Антон Черепов	
+		.user__info
+				
+				.user__desc  Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+				.socials 
+					include ./_socials
+
+		.header__btn
+			a#exit(href='./index.html') Выйти
+			a#edit(href='#') Редактировать
+
+	.statistic
+		input.search__input(name='search' type='text' placeholder='Исследовать мир')
+		.search__icon
