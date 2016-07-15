@@ -34,7 +34,7 @@ $.gulp.task('default', $.gulp.series(
     'favicon'  
   ),
   $.gulp.parallel(
-    'watch',
-    'serve'
+    'watch'
+    // 'serve'
   )
 ));
