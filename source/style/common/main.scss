@@ -14,14 +14,55 @@
 	height: 60px;
 	background-color: rgba(#000,.5);
 	display: flex;
+	}
+
+.footer_text {
+	flex: 2;
 }
 
+.btn_up {
+	flex: 1;
+}
+
+.copyright {
+	flex: 2;
+}
+//==========header================
 .header {
 	width: 100%;
 	min-height: 300px;
-	background-color: rgba(#000,.5);
+	background-color: rgba(#dedede,.5);
 	display: flex;
 	flex-direction: column;
+}
+
+.header__content {
+	display: flex;
+	padding-top: 25px;
+	flex: 1;
+}
+
+.user {
+	display: flex;	
+	flex: 1;
+}
+
+.user__avatar,
+.user__info		 {
+	margin: 25px
+}
+
+.user__info {
+	width: 450px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+}
+.social__block{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .user__avatar {
@@ -30,23 +71,104 @@
 	border-radius: 50%;
 	overflow: hidden;
 }
+.header__btn {
+	display: flex;
+	flex-direction: column;
 
-.header__content {
-	flex: 1;
-}
-
+	}
 .search {
 	height: 60px;
 	background-color: #dbdbdc;
 	display: flex;
-	flex-direction: row-revers;
 	align-items: center;
+	justify-content: flex-end;
 
 }
 
 .search__input {
-	width: 385px;
+	width: 30%;
 	padding: 10px 10px 10px 50px;
 	border-radius: 20px;
 	
 }
+
+//==========new world==========
+.news {
+	
+}
+
+.news__list {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.news__block {
+	border: 1px solid #f1f1f1;
+	width: 380px;
+	height: 380px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.news__img  {
+	width: 380px;
+	height: 250px;
+	margin-bottom:20px;
+}
+
+.news__desc {
+	display: flex;
+	margin-bottom:20px;
+}
+
+.news__author {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	
+}
+
+.news__author__img {
+	display: block;
+	 width: 50px;
+	 
+}
+
+.news__album {
+	background-color: #f6f6f6;
+	padding: 15px 20px;
+}
+
+//==========my albums===============
+.my_albums {
+	background-color: #f6f6f6;
+}
+
+.albums__list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.albums__desc{
+	display:  none;
+}
+.albums__block {
+	border: 1px solid #f1f1f1;
+	width: 300px;
+	height: 350px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.albums__img__wrap {
+	 width: 300px;
+	 height: 300px;
+}
+
+.albums__img {
+	display: block;
+//	height: 300px;
+}
+
