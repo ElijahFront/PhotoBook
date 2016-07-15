@@ -15,6 +15,8 @@ app.use(bodyParser.json({type: 'application/json'}));
 
 app.use(express.static('build'));
 
+app.set('view engine', 'jade');
+
 
 app.get('/*', function (req, res) {
     res.setHeader('Content-Type', 'text/html; encoding: utf-8;');
