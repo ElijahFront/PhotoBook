@@ -1,0 +1,193 @@
+include common/_main
+	.wraper
+		.main_content
+			.contaienr
+
+				header.header
+					.header__content
+						.user
+							.user__avatar
+								img.user__avatar__img(src='./assets/img/users/us.jpg')
+							.user_name Антон Черепов
+							.user_desс Я веб разработчик. Мне 24 года. Л.бл. путешествия, кодинг, фриланс и активный отдых.
+							.socials 
+
+						a.exit_btn#exit(href='./index.html') Выйти
+						a.edit_btn#edit(href='#') Редактировать
+
+					.search
+						input.search__input(name='search' type='text' placeholder='Исследовать мир')
+						.search__icon
+
+				section.new_world
+					h1.section_title Новое в мире
+					.news
+						ul.news__list
+							li.news__item
+								.news__block
+									img.news__img(src='./assets/img/photos/ph1.jpg')
+									.news__desc Путешествие на лодке по озеру
+									.news__author: img.news__author__img(src='./assets/img/users/us1.jpg') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name Прогулки по воде
+										.news__album__icon
+							
+							li.news__item
+								.news__block
+									img.news__img(src='#')
+									.news__desc Отдых в палатке
+									.news__author: img.news__author__img(src='#') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name Палаточный лагерь
+										.news__album__icon
+							
+							li.news__item
+								.news__block
+									img.news__img(src='#')
+									.news__desc Любимы лошадки
+									.news__author: img.news__author__img(src='#') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name Животные
+										.news__album__icon
+							
+							li.news__item
+								.news__block 
+									img.news__img(src='#')
+									.news__desc Мечтательный взгляд вдаль поверх чего-то там
+									.news__author: img.news__author__img(src='#') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name Пустыня
+										.news__album__icon
+										
+							li.news__item
+								.news__block
+									img.news__img(src='#')
+									.news__desc Я лежу в гамаке, как это прекрасно 
+									.news__author: img.news__author__img(src='#') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name Отдых
+										.news__album__icon
+										
+							li.news__item
+								.news__block
+									img.news__img(src='#')
+									.news__desc Велопутешествие
+									.news__author: img.news__author__img(src='#') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name Дорога
+										.news__album__icon
+
+							li.news__item
+								.news__block
+									img.news__img(src='#')
+									.news__desc
+									.news__author: img.news__author__img(src='#') 
+									.comments
+										.commennts__icon
+										.comments__count#c_count 9
+									.like
+										.like__icon
+										.like__count#l_count 25
+									.news__album
+										.news__album__name
+										.news__album__icon
+
+					button.news__more(type='button') Показать еще
+				
+				section.my_albums
+					h2.section_title Мои альбомы
+					a.add__albums(href='#') добавить альбом
+					.albums
+						ul.albums__list
+							li.albums__item
+								.albums__block
+									img.albums__img(src='#')
+									.albums__name Поход в горы
+									a.albums__edit(href='#') редактировать альбом
+									.albums_desc Горы, реки, леса и поля
+									.albums__amount_photo 10 фотографий	
+
+							li.albums__item
+								.albums__block
+									img.albums__img(src='#')
+									.albums__name Животные
+									a.albums__edit(href='#') редактировать альбом
+									.albums_desc собаки, кошки, лошади
+									.albums__amount_photo 10 фотографий
+
+							li.albums__item
+								.albums__block
+									img.albums__img(src='#')
+									.albums__name Прогулки на лодке
+									a.albums__edit(href='#') редактировать альбом
+									.albums_desc Лодки, реки
+									.albums__amount_photo 10 фотографий	
+								
+								li.albums__item
+								.albums__block
+									img.albums__img(src='#')
+									.albums__name Море и серфинг
+									a.albums__edit(href='#' alt='редактировать альбом') редактировать альбом
+									.albums_desc Море, серфинг, пляж, лето
+									.albums__amount_photo 10 фотографий					
+
+							li.albums__item
+								.albums__block
+									img.albums__img(src='#')
+									.albums__name Ущелье и горные хребты
+									a.albums__edit(href='#' alt='редактировать альбом') редактировать альбом
+									.albums_desc Горы, реки, леса и поля
+									.albums__amount_photo 10 фотографий	
+
+							li.albums__item
+								.albums__block
+									img.albums__img(src='#')
+									.albums__name Лесной выезд
+									a.albums__edit(href='#' alt='редактировать альбом') редактировать альбом
+									.albums_desc природа, леса, еноты и олени
+									.albums__amount_photo 10 фотографий
+
+						
+
+
+			footer.footer
+				.container
+					.footer_text Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+					a.btn_up(href='#' alt='наверх') наверх
+					.copyright 2016 | Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool

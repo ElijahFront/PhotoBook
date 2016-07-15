@@ -24,7 +24,7 @@ include common/_main
 
 								a.login__link#forgot(http='#' ) Забыли пароль?
 
-								button#login_btn.login__button Войти
+								a#login_btn.login__button(href='./main.html') Войти
 
 								.login__text Нет аккаунта?
 									a.login__link#registr(href='#') Зарегистрироваться
@@ -48,10 +48,10 @@ include common/_main
 
 								.login__text Ваши данные остаются строго конфеденциальны		
 								
-								button#create_accaunt.login__button Создать аккаунт
+								a#create_accaunt.login__button(href='#') Создать аккаунт
 
 								.login__text Уже зарегистрированы?
-									a.login__link#enter(href='#') Войти	
+									a.login__link#enter(href='./main.html') Войти	
 
 								// форма для восстановления пароля
 						.block 
@@ -64,14 +64,13 @@ include common/_main
 									input#email(name='email' type='email' placeholder='Электронная почта')
 									.login__icon
 
-								button#restore_btn.login__button Восстановить пароль
+								a#restore_btn.login__button(href='#') Восстановить пароль
 
 								.login__text Вспомнили пароль?
 									a.login__link#enter(href='#') Войти
 
-					footer.footer 
-						.footer_title 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
+					footer.footer_auth 
+						.footer_title.copyright 2016 | Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
 
 include common/_scripts
-//- scripts(src='./assets/js/parallax.min.js' defer)
-//- scripts(src='./assets/js/main.js' defer)
+

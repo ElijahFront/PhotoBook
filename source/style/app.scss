@@ -25,10 +25,14 @@ li {
 a {
 	text-decoration: none;
 }
-
+input {
+	outline: none;
+	border: none;
+}
  *,*:before,*:after {
  	box-sizing: inherit;
  }
 @import 'common/fonts'; 
 @import 'common/paralax';
 @import 'common/login';
+@import 'common/main';
