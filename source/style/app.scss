@@ -1,3 +1,9 @@
+@import 'common/fonts'; 
+@import 'common/paralax';
+@import 'common/login';
+@import 'common/main';
+
+
 html{
 	font-size: 16px;
 	font-family: 'proxima_nova_ltlight',arial,sans-serif;
@@ -26,9 +32,19 @@ a {
 	text-decoration: none;
 }
 
+input {
+	outline: none;
+	border: none;
+}
+
  *,*:before,*:after {
  	box-sizing: inherit;
  }
-@import 'common/fonts'; 
-@import 'common/paralax';
-@import 'common/login';
+
+ .section_title {
+ 	font-size: 2.625rem;
+ 	font-family: 'pantonbold';
+ 	color: #323232;
+ }
+
+

@@ -7,66 +7,70 @@ include common/_main
 									
 				.content
 					.main_content
-						.hello
+							
+						.block.block_active
 							h1.hello_title Добро пожаловать
 							p.hello_text Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+							
+							form.login#login_form
 
-							// форма для авторизации	
-						form.login#login_form
+								.login__input
+									input#emailLog(name='email' type='email' placeholder='Электронная почта')
+									.login__icon
 
-							.login__input
-								input#email(name='email' type='email' placeholder='Электронная почта')
-								.login__icon
+								.login__input
+									input#passLog(name='pass' type='password' placeholder='Пароль')
+									.login__icon
 
-							.login__input
-								input#pass(name='pass' type='password' placeholder='Пароль')
-								.login__icon
+								a.login__link#forgot(href='#' ) Забыли пароль?
 
-							a.login__link#forgot(http='#' ) Забыли пароль?
+								a#login_btn.login__button(href='./main.html') Войти
 
-							button#login_btn.login__button Войти
-
-							.login__text Нет аккаунта?
-								a.login__link#registr(href='#') Зарегистрироваться
+								.login__text Нет аккаунта?
+									a.login__link#registr(href='#') Зарегистрироваться
 								
 								//форма для регистрации
-						form.login#reg_form
-							.login__input
-								input#user(name='user_name' type='text' placeholder='Имя')  
-								.login__icon
+						.block
+							h2.hello_title Регистрация	
 
-							.login__input
-								input#email(name='email' type='email' placeholder='Электронная почта')
-								.login__icon
+							form.login#reg_form
+								.login__input
+									input#user(name='user_name' type='text' placeholder='Имя')  
+									.login__icon
 
-							.login__input
-								input#pass(name='pass' type='password' placeholder='Пароль')
-								.login__icon
+								.login__input
+									input#emailLogin(name='email' type='email' placeholder='Электронная почта')
+									.login__icon
 
-							.login__text Ваши данные остаются строго конфеденциальны		
-							
-							button#create_accaunt.login__button Создать аккаунт
+								.login__input
+									input#pass(name='pass' type='password' placeholder='Пароль')
+									.login__icon
 
-							.login__text Уже зарегистрированы?
-								a.login__link#enter(href='#') Войти	
+								.login__text Ваши данные остаются строго конфеденциальны		
+								
+								a#create_account.login__button(href='#') Создать аккаунт
 
-						// форма для восстановления пароля
-						form.login#restore_pass
-							.login__title Забыли пароль?
-							.login__text Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
-							.login__input
-								input#email(name='email' type='email' placeholder='Электронная почта')
-								.login__icon
+								.login__text Уже зарегистрированы?
+									a.login__link#enter(href='./main.html') Войти	
 
+								// форма для восстановления пароля
+						.block 
+							h2.hello_title Восстановление пароля
 
-							button#restore_btn.login__button Восстановить пароль
+							form.login#restore_pass
+								.login__title Забыли пароль?
+								.login__text Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
+								.login__input
+									input#email(name='email' type='email' placeholder='Электронная почта')
+									.login__icon
 
-							.login__text Вспомнили пароль?
-								a.login__link#enter(href='#') Войти
+								a#restore_btn.login__button(href='#') Восстановить пароль
 
-					footer.footer 
-						.footer_title 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
+								.login__text Вспомнили пароль?
+									a.login__link#enter(href='#') Войти
+
+					footer.footer_auth 
+						.footer_title.copyright 2016 | Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
 
 include common/_scripts
-//- scripts(src='./assets/js/parallax.min.js' defer)
-//- scripts(src='./assets/js/main.js' defer)
+

@@ -10,7 +10,7 @@
 	align-items: center;
 
 	// justify-content: center;
-	// flex-wrap: wrap;
+	flex-wrap: wrap;
 	min-height: 100vh;
 	z-index: 3;
 	color: #fff;
@@ -21,23 +21,23 @@
 	z-index: 3;
 	// align-self: center;	
 }
-.hello {
-	width: 550px;
-}
 
-.footer {
-	height: 70px;
+.footer_auth {
+	height: 60px;
 	z-index: 3;
 }
 
 .login {
-	display: none;
 	padding: 20px;
 	border-radius: 20px;
 	background-color: #fff;
 	width: 280px;
 }
-.login_active {
+.block {
+	display: none;
+	width: 550px;
+}
+.block_active {
 	display: block;
 }
 
