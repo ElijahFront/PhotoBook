@@ -15,14 +15,14 @@ include common/_body_head
 							form.login#login_form
 
 								.login__input
-									input#email(name='email' type='email' placeholder='Электронная почта')
+									input#emailLog(name='email' type='email' placeholder='Электронная почта')
 									.login__icon
 
 								.login__input
-									input#pass(name='pass' type='password' placeholder='Пароль')
+									input#passLog(name='pass' type='password' placeholder='Пароль')
 									.login__icon
 
-								a.login__link#forgot(http='#' ) Забыли пароль?
+								a.login__link#forgot(href='#' ) Забыли пароль?
 
 								a#login_btn.login__button(href='./main.html') Войти
 
@@ -39,7 +39,7 @@ include common/_body_head
 									.login__icon
 
 								.login__input
-									input#email(name='email' type='email' placeholder='Электронная почта')
+									input#emailLogin(name='email' type='email' placeholder='Электронная почта')
 									.login__icon
 
 								.login__input
@@ -48,7 +48,7 @@ include common/_body_head
 
 								.login__text Ваши данные остаются строго конфеденциальны		
 								
-								a#create_accaunt.login__button(href='#') Создать аккаунт
+								a#create_account.login__button(href='#') Создать аккаунт
 
 								.login__text Уже зарегистрированы?
 									a.login__link#enter(href='./main.html') Войти	
