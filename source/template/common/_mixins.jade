@@ -1,8 +1,7 @@
-
-// -var svg="/assets/img/sprite.svg"
-
-
-// mixin icon(name, c_name)
-// 	svg(role="img" class="#{c_name}"+" "+".social_svg_h")
-// 		use(xlink:href="#{svg}##{name}")
-
+mixin comments_likes(c_count,l_count)
+	.comments
+		.commennts__icon
+		.comments__count #{c_count}
+	.like
+		.like__icon
+		.like__count #{l_count}

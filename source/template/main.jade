@@ -1,12 +1,15 @@
+include common/_mixins
 include common/_body_head
 
 	.wraper
 		include common/_edit_header
+		include common/_slider
 
 		.main_content
-			.contaienr
+			.container
 				include common/_header
 
+						//========section new world========
 				section.new_world
 					h1.section_title Новое в мире
 					.news
@@ -17,12 +20,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us1.jpg')
 										.news__img__name Путешествие на лодке по озеру
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Прогулки по воде
 										.news__album__icon
@@ -33,12 +31,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us2.jpg')
 										.news__img__nameОтдых В палатке
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Палаточный лагерь
 										.news__album__icon
@@ -49,12 +42,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us4.jpg') 
 										.news__img__name Любимые лошадки
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Животные
 										.news__album__icon
@@ -65,12 +53,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us5.jpg')
 										.news__img__nameМечтательный Взгляд вдаль поверх чего-то там
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Пустыня
 										.news__album__icon
@@ -81,12 +64,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us6.jpg')
 										.news__img__nameЯ Лежу в гамаке, как это прекрасно
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Отдых
 										.news__album__icon
@@ -97,12 +75,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us7.jpg')
 										.news__img__name Велопутешествие
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Дорога
 										.news__album__icon
@@ -113,12 +86,7 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us7.jpg')
 										.news__img__name Черничка, вкусная
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Дорога
 										.news__album__icon
@@ -129,18 +97,14 @@ include common/_body_head
 									.news__desc
 										.news__author: img.news__author__img(src='./assets/img/users/us3.jpg')
 										.news__img__name Горы-горы
-										.comments
-											.commennts__icon
-											.comments__count#c_count 9
-										.like
-											.like__icon
-											.like__count#l_count 25
+										+comments_likes(9,25)
 									.news__album
 										.news__album__name Путешествие
 										.news__album__icon
 
 					button.news__more(type='button') Показать еще
 
+						//======section My album===========
 				section.my_albums
 					h2.section_title Мои альбомы
 					a.add__albums(href='#') добавить альбом
@@ -148,60 +112,66 @@ include common/_body_head
 						ul.albums__list
 							li.albums__item
 								.albums__block
-									.albums__img__wrap
+									a.albums__img__wrap(href='./album.html')
 										img.albums__img(src='./assets/img/photos/ph11.jpg')
 									.albums__name Поход в горы
 									a.albums__edit(href='#') редактировать альбом
+										i.fa.fa-pencil
 									.albums__desc
 										.albums__about Горы, реки, леса и поля
 										.albums__amount_photo 10 фотографий	
 
 							li.albums__item
 								.albums__block
-									.albums__img__wrap
+									a.albums__img__wrap(href='./album.html')
 										img.albums__img(src='./assets/img/photos/ph22.jpg')
 									.albums__name Животные
 									a.albums__edit(href='#') редактировать альбом
+										i.fa.fa-pencil
 									.albums__desc
 										.albums__about Собаки, кошки, лошади
 										.albums__amount_photo 10 фотографий
 
 							li.albums__item
 								.albums__block
-									.albums__img__wrap
+									a.albums__img__wrap(href='./album.html')
 										img.albums__img(src='./assets/img/photos/ph33.jpg')
 									.albums__name Прогулки на лодке
 									a.albums__edit(href='#') редактировать альбом
+										i.fa.fa-pencil
 									.albums__desc
 										.albums__about Лодки, реки
 										.albums__amount_photo 10 фотографий	
 
 								li.albums__item
 								.albums__block
-									.albums__img__wrap
+									a.albums__img__wrap(href='./album.html')
 										img.albums__img(src='./assets/img/photos/ph44.jpg')
 									.albums__name Море и серфинг
-									a.albums__edit(href='#' alt='редактировать альбом') редактировать альбом
+									a.albums__edit(href='#') редактировать альбом
+										i.fa.fa-pencil
 									.albums__desc
 										.albums__about Море, серфинг, пляж, лето
 										.albums__amount_photo 10 фотографий
 
 							li.albums__item
 								.albums__block
-									.albums__img__wrap
+									a.albums__img__wrap(href='./album.html')
 										img.albums__img(src='./assets/img/photos/ph55.jpg')
 									.albums__name Ущелье и горные хребты
-									a.albums__edit(href='#' alt='редактировать альбом') редактировать альбом
+									a.albums__edit(href='#') редактировать альбом
+										i.fa.fa-pencil
 									.albums__desc
 										.albums__about Горы, реки, леса и поля
 										.albums__amount_photo 10 фотографий
 
 							li.albums__item
 								.albums__block
-									.albums__img__wrap
+									a.albums__img__wrap(href='./album.html')
 										img.albums__img(src='./assets/img/photos/ph66.jpg')
 									.albums__name Лесной выезд
-									a.albums__edit(href='#' alt='редактировать альбом') редактировать альбом
+									a.albums__edit(href='#') редактировать альбом
+										i.fa.fa-pencil
 									.albums__desc
 										.albums__about природа, леса, еноты и олени
 										.albums__amount_photo 10 фотографий

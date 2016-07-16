@@ -1,0 +1,113 @@
+include common/_mixins
+include common/_body_head
+	.wraper
+		.main_content
+			.container
+					header.header
+						.header__content.header__content_a
+							.user
+								.user__ava.user__ava_a
+									img.user__ava__img(src='./assets/img/users/us.jpg')
+								.user__name Антон Черепов	
+							.album__about
+								.album__title Лесные прогулки
+								.album__desc Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
+							.header__btn
+								a#exit(href='./main.html') На главную
+								a#edit(href='#') Редактировать
+
+						.stat
+							ul.stat__list
+								li.stat__item
+									.stat__photo Фотографий
+									.stat__photo__count 16
+								li.stat__item
+									.stat__like Лайков
+									.stat__like__count 12
+								li.stat__item
+									.stat__photo Комментария
+									.stat__photo__count 4	
+
+					section.albums__photos
+						ul.albums__photos__list
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
+											+comments_likes(9,15)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Путешествие на лодке по озеру
+										
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph10.jpg')
+											+comments_likes(2,22)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Отдых в палатке
+
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph12.jpg')
+											+comments_likes(4,32)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Любимые лошадки
+										
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph13.jpg')
+											+comments_likes(9,21)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Мечтательный взгляд вдаль поверх гл...
+										
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph14.jpg')
+											+comments_likes(4,14)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Я лежу в гамаке, как это прекрасно, во...
+										
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph15.jpg')
+											+comments_likes(2,28)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Велопутешествие
+										
+							li.albums__photos__item
+								.albums__photos__block
+									a.albums__photos__link(href='#')
+										.albums__photos__wrap
+											img.albums__photos__img(src='./assets/img/photos/ph16.jpg')
+											+comments_likes(9,21)
+									.albums__photos__name__wrap
+										a.edit__photos__name(href='#') редактировать
+											.edit_icon
+										.albums__photos__name	Мечтательный взгляд вдаль поверх гл...
+										
+							
+							
+		include common/_footer
+		include common/_scripts					

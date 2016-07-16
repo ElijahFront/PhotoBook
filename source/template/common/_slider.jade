@@ -1,47 +1,57 @@
 .view_photo 
-	
+							
 	.slider
 		.close_icon
-		.photos__wrap
-			img.photo(src='./assets/img/photos/ph1_big.jpg')
+						//==========photo section==========
+		section.photo_section
+			.photos__wrap
+				img.photo(src='./assets/img/photos/ph1_big.jpg')
+		
+						
+			.photos_after 
+				.user
+					.user__ava
+						img.user__ava__img(src='./assets/img/users/us1.jpg')
+					.user__name Анна Богданова
 
-		.user_com.user_com_auth
-			.user__ava
-				img.user__ava__img(src='./assets/img/users/us1.jpg')
-			.user__name_c Анна Богданова
+				.photos__like
+					.like__icon
+					.like__count 16
 
-			.photos__like
-				.like__icon
-				.like__count 16
+				.photos__name Путешествие на речном трамвайчике
+				.photos__desc Мы отправились в #путешествие 2 дня назад, но уже сейчас такое ощущение, что мы посмотрели целый новый мирю Далее будет еще одно описательное предложение. Возможно оно также будет с #тегами
+					
 
-			.photos__name Путешествие на речном трамвайчике
-			.photos__desc Мы отправились в #путешествие 2 дня назад, но уже сейчас такое ощущение, что мы посмотрели целый новый мирю Далее будет еще одно описательное предложение. Возможно оно также будет с #тегами
-
-		.comments_photo
+				//==========comments section==============
+		section.comments_photo
 			.comments__title Комментарии
 			.comments__more__icon
+
+				//========add comment==================
 			.comments__add 
-				.user_com
+				.user
 					.user__ava
 						img.user__ava__img(src='./assets/img/users/us.jpg')
-					.user__name_c Антон Черепов
-				input.comments__add__input(name='add_comment' type='text' placeholder='Добавить комментарий')
-				button.comments__add__btn(type='button')
+					.user__name.user__name_c Антон Черепов
 
+				input.comments__add__input(name='add_comment' type='text' placeholder='Добавить комментарий')
+				button.comments__add__btn(type='button') Добавить
+
+					//========other comments===============
 			.comments__block
 				ul.comments__list		
 					li.comments__item
-						.user_com
+						.user
 							.user__ava
 								img.user__ava__img(src='./assets/img/users/us7.jpg')
-							.user__name_c Виталий Виноградов
+							.user__name.user__name_c Виталий Виноградов
 						.comments__text Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
 
 					li.comments__item
-						.user_com
+						.user
 							.user__ava
 								img.user__ava__img(src='./assets/img/users/us6.jpg')
-							.user__name_c Татьяна Литвинова
+							.user__name.user__name_c Татьяна Литвинова
 						.comments__text	Эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением.
 						
 
