@@ -5,12 +5,15 @@
 @import 'common/slider';
 @import 'common/edit_header';
 @import 'common/album';
+@import 'common/icons';
+@import 'common/search';
 
 
 
 html{
 	font-size: 16px;
 	font-family: 'proxima_nova_ltlight',arial,sans-serif;
+	line-height: 1.5;
 }
 html,body{
 	margin:0;
@@ -56,7 +59,13 @@ button {
 		border: 2px solid #28bbf0;
 		background-color: #fff;
 }
-
+.container{
+	max-width: 1920px;
+	min-width: 320px;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
 
 
  .section_title {

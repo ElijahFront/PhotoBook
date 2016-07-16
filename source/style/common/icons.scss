@@ -1,8 +1,24 @@
-.social_icon {
-	color-fill: rgba(#fff,.6);
+.svg-soc_vk-dims,
+.svg-soc_fb-dims,
+.svg-soc_twitter-dims,
+.svg-social_google-dims,
+.svg-soc_email-dims     {
+	fill: rgba(#fff,.6);
+	width: 20px;
+	height: 20px;
+	transition: 0.3;
+	&:hover {
+		fill: #fff;
+	}
+
 }
 
-.fa-pencil:before{
-	color: black;
-	background-color: #000;
+.svg-search-dims,
+.svg-home-dims,
+.svg-edit-dims,
+.svg-off-dims {
+	fill: #848484;
+	width: 20px;
+	height: 20px;
 }
+

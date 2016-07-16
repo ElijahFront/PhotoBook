@@ -14,7 +14,11 @@
 	background-color: rgba(#000,.5);
 	display: flex;
 	margin-top: auto;
+	padding: 0 5%;
 	}
+.footer_container{
+	
+}
 
 .footer_text {
 	flex: 2;
@@ -34,12 +38,15 @@
 	background-color: rgba(#dedede,.5);
 	display: flex;
 	flex-direction: column;
+	align-item: center;
 }
 
 .header__content {
 	display: flex;
 	padding-top: 25px;
+	margin: auto;
 	flex: 1;
+	width: 90%;
 }
 
 .user_header {
@@ -59,42 +66,72 @@
 	flex-wrap: wrap;
 
 }
+
+.user_header__name,
+ .user_header__desc {
+	margin-bottom: 20px;
+}
+
 .social__block{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-start;
+	margin-right: 10px;
 }
+
 
 .user_header__avatar {
 	width: 125px;
 	height: 125px;
 	border-radius: 50%;
 	overflow: hidden;
+
 }
-.header__btn {
+.header__btn__block {
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-start;
+	align-item: flex-start;
+	align-content: flex-start;
 
 	}
+
+.header__btn {
+	font-size: 0;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background-color: #fff;
+}
 .search {
 	height: 60px;
 	background-color: #dbdbdc;
+	
+
+}
+.search__wrap {
+	width: 90%;
+	height: 100%;
+	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-
 }
-
 .search__input {
 	width: 30%;
 	padding: 10px 10px 10px 50px;
 	border-radius: 20px;
 	
 }
-
+.search__link{
+	margin-right: -35px;
+	font-size: 0;
+	order: -1;
+	z-index: 3;
+}
 //==========new world==========
-.news {
-	
+.new_world {
+	padding: 0 5%;
 }
 
 .news__list {
@@ -144,6 +181,7 @@
 //==========my albums===============
 .my_albums {
 	background-color: #f6f6f6;
+	padding: 0 5%;
 }
 
 .albums__list {

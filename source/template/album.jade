@@ -5,10 +5,7 @@ include common/_body_head
 			.container
 					header.header
 						.header__content.header__content_a
-							.user
-								.user__ava.user__ava_a
-									img.user__ava__img(src='./assets/img/users/us.jpg')
-								.user__name Антон Черепов	
+							+user('Антон Черепов','us.jpg')
 							.album__about
 								.album__title Лесные прогулки
 								.album__desc Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
