@@ -1,17 +1,16 @@
+var checkAuth = require('./auth');
+
 module.exports = function (app) {
-    app.post('/login', require('./login').post);
+    app.post('/login', checkAuth,  require('./login').post);
+    
+    app.post('/logout', checkAuth, require('./logout').post);
+    
+    app.get('/main', checkAuth, require('./render'));
+    
+    app.get('/search', checkAuth, require('./render'));
+    
+    app.get('/album', checkAuth, require('./render'));
 
-    app.get('/*', function (req, res) {
-
-        res.type('html');
-
-        console.log('Got new request at', req.url);
-
-        var adr = req.url.slice(1);
-
-        res.render(adr);
-
-        res.end();
-    });
+    app.get(['/', '/index'], require('./render'))
 
 };
