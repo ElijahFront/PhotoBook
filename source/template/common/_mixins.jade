@@ -1,8 +1,22 @@
+mixin comments_likes(c_count,l_count)
+	.comments
+		.commennts__icon
+		.comments__count #{c_count}
+	.like
+		.like__icon
+		.like__count #{l_count}
 
-// -var svg="/assets/img/sprite.svg"
 
 
-// mixin icon(name, c_name)
-// 	svg(role="img" class="#{c_name}"+" "+".social_svg_h")
-// 		use(xlink:href="#{svg}##{name}")
+-var svg="/assets/img/svg-sprite.svg"
 
+
+mixin icon(name, c_name)
+	svg(role="img" class="#{c_name}"+" "+".social_svg_h")
+		use(xlink:href="#{svg}##{name}")
+
+mixin user(name,name_photo)
+	.user
+		.user__ava.user__ava_a
+				img.user__ava__img(src='./assets/img/users/'+'#{name_photo}')
+		.user__name #{name}	

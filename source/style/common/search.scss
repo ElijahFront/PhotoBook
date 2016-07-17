@@ -1,0 +1,17 @@
+.header_search {
+	display: flex;
+	flex-direction: column;
+	height: 140px;
+}
+.header__title {
+	display: flex;
+	justify-content: center;
+	align-item: center;
+}
+
+.section_title_s {
+	font-family: 'pantonbold';
+	font-size: 2.64rem;
+	// padding: auto;
+	margin: 0;
+}
