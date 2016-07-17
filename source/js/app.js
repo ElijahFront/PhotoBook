@@ -35,16 +35,16 @@
 (function () {
 
     function sendXHR(route, data){
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('POST', route);
-        xhr.setRequestHeader('Content-type', 'application/json; charset:utf-8');
-        xhr.send(JSON.stringify(data))
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: data
+        })
     }
 
     $('#login_btn').on('click', function (e) {
 
-        e.preventDefault();
+        //e.preventDefault();
 
         var log = $('#emailLog').val(),
             pass = $('#passLog').val();
