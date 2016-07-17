@@ -1,0 +1,9 @@
+{
+  "session":{
+    "secret": "MySuperSecretString",
+    "cookie": {
+      "maxAge": null,
+      "httpOnly": true
+    }
+  }
+}
