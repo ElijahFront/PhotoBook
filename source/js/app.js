@@ -35,16 +35,16 @@
 (function () {
 
     function sendXHR(route, data){
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('POST', route);
-        xhr.setRequestHeader('Content-type', 'application/json; charset:utf-8');
-        xhr.send(JSON.stringify(data))
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: data
+        })
     }
 
     $('#login_btn').on('click', function (e) {
 
-        e.preventDefault();
+        //e.preventDefault();
 
         var log = $('#emailLog').val(),
             pass = $('#passLog').val();
@@ -55,7 +55,19 @@
         };
 
         if (log != "" && pass != ""){
-            sendXHR('/login', loginData)
+            $.ajax({
+                type: 'POST',
+                url: '/login',
+                data: loginData,
+                statusCode:{
+                    403: function () {
+                        alert('Неправильный логин/пароль, попробуйте снова')
+                    },
+                    200: function () {
+                        window.href.location = '/main'
+                    }
+                }
+            })
         } else {
             alert('Заполните все поля!')
         }
