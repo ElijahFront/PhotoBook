@@ -6,12 +6,13 @@ exports.post = function (req, res, next) {
     var login = req.body.login;
 
     var user = new User({name:name, login:login, password:password});
-    user.save(function(err){
-        if (err) {
-            return next (err)
-        } else{
-            res.send(200)
+        user.save(function(err){
+            if (err) {
+                return next (err)
+            } else{
+                res.sendStatus(200)
+            }
         }
-    }
-    )
+    );
+    console.log(password)
 };

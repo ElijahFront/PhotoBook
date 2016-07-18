@@ -7,6 +7,5 @@ module.exports = function (req, res) {
     var adr = req.url.slice(1);
 
     res.render(adr);
-
-    res.end();
+    
 };

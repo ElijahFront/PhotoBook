@@ -1,7 +1,7 @@
 var checkAuth = require('./auth');
 
 module.exports = function (app) {
-    app.post('/login', checkAuth,  require('./login').post);
+    app.post('/login',  require('./login').post);
     
     app.post('/logout', checkAuth, require('./logout').post);
     

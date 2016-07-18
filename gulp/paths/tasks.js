@@ -13,5 +13,6 @@ module.exports = [
   './gulp/tasks/copy.image.js',
   './gulp/tasks/sprites.js',
   './gulp/tasks/fonts.js',
-  './gulp/tasks/favicon.js'  
+  './gulp/tasks/favicon.js',
+  './gulp/tasks/copy.jade.js'  
 ];

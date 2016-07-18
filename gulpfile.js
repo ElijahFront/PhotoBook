@@ -24,14 +24,15 @@ $.gulp.task('default', $.gulp.series(
   'clean',
   $.gulp.parallel(
     'sass',
-    'jade',
+    //'jade',
     'js.foundation',
     'js.process',
     'copy.image',
     'css.foundation', 
     'sprites',
     'fonts',
-    'favicon'  
+    'favicon',
+    'copy.jade'
   ),
   $.gulp.parallel(
     'watch'

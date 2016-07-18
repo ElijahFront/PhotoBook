@@ -64,7 +64,7 @@
                         alert('Неправильный логин/пароль, попробуйте снова')
                     },
                     200: function () {
-                        window.href.location = '/main'
+                        window.location.href = '/main'
                     }
                 }
             })
@@ -87,9 +87,22 @@
             login: log,
             password:pass
         };
+        console.log(loginData);
 
         if (name != "" && log != "" && pass != ""){
-            sendXHR('/signUp', loginData)
+            $.ajax({
+                type: 'POST',
+                url: '/signUp',
+                data: loginData,
+                statusCode:{
+                    403: function () {
+                        alert('Ошибка')
+                    },
+                    200: function () {
+                        window.href.location = '/main'
+                    }
+                }
+            })
         } else {
             alert('Заполните все поля!')
         }
