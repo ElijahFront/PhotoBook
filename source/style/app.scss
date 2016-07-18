@@ -1,3 +1,6 @@
+$colBlue: #28bbef;
+
+
 @import 'common/fonts'; 
 @import 'common/paralax';
 @import 'common/login';
@@ -7,7 +10,6 @@
 @import 'common/album';
 @import 'common/icons';
 @import 'common/search';
-
 
 
 html{
@@ -26,7 +28,7 @@ html,body{
 }
 
 
-ul {
+ul,p {
 	padding: 0;
 	margin: 0;
 }
@@ -52,13 +54,19 @@ button {
 	border-radius: 30px;
 	font-family: 'pantonbold';
 	font-size: 0.875rem;
-	color: #28bbf0;
+	color: $colBlue;
 	outline: none;
 		cursor: pointer;
 		box-shadow: none;
-		border: 2px solid #28bbf0;
+		border: 2px solid $colBlue;
 		background-color: #fff;
 }
+h1,h2 {
+  padding: 0;
+	margin: 20px 0;
+	line-height: 1;
+}
+
 .container{
 	max-width: 1920px;
 	min-width: 320px;

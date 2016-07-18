@@ -1,26 +1,24 @@
+include common/_mixins
 include common/_body_head
 		.wraper_login
-			
-				.paralax
-					img.instead_paralax(src='./assets/img/paralax/instead.jpg' alt='картинка вместо паралакса')
-								
-									
+						
 				.content
 					.main_content
 							
 						.block.block_active
-							h1.hello_title Добро пожаловать
-							p.hello_text Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+							.hello
+								h1.hello_title Добро пожаловать
+								p.hello_text Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
 							
 							form.login#login_form
-
-								.login__input
-									input#emailLog(name='email' type='email' placeholder='Электронная почта')
-									.login__icon
-
-								.login__input
-									input#passLog(name='pass' type='password' placeholder='Пароль')
-									.login__icon
+								.login__input_wrap
+									.login__input
+										input#emailLog(name='email' type='email' placeholder='Электронная почта')
+										+icon('envelope','svg-envelope-dims')
+										
+									.login__input
+										input#passLog(name='pass' type='password' placeholder='Пароль')
+										+icon('password','svg-password-dims')
 
 								a.login__link#forgot(href='#' ) Забыли пароль?
 
@@ -31,20 +29,22 @@ include common/_body_head
 								
 								//форма для регистрации
 						.block
-							h2.hello_title Регистрация	
+							.hello
+								h2.hello_title Регистрация	
 
 							form.login#reg_form
-								.login__input
-									input#user(name='user_name' type='text' placeholder='Имя')  
-									.login__icon
+								.login__input_wrap
+									.login__input
+										input#user(name='user_name' type='text' placeholder='Имя')  
+										+icon('name','svg-name-dims')
 
-								.login__input
-									input#emailLogin(name='email' type='email' placeholder='Электронная почта')
-									.login__icon
+									.login__input
+										input#emailLogin(name='email' type='email' placeholder='Электронная почта')
+										+icon('envelope','svg-envelope-dims')
 
-								.login__input
-									input#pass(name='pass' type='password' placeholder='Пароль')
-									.login__icon
+									.login__input
+										input#pass(name='pass' type='password' placeholder='Пароль')
+										+icon('password','svg-password-dims')
 
 								.login__text Ваши данные остаются строго конфеденциальны		
 								
@@ -55,14 +55,16 @@ include common/_body_head
 
 								// форма для восстановления пароля
 						.block 
-							h2.hello_title Восстановление пароля
+							.hello
+								h2.hello_title Восстановление пароля
 
 							form.login#restore_pass
 								.login__title Забыли пароль?
 								.login__text Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
-								.login__input
-									input#email(name='email' type='email' placeholder='Электронная почта')
-									.login__icon
+								.login__input_wrap
+									.login__input
+										input#email(name='email' type='email' placeholder='Электронная почта')
+										+icon('envelope','svg-envelope-dims')
 
 								a#restore_btn.login__button(href='#') Восстановить пароль
 
