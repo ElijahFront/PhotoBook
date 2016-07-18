@@ -55,7 +55,19 @@
         };
 
         if (log != "" && pass != ""){
-            sendXHR('/login', loginData)
+            $.ajax({
+                type: 'POST',
+                url: '/login',
+                data: loginData,
+                statusCode:{
+                    403: function () {
+                        alert('Неправильный логин/пароль, попробуйте снова')
+                    },
+                    200: function () {
+                        window.href.location = '/main'
+                    }
+                }
+            })
         } else {
             alert('Заполните все поля!')
         }
