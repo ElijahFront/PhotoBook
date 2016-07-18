@@ -30,7 +30,7 @@ app.use(express.static('build'));
 
 app.set('view engine', 'jade');
 
-require('routes')(app);
+require('./routes')(app);
 
 
 app.listen(3035);
