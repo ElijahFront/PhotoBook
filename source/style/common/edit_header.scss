@@ -1,17 +1,18 @@
 .edit {
-	display: none;
 	background-color: rgba(#fff,.9);
-	align-items: center;
-	flex-direction: column;
-	justify-content: flex-start;
+}
 
+form.edit__profile {
+	width: 80%;
+	margin: 0 auto;
 }
 .edit__header {
 	background-color: rgba(#000,.9);
-	width: 80%;
+	width: 100%;
 	height: 240px; 
 	display: flex;
 	padding: 40px 30px;
+	margin-bottom: 10px;
 }
 .edit__user {
 	display: flex;
@@ -22,7 +23,7 @@
 .edit__user__info {
 	display: flex;
 	flex-direction: column;
-	width: 480px;
+	width: 40%;
 
 }
 
@@ -43,36 +44,85 @@
 	padding: 10px 20px;
 }
 
-.edit__btn_block {
-	align-self: flex-end;
-	margin-right: 240px;
-}
 .edit__user__avatar {
 	width: 125px;
 	height: 125px;
+	border: 3px solid #fff;
 	border-radius: 50%;
 	overflow: hidden;
 	margin: 20px; 
+	background-image: url(../img/users/us.jpg);
+	position: relative;
+}
+
+.user__avatar__label {	
+	background-color: rgba(#000,.8);
+	 width: 100%;
+	 height: 100%;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
 }
 
 .user__avatar__mask {
-	z-index: 4;
-	background-color: rgba(#070,.8);
-	width: 125px;
-	height: 125px;
-	border-radius: 50%;
-	overflow: hidden;
-	border: 2px solid #fff;
+	position: absolute;
+	top: 11%;
+	left: 6%;
+	text-align: center;
+	span {
+	 	color: rgba(#fff,.8);
+	 	font-family: 'proxima_nova_ltsemibold';
+	}
 }
 
-.edit__backgraund {
+.edit__background__block {
+	display: flex;
+	width: 115px;
+	justify-content: center;
+	align-items: center;
+}
+
+.edit__background__label {
+	width: 100%;
+	height: 65px;
 	display: flex;
 	flex-direction: column;
 	color: rgba(#fff,.8);
-	justify-content: center;
 	align-items: center;
-	i {
-		order: -1;
-		margin-bottom: 10px;
+	
+	 font-family: 'proxima_nova_ltsemibold';;
+
+		.svg-cam-dims {
+			order: -1;
+			margin-bottom: 10px;
+		}
+}
+
+.edit__btn_block{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 30px;
+}
+
+.edit__btn {
+	border: none;
+	&[type=submit] {
+		color: #fff;
+		background-color: $colBlue;
 	}
+	&[type=reset] {
+		color: $colBlue;
+	}
+}
+		
+.edit__btn[type=reset]:hover {
+	color: #fff;
+	background-color: $colBlue;
+	
+	.edit__btn [type=submit] {
+		
+			background-color: #fff;
+	    color: $colBlue;
+		}
+		
 }
