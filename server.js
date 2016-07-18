@@ -2,8 +2,12 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
-// var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/skillsDB');
+var config = require('./config');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/OurDB');
 
 
 
@@ -11,22 +15,22 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(bodyParser.json({type: 'application/json'}));
+app.use(bodyParser.json());
+
+app.use(cookieParser());
+
+app.use(session({
+    secret: config.get('session:secret'),
+    cookie: config.get('session:cookie'),
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
+
 
 app.use(express.static('build'));
 
 app.set('view engine', 'jade');
 
-
-app.get('/*', function (req, res) {
-    res.setHeader('Content-Type', 'text/html; encoding: utf-8;');
-    console.log('Got new request at', req.url);
-    var fileName = './build/'+ req.url;
-    var content = fs.readFileSync(fileName, {encoding: 'utf-8'});
-    console.log('Server running');
-    res.write(content);
-    res.end();
-});
+require('./routes')(app);
 
 
 app.listen(3035);
