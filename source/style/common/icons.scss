@@ -16,9 +16,20 @@
 .svg-search-dims,
 .svg-home-dims,
 .svg-edit-dims,
-.svg-off-dims {
+.svg-off-dims  {
 	fill: #848484;
 	width: 20px;
 	height: 20px;
+}
+
+.svg-envelope-dims,
+.svg-password-dims,
+.svg-name-dims 			{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: 30%;
+	left: 7%;
+	fill: #c9c9c9;
 }
 
