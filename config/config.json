@@ -1,4 +1,5 @@
 {
+  "name": "someString",
   "session":{
     "secret": "MySuperSecretString",
     "cookie": {
