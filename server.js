@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
+var multer  = require('multer');
 var config = require('config/index.js');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -23,6 +24,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.use(multer({ dest: './uploads/'}));
+
 app.use(cookieParser());
 
 app.use(session({
@@ -31,8 +34,6 @@ app.use(session({
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
-
-//console.log(nconf.get('name'));
 
 app.use(express.static('build'));
 

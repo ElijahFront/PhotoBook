@@ -19,6 +19,18 @@ var userSchema = new Schema({
     salt:{
         type: String,
         required: true
+    },
+    userInfo:{
+        type: String,
+        required: true
+    },
+    avaPath:{
+        type: String,
+        required: true
+    },
+    backgroundPath:{
+        type: String,
+        required: true
     }
 });
 
