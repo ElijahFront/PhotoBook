@@ -1,7 +1,7 @@
 var User = require('../models/user').User;
 
 exports.post = function (req, res, next) {
-  var password = req.body.password;
+    var password = req.body.password;
     var login = req.body.login;
 
     // 1. Получить пользователя с таким login из базы
