@@ -120,3 +120,36 @@
     });
 
 }());
+
+/*
+ * XmlHttpRequests from the main page
+ */
+(function () {
+
+    function sendXHR(route, data){
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: data
+        })
+    }
+
+    $('#edit__header_save').on('click', function (e) {
+        e.preventDefault();
+
+        var avatar = $('#header__user_ava').val(),
+            background = $('#header__user_back').val(),
+            username = $('#header__user_name').val(),
+            userInfo = $('#user__header_description').val();
+
+        var profileData = {
+            avatar: avatar,
+            background: background,
+            username: username,
+            userInfo: userInfo
+        };
+
+        sendXHR('/profileUpload', profileData)
+    });
+
+}());

@@ -5,26 +5,27 @@
 					.edit__user
 						.edit__user__avatar
 							label.user__avatar__label
-								input.user__avatar__input(type='file' hidden)
+								input.user__avatar__input#header__user_ava(type='file' hidden)
 								.user__avatar__mask
 									+icon('cam','svg-cam-dims')
 									span Изменить фото
 
 						.edit__user__info
-							input.edit__user__input(type='text' value='Антон Черепов')
-							textarea.edit__user__textarea(type='text' value='Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.')
+							input.edit__user__input#header__user_name(type='text' value='Антон Черепов')
+							textarea.edit__user__textarea#user__header_description.
+								Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
 							.socials
 								include ./_socials
 								
 					.edit__background__block
 						label.edit__background__label
-							input.edit__background__input(type='file' hidden)
+							input.edit__background__input#header__user_back(type='file' hidden)
 							span Изменить фон
 							+icon('cam','svg-cam-dims')
 
 				.edit__btn_block
 					button.edit__btn(type='reset') Отменить
-					button.edit__btn(type='submit') Сохранить
+					button.edit__btn#edit__header_save(type='submit') Сохранить
 
 			.popup__block
 				ul.popoup__list
