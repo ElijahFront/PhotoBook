@@ -1,23 +1,72 @@
 .edit
-	.edit__header
-		.edit__user
-			.edit__user__avatar
-				img.user__avatar__img(src='./assets/img/users/us.jpg')
+	.container
+		form.edit__profile
+				.edit__header
+					.edit__user
+						.edit__user__avatar
+							label.user__avatar__label
+								input.user__avatar__input#header__user_ava(type='file' hidden)
+								.user__avatar__mask
+									+icon('cam','svg-cam-dims')
+									span Изменить фото
 
-				.user__avatar__mask
-					i.fa.fa-camera.fa-4x
-					span Изменить фото 
+						.edit__user__info
+							input.edit__user__input#header__user_name(type='text' value='Антон Черепов')
+							textarea.edit__user__textarea#user__header_description.
+								Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+							.socials
+								include ./_socials
+								
+					.edit__background__block
+						label.edit__background__label
+							input.edit__background__input#header__user_back(type='file' hidden)
+							span Изменить фон
+							+icon('cam','svg-cam-dims')
 
-			.edit__user__info
-				input.edit__user__input(type='text' value='Антон Черепов')
-				textarea.edit__user__textarea(type='text' value='Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.')   
-				.socials 
-					include ./_socials
+				.edit__btn_block
+					button.edit__btn(type='reset') Отменить
+					button.edit__btn#edit__header_save(type='submit') Сохранить
 
-		a.edit__backgraund(href='#') Изменить фон
-			i.fa.fa-camera
+			.popup__block
+				ul.popoup__list
+					li.popup__item
+						form.popup__form#vk_popup
+							.triangle
+							input.popup__input(name='vk_pop' type='text')
+							button.popup__btn(name='save_pop' type='submit') Сохранить
+							button.popup__btn(name='reset_pop' type='reset') Отменить
+							
 
-	.edit__btn_block
-		button.edit__btn(type='button') Отменить
-		button.edit__btn(type='button') Сохранить
-		
+					li.popup__item
+						form.popup__form#fb_popup
+							.triangle
+							input.popup__input(name='fb_pop' type='text')
+							button.popup__btn(name='save_pop' type='submit') Сохранить
+							button.popup__btn(name='reset_pop' type='reset') Отменить
+
+					li.popup__item
+						form.popup__form#tw_popup
+							.triangle
+							input.popup__input(name='tw_pop' type='text')
+							button.popup__btn(name='save_pop' type='submit') Сохранить
+							button.popup__btn(name='reset_pop' type='reset') Отменить		
+							
+
+					li.popup__item
+						form.popup__form#google_popup
+							.triangle
+							input.popup__input(name='google_pop' type='text')
+							button.popup__btn(name='save_pop' type='submit') Сохранить
+							button.popup__btn(name='reset_pop' type='reset') Отменить
+							
+
+					li.popup__item
+						form.popup__form#mail_popup
+							.triangle
+							input.popup__input(name='mail_pop' type='text')
+							button.popup__btn(name='save_pop' type='submit') Сохранить
+							button.popup__btn(name='reset_pop' type='reset') Отменить
+							
+
+						
+

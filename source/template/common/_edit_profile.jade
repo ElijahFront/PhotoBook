@@ -1,0 +1,54 @@
+.profile__container
+	.edit__profile
+		form.profile
+			
+			.profile__title__block
+				h2.profile__title Редактировать профиль
+				+icon('close','svg-close-dims')
+
+			.profile__name__block
+				span.profile__input__title Имя
+				input.profile__name__input(name='name_first' type='text' placeholder='Имя')
+				input.profile__name__input(name='name_second' type='text' placeholder='Фамилия')
+			
+			.profile__about__block
+				span.profile__input__title О себе
+				textarea.profile__about__area(name='about_user' placeholder='Фамилия')		
+			
+			.profile__photo__block
+				+user('','us.jpg')
+				input(type='file')
+
+
+	//- .popup__block
+			//- 	ul.popoup__list
+			//- 		li.popup__item
+			//- 			form.popup__form#vk_popup
+			//- 				input.popup__input(name='vk_pop' type='text')
+			//- 				button.popup__btn(name='save_pop' type='submit') Сохранить
+			//- 				button.popup__btn(name='reset_pop' type='reset') Отменить
+			//- 			.triangle
+
+			//- 		li.popup__item
+			//- 			form.popup__form#fb_popup
+			//- 				input.popup__input(name='fb_pop' type='text')
+			//- 				button.popup__btn(name='save_pop' type='submit') Сохранить
+			//- 				button.popup__btn(name='reset_pop' type='reset') Отменить
+			//- 			.triangle
+
+			//- 		li.popup__item
+			//- 			form.popup__form#google_popup
+			//- 				input.popup__input(name='google_pop' type='text')
+			//- 				button.popup__btn(name='save_pop' type='submit') Сохранить
+			//- 				button.popup__btn(name='reset_pop' type='reset') Отменить
+			//- 			.triangle
+
+			//- 		li.popup__item
+			//- 			form.popup__form#mail_popup
+			//- 				input.popup__input(name='mail_pop' type='text')
+			//- 				button.popup__btn(name='save_pop' type='submit') Сохранить
+			//- 				button.popup__btn(name='reset_pop' type='reset') Отменить
+			//- 			.triangle
+
+						
+

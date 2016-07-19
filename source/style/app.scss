@@ -1,8 +1,8 @@
 $colBlue: #28bbef;
+$colGray: #848484;
 
 
 @import 'common/fonts'; 
-@import 'common/paralax';
 @import 'common/login';
 @import 'common/main';
 @import 'common/slider';
@@ -44,6 +44,8 @@ a {
 input {
 	outline: none;
 	border: none;
+	padding: 10px;
+	border-radius: 20px;
 }
 
  *,*:before,*:after {
@@ -60,6 +62,11 @@ button {
 		box-shadow: none;
 		border: 2px solid $colBlue;
 		background-color: #fff;
+
+	&[type=reset] {
+		color: $colBlue;
+		border: none;
+	}
 }
 h1,h2 {
   padding: 0;

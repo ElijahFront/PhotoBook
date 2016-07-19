@@ -17,7 +17,7 @@
 .svg-home-dims,
 .svg-edit-dims,
 .svg-off-dims  {
-	fill: #848484;
+	fill: $colGray;
 	width: 20px;
 	height: 20px;
 }
@@ -32,4 +32,17 @@
 	left: 7%;
 	fill: #c9c9c9;
 }
+
+.svg-close-dims {
+	width: 25px;
+	height: 25px;
+	fill: $colGray;
+}
+
+.svg-cam-dims {
+	width: 40px;
+	height: 40px;
+	fill: rgba(#fff,.8);
+}
+
 
