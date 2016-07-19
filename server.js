@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
+var multer  = require('multer');
 var config = require('config/index.js');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -22,6 +23,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
+
+app.use(multer({ dest: './uploads/'}));
 
 app.use(cookieParser());
 

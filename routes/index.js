@@ -1,4 +1,6 @@
 var checkAuth = require('./auth');
+var multer  = require('multer');
+var uploadUser = multer({ dest: 'uploads/usersPhotos' });
 
 module.exports = function (app) {
     app.post('/login', checkAuth,  require('./login').post);
@@ -15,6 +17,6 @@ module.exports = function (app) {
     
     app.post('/signUp', require('./signup').post);
 
-    app.post('/profileUpload', require('./profileUpload'))
+    app.post('/profileUpload', uploadUser.array('user_edit'), require('./profileUpload').post)
 
 };
