@@ -1,6 +1,6 @@
 var checkAuth = require('./auth');
 var multer  = require('multer');
-var uploadUser = multer({ dest: 'uploads/usersPhotos' });
+var uploadUser = multer({ dest: './uploads/usersPhotos' });
 
 module.exports = function (app) {
     app.post('/login',  require('./login').post);
