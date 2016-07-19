@@ -2,23 +2,23 @@
 	background-color: rgba(#fff,.9);
 	position: absolute;
 	top: 0;
-	z-index: 3;
 	left: -99999px;
 	width: 100%;
 	height: 100%;
 	bottom: 0;
+	z-index: 3;
 	
 
 }
 
-form.edit__profile {
+.edit__profile {
 	width: 80%;
 	margin: 0 auto;
+	position: relative;
 }
 .edit__header {
 	background-color: rgba(#000,.9);
 	width: 100%;
-	height: 240px; 
 	display: flex;
 	padding: 40px 30px;
 	margin-bottom: 10px;
@@ -32,7 +32,8 @@ form.edit__profile {
 .edit__user__info {
 	display: flex;
 	flex-direction: column;
-	width: 40%;
+	width: 480px;
+	align-items: flex-start;
 
 }
 
@@ -40,12 +41,14 @@ form.edit__profile {
 	padding: 10px 20px;
 	border-radius: 20px;
 	margin-bottom: 10px;
+	width: 100%; 
 }
 
 .edit__user__textarea {
 	resize: none;
 	outline: none;
 	border: none;
+	width: 100%; 
 	border-radius: 20px;
 	min-height: 65px;
 	margin-bottom: 10px;
@@ -54,6 +57,7 @@ form.edit__profile {
 }
 
 .edit__user__avatar {
+	flex: 0 3 125px;
 	width: 125px;
 	height: 125px;
 	border: 3px solid #fff;
@@ -61,6 +65,7 @@ form.edit__profile {
 	overflow: hidden;
 	margin: 20px; 
 	background-image: url(../img/users/us.jpg);
+	background-repeat: no-repeat;
 	position: relative;
 }
 
@@ -114,24 +119,54 @@ form.edit__profile {
 }
 
 .edit__btn {
-	border: none;
-	&[type=submit] {
+	
+		&[type=submit] {
 		color: #fff;
 		background-color: $colBlue;
 	}
-	&[type=reset] {
-		color: $colBlue;
-	}
 }
-		
-.edit__btn[type=reset]:hover {
-	color: #fff;
-	background-color: $colBlue;
-	
-	.edit__btn [type=submit] {
-		
-			background-color: #fff;
-	    color: $colBlue;
-		}
-		
+.popup__block {
+	position: absolute;
+	top: 210px;
+	left: 187px;
+	z-index: 5;
+}
+
+
+.popup__form {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	box-shadow: 2 2 4 #f1f1f1;
+	padding: 10px;
+	z-index: 5;	
+}	
+
+
+.popup__item {
+	position: relative;
+	margin: 0;
+	width: 280px;
+}
+ .triangle {
+		position: absolute;
+		top: -10px;
+		left: 50%;
+		width: 0;
+		height: 0;
+		border-bottom: 15px solid #fff;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		z-index: 4;
+	}	
+
+.popup__input {
+	border: 1px solid #e7e7e7;
+	width: 95%;
+	display: block;
+	margin: 0 auto 10px;
+}
+.popup__btn{
+	margin-left: 5px;
 }
