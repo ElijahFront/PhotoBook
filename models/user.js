@@ -20,6 +20,10 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
+    emailconf: {
+        type: String,
+        required: false
+    },
     userInfo:{
         type: String,
         required: true

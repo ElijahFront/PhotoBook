@@ -1,26 +1,48 @@
 var User = require('../models/user').User;
 var fs = require('fs');
+var async = require('async');
 
 exports.post = function (req, res, next) {
 
-    // var id = req.session.id,
-    //     avatar = req.files.user_edit[0],
-    //     avatarPath = req.files[0].path,
-    //     background = req.files[1],
-    //     backgroundPath = req.files[1].path,
-    //     username = req.body.username,
-    //     userInfo = req.body.userInfo;
-    
-    // User.update({_id: id}, $set({avaPath:avatarPath},
-    //     {backgroundPath:backgroundPath},
-    //     {name:username},
-    //     {userInfo:userInfo}),
-    //         function (err, path) {
-    //             if (err) return next(err);
-    //         });
-    console.log(req.files);
-    console.log(req.body);
-    res.end()
+    // Получаем старый путь
+    // Удаляем файл
+    // Обновляем путь в БД
 
+    var id = req.session.id,
+        avatar = req.files.user__avatar__input,
+        avatarPath = req.files.user__avatar__input.path,
+        background = req.files.user__back__input,
+        backgroundPath = req.files.user__back__input.path,
+        username = req.body.user__name__input,
+        userInfo = req.body.user__text__input;
+
+    async.series([
+        function () {
+            User.findOne({_id:id}, function (err, user) {
+                if (err) return next(err);
+
+                var oldAvatar = user.avaPath;
+                var oldBack = user.backgroundPath;
+
+                fs.unlink([oldAvatar, oldBack], function (err) {
+                    if (err) return next(err);
+                });
+
+            });
+        },
+        function () {
+            User.update({_id: id}, $set(
+                {avaPath:avatarPath},
+                {backgroundPath:backgroundPath},
+                {name:username},
+                {userInfo:userInfo}),
+                function (err, path) {
+                    if (err) return next(err);
+                });
+        }
+    ]);
+    
+    console.log(req.files);
+    res.end()
 
 };
