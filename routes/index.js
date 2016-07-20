@@ -1,6 +1,16 @@
 var checkAuth = require('./auth');
 var multer  = require('multer');
-var uploadUser = multer({ dest: 'uploads/usersPhotos' });
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '/tmp/my-uploads')
+    },
+    filename: function (req, file, cb) {
+        var name = file.originalname.replace((/\s+/g, ''));
+        cb(null, Date.now() + '_' + name)
+    }
+});
+
+var uploadUser = multer({ storage: storage });
 
 module.exports = function (app) {
     app.post('/login', checkAuth,  require('./login').post);
