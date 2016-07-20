@@ -24,8 +24,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-//app.use(multer({ dest: './uploads/'}));
-
 app.use(cookieParser());
 
 app.use(session({
