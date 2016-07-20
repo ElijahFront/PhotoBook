@@ -38,18 +38,17 @@ exports.post = function (req, res, next) {
     });
     user.save(function(err){
         if (err) {
+                return next (err);
+        } else {
             // send mail with defined transport object
-            transporter.sendMail(mailOptions, function(err, info){
-                if(err){
+            transporter.sendMail(mailOptions, function(err, info) {
+                if (err) {
                     return console.log(err);
                 }
                 console.log('Message sent: ' + info.response);
-
-                return next (err);
             });
 
-        } else {
-            res.send(200)
+                res.send(200)
         }
     }
     )
