@@ -2,7 +2,7 @@ var checkAuth = require('./auth');
 var multer  = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '/tmp/my-uploads')
+        cb(null, './tmp/my-uploads')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));
@@ -29,6 +29,6 @@ module.exports = function (app) {
 
     app.post('/signUp', require('./signup').post);
 
-    app.post('/profileUpload', uploadUser.array('user__avatar__input'), require('./profileUpload').post)
+    app.post('/profileUpload', uploadUser.array('edit__profile_inp'), require('./profileUpload').post)
 
 };
