@@ -19,6 +19,10 @@ var userSchema = new Schema({
     salt:{
         type: String,
         required: true
+    },
+    emailconf:{
+        type: String,
+        required: false
     }
 });
 

@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
-var config = require('config/index.js');
+var config = require('./config/index.js');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
@@ -28,6 +28,8 @@ app.use(cookieParser());
 app.use(session({
     secret: nconf.get('session:secret'),
     cookie: nconf.get('session:cookie'),
+    resave: true, // добавил так как без этого была обибка
+    saveUninitialized: true, // это тоже
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
