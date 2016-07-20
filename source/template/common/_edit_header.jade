@@ -1,11 +1,11 @@
 .edit
 	.container
-		form.edit__profile(enctype="multipart/form-data")
+		form.edit__profile(enctype="multipart/form-data", name="headerForm")
 				.edit__header
 					.edit__user
 						.edit__user__avatar
 							label.user__avatar__label
-								input.user__avatar__input#header__user_ava(type='file' hidden)
+								input.user__avatar__input#header__user_ava(type='file', name="upl" hidden)
 								.user__avatar__mask
 									+icon('cam','svg-cam-dims')
 									span Изменить фото

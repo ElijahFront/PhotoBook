@@ -144,6 +144,7 @@
             type: 'POST',
             url: route,
             data: data
+            //contentType: 'multipart/form-data'
         })
     }
 

@@ -18,7 +18,9 @@ exports.post = function (req, res, next) {
     //         function (err, path) {
     //             if (err) return next(err);
     //         });
-    console.log(req.files)
+    console.log(req.file);
+    console.log(req.body);
+    res.end()
 
 
 };
