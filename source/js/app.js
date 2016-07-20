@@ -120,3 +120,28 @@
     });
 
 }());
+
+
+/*
+* function for popup
+*/
+
+(function(){
+  var soc = $('.social__block');
+
+ $('.social__item, .popup__item').on({
+    mouseenter : function(e){
+        $(this).find('.poup__item').addClass('popup__active');   
+        console.log('ok');
+    }, 
+    mouseleave : function(e) {
+         $(this).find('.poup__item').removeClass('popup__active');
+         console.log('no');
+     } 
+
+
+  });
+
+
+
+}());

@@ -7,16 +7,17 @@
 	width: 20px;
 	height: 20px;
 	transition: 0.3;
-	&:hover {
-		fill: #fff;
-	}
+	 &:hover {
+	 	fill: #fff;
+	 }
 
 }
 
 .svg-search-dims,
 .svg-home-dims,
 .svg-edit-dims,
-.svg-off-dims  {
+.svg-off-dims,
+.svg-add-dims {
 	fill: $colGray;
 	width: 20px;
 	height: 20px;
@@ -44,5 +45,32 @@
 	height: 40px;
 	fill: rgba(#fff,.8);
 }
+.svg-top-dims {
+	width: 30px;
+	height: 30px;
+	fill:#fff;					
 
+}
+
+.svg-comments-dims,
+.svg-like-dims,
+.svg-album-dims {
+	fill: #d6d6d6;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.svg-loupe-dims{
+	fill: transparent;
+	width: 45px;
+	height: 45px;
+	margin-top: 25%;
+}
+.svg-more-dims {
+	width: 20px;
+	height: 10px;
+	fill: transparent;
+	margin-top: 18px;
+}
 

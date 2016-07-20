@@ -1,22 +1,24 @@
 header.header
-	.header__content
-		.user_header
-			.user_header__avatar
-				img.user_header__avatar__img(src='./assets/img/users/us.jpg')
-			.user_header__info
-				.user_header__name Антон Черепов
-				.user_header__desc  Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
-				.socials 
-					include ./_socials
+	.main__container
+		.header__content
+				.user_header
+					.user_header__avatar
+						img.user_header__avatar__img(src='./assets/img/users/us.jpg')
+					.user_header__info
+						.user_header__name Антон Черепов
+						.user_header__desc  Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+						.socials
+							include ./_socials
 
-		.header__btn__block
-			a.header__btn#header_edit(href='#') Редактировать
-				+icon('edit','svg-edit-dims')
-			a.header__btn#header_exit(href='./index.html') Выйти
-				+icon('off','svg-off-dims')
-			
+				.header__btn__block
+					a.header__btn#header_edit(href='#') Редактировать
+						+icon('edit','svg-edit-dims')
+					a.header__btn#header_exit(href='./index.html') Выйти
+						+icon('off','svg-off-dims')
+
 	.search
-		.search__wrap
-			input.search__input(name='search' type='text' placeholder='Исследовать мир')
-			a.search__link(href='#') поиск
-				+icon('search','svg-search-dims')
+		.main__container
+			form.search__wrap
+				input.search__input(name='search' type='text' placeholder='Исследовать мир')
+				button.search__btn(name='search_btn' type='submit')
+					+icon('search','svg-search-dims')
