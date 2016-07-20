@@ -17,6 +17,6 @@ module.exports = function (app) {
 
     app.post('/signUp', require('./signup').post);
 
-    app.post('/profileUpload', uploadUser.single('upl'), require('./profileUpload').post)
+    app.post('/profileUpload', uploadUser.array('user__avatar__input'), require('./profileUpload').post)
 
 };

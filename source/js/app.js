@@ -143,25 +143,18 @@
         $.ajax({
             type: 'POST',
             url: route,
-            data: data
-            //contentType: 'multipart/form-data'
+            data: data,
+            processData: false,
+            contentType: false
+
         })
     }
 
     $('#edit__header_save').on('click', function (e) {
         e.preventDefault();
 
-        var avatar = $('#header__user_ava').val(),
-            background = $('#header__user_back').val(),
-            username = $('#header__user_name').val(),
-            userInfo = $('#user__header_description').val();
 
-        var profileData = {
-            avatar: avatar,
-            background: background,
-            username: username,
-            userInfo: userInfo
-        };
+        var profileData = new FormData($('#edit__header_form')[0]);
 
         sendXHR('/profileUpload', profileData)
     });

@@ -1,25 +1,25 @@
 .edit
 	.container
-		form.edit__profile(enctype="multipart/form-data", name="headerForm")
+		form.edit__profile#edit__header_form(enctype="multipart/form-data", name="edit__profile")
 				.edit__header
 					.edit__user
 						.edit__user__avatar
 							label.user__avatar__label
-								input.user__avatar__input#header__user_ava(type='file', name="upl" hidden)
+								input.user__avatar__input#header__user_ava(type='file', name="user__avatar__input")
 								.user__avatar__mask
 									+icon('cam','svg-cam-dims')
 									span Изменить фото
 
 						.edit__user__info
-							input.edit__user__input#header__user_name(type='text' value='Антон Черепов')
-							textarea.edit__user__textarea#user__header_description.
+							input.edit__user__input#header__user_name(type='text' value='Антон Черепов', name="user__name__input")
+							textarea.edit__user__textarea#user__header_description(name="user__text__input").
 								Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
 							.socials
 								include ./_socials
 								
 					.edit__background__block
 						label.edit__background__label
-							input.edit__background__input#header__user_back(type='file' hidden)
+							input.edit__background__input#header__user_back(type='file', name="user__back__input")
 							span Изменить фон
 							+icon('cam','svg-cam-dims')
 
