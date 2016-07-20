@@ -123,25 +123,29 @@
 
 
 /*
-* function for popup
-*/
+ * XmlHttpRequests from the main page
+ */
+(function () {
 
-(function(){
-  var soc = $('.social__block');
+    function sendXHR(route, data){
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: data,
+            processData: false,
+            contentType: false
 
- $('.social__item, .popup__item').on({
-    mouseenter : function(e){
-        $(this).find('.poup__item').addClass('popup__active');   
-        console.log('ok');
-    }, 
-    mouseleave : function(e) {
-         $(this).find('.poup__item').removeClass('popup__active');
-         console.log('no');
-     } 
+        })
+    }
 
-
-  });
+    $('#edit__header_save').on('click', function (e) {
+        e.preventDefault();
 
 
+
+        var profileData = new FormData($('#edit__header_form')[0]);
+
+        sendXHR('/profileUpload', profileData)
+    });
 
 }());
