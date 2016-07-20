@@ -38,6 +38,7 @@ console.log(nconf.get('name'));
 
 app.use(express.static('build'));
 
+app.set('views', './build');
 app.set('view engine', 'jade');
 
 require('./routes')(app);

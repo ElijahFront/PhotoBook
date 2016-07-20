@@ -14,7 +14,9 @@ module.exports = function (app) {
     app.get('/album', checkAuth, require('./render'));
 
     app.get(['/', '/index'], require('./render'));
+    
+    app.post('/signUp', require('./signup').post);
 
-    app.post('/signUp', require('./signup').post)
+    app.post('/profileUpload', require('./profileUpload'))
 
 };

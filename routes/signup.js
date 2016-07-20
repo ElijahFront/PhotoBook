@@ -27,7 +27,15 @@ exports.post = function (req, res, next) {
     };
 
 
-    var user = new User({name:name, login:login, password:password, emailconf:emailconf});
+    var user = new User({
+        name:name,
+        login:login,
+        password:password,
+        emailconf:emailconf,
+        userInfo:'А это описание моего профиля. Я еще не успел его поменять',
+        avaPath:'path/to/ava.jpg',
+        backgroundPath:'path/to/background.jpg'
+    });
     user.save(function(err){
         if (err) {
             // send mail with defined transport object

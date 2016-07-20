@@ -20,9 +20,21 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
-    emailconf:{
+    emailconf: {
         type: String,
         required: false
+    },
+    userInfo:{
+        type: String,
+        required: true
+    },
+    avaPath:{
+        type: String,
+        required: true
+    },
+    backgroundPath:{
+        type: String,
+        required: true
     }
 });
 
