@@ -29,6 +29,29 @@
 }());
 
 /*
+ * Logout requset
+ */
+
+(function () {
+    function sendXHR(route){
+        $.ajax({
+            type: 'POST',
+            url: route
+        })
+    }
+
+    $('#header_exit').on('click', function (e) {
+
+        e.preventDefault();
+
+        sendXHR('/logout')
+
+    })
+
+}())
+
+
+/*
  * XmlHttpRequests from authorization page
  */
 
