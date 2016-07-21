@@ -34,10 +34,16 @@
 	fill: #c9c9c9;
 }
 
+.svg-arrow_left-dims,
+.svg-arrow_right-dims,
 .svg-close-dims {
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	fill: $colGray;
+	&:hover {
+		fill: #fff;
+	}
+	
 }
 
 .svg-cam-dims {
@@ -74,3 +80,9 @@
 	margin-top: 18px;
 }
 
+.svg-heart-dims{
+  width: 20px;
+	height: 20px;
+	fill: #fff;
+
+}

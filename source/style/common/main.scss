@@ -6,9 +6,9 @@
 	
 }
 .container {
-	background-image: url(../img/photos/ph_hh.jpg);
-	background-size: 100% auto;
-	background-repeat: repeat-y;	
+	// background-image: url(../img/photos/ph_hh.jpg);
+	// background-size: 100% auto;
+	// background-repeat: repeat-y;	
 }
 .main__container {
 	width: 1200px;
@@ -25,12 +25,19 @@
 }
 //========footer====================
 .footer {
-	background-color: rgba(#000,.5);
+	background-color: rgba(#000,.6);
 	display: flex;
 	margin-top: auto;
 	color: #fff;
 	padding: 15px 0 20px;
 }
+.footer__main,
+.header__main {
+	background-image: url(../img/photos/ph_hh.jpg);
+	background-size: 100% auto;
+	background-position: auto center;
+}
+
 .footer__container {
 	flex-shrink: 2;
 	width: 1200px;
@@ -123,9 +130,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	 align-item: flex-end;
-
-	 // align-content: flex-end;
+	align-item: flex-end;
 	width: 150px;
 	}
 
@@ -143,36 +148,36 @@
 	text-align: center;
 
 		 .svg-off-dims,
-		 .svg-edit-dims {
+		 .svg-edit-dims,
+		 .svg-home-dims {
 				position: absolute;
 				top: 10px;
 				left: 10px;
 		 }
 		
 }
-#header_edit:hover,
-#header_exit:hover,{			
+
+.header__btn:hover,{			
 	color: #fff;
 	background-color: $colBlue;
 	border-radius: 20px;
 	font-family: 'pantonBold';
 	padding: 10px 10px 10px 30px;
 	font-size: 0.875rem;
-	
+	width: 95px;
+		
 				.svg-off-dims,
+				.svg-home-dims,
 				.svg-edit-dims {
 		  			fill: #fff;
 						left: 10px;
 				}
 }
 
-#header_edit:hover {
+.header__btn_l:hover {
  width: 150px;
 }	
 
-#header_exit:hover {
-	width: 95px;
-}
 
 .search {
 	height: 60px;
@@ -207,6 +212,9 @@
 	z-index: 3;
 	border: none;
 	padding: 0;
+	&:hover {
+		background: none;
+	}
 }
 //==========new world==========
 .new_world {
@@ -219,9 +227,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-item: center;
-
-//	justify-content: center;
-	
 }
 
 .news__item {
@@ -239,8 +244,7 @@
 
 .news__img  {
 	width: 380px;
-	height: 250px;	
-	
+	height: 250px;		
 }
 
 .news__mask {
@@ -331,6 +335,7 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
+	border: 1px solid #eee;
 	background-color: #fff;
 	position: relative;	
 	transition: 0.3s;

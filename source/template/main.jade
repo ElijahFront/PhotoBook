@@ -4,7 +4,8 @@ include common/_body_head
 	.wraper
 		.main_content
 			.container
-				include common/_header
+				.header__main
+					include common/_header
 
 						//========section new world========
 				section.new_world
@@ -27,7 +28,7 @@ include common/_body_head
 												.news__img__name Путешествие на лодке по озеру
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Прогулки по воде
+											a.news__album__name(href='#') Прогулки по воде
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -45,7 +46,7 @@ include common/_body_head
 												.news__img__name Отдых в палатке
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Палаточный лагерь
+											a.news__album__name(href='#')  Палаточный лагерь
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -63,7 +64,7 @@ include common/_body_head
 												.news__img__name Любимые лошадки
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Животные
+											a.news__album__name(href='#')  Животные
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -81,7 +82,7 @@ include common/_body_head
 												.news__img__name Мечтательный взгляд вдаль пове...
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Пустыня
+											a.news__album__name(href='#') Пустыня
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -99,7 +100,7 @@ include common/_body_head
 												.news__img__name Я лежу в гамаке, как это прекрасно
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Отдых
+											a.news__album__name(href='#') Отдых
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -117,7 +118,7 @@ include common/_body_head
 												.news__img__name Велопутешествие
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Дорога
+											a.news__album__name(href='#') Дорога
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -135,7 +136,7 @@ include common/_body_head
 												.news__img__name Черничка, вкусная
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Дорога
+											a.news__album__name(href='#') Дорога
 											+icon('album','svg-album-dims')
 
 								li.news__item
@@ -153,7 +154,7 @@ include common/_body_head
 												.news__img__name Горы-горы
 												+comments_likes(9,25)
 										.news__album
-											.news__album__name Путешествие
+											a.news__album__name(href='#') Путешествие
 											+icon('album','svg-album-dims')
 						button.news__more(type='button') Показать еще
 
@@ -238,9 +239,10 @@ include common/_body_head
 											.albums__about природа, леса, еноты и олени
 											.albums__amount_photo 10 фотографий
 
-				include common/_footer
+				.footer__main
+						include common/_footer
 
 						// modal windows
-				include common/_slider
+		include common/_slider
 		include common/_edit_header
 		include common/_scripts
