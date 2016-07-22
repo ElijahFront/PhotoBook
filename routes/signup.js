@@ -19,7 +19,7 @@ exports.post = function (req, res, next) {
 
 // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: '"' + name + '" <confirm@gmail.com>', // sender address
+        from: '"Photo Book" <loftschool.photobook@gmail.com>', // sender address
         to: login, // list of receivers
         subject: 'Подтвердите пароль', // Subject line
         text: 'Подтвердите пароль по ссылке http://localhost:3035/confirm/' + emailconf, // plaintext body
