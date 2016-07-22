@@ -3,7 +3,7 @@ var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://логин%40gmail.com:Пароль@smtp.gmail.com');
+var transporter = nodemailer.createTransport('smtps://loftschool.photobook%40gmail.com:ekb96reg@smtp.gmail.com');
 
 
 
