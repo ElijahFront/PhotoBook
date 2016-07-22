@@ -1,0 +1,126 @@
+.add_album {
+	background-color: rgba(#000,.9);
+	position: absolute;
+	top: 0;
+	left: -9999px;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	z-index: 3;	
+	border-radius: 10px;
+	
+	.main__container {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.add_album__form {
+
+	width: 680px;
+	background-color: #fff;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	.section_title {
+		font-size: 1.3125rem;
+		line-height: 1;
+		padding: 10px 0;
+	}
+	.sv-close-dims {
+		fill: #a0a09f;
+	}
+}
+
+.add_album__caption {
+	background-color: #f1f1f1;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.add_album__inputs {
+	padding: 35px 20px;
+}
+.add_album__desc {
+	display: flex;
+	margin-bottom: 15px;
+	align-items: center;
+
+}
+.add_album__span {
+	padding: 0 25px 0 30px;
+}
+
+.add_album__input {
+	border: 2px solid #d8d6d6;
+	flex: 1;
+	width: 100%;
+	padding: 8px 15px;
+}
+
+.add_album__textarea {
+	border: 2px solid $colBlue;
+	border-radius: 20px;
+	flex: 1;
+	width: 100%;
+	resize: none;
+	outline: none;
+	height: 120px;
+	padding: 10px 15px;
+}
+.add_album__btn {
+	padding: 10px 15px;
+	background-color: #f1f1f1;
+	display: flex;
+	justify-content: space-between;
+}
+
+.add_album__wrap {
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 0 25px 0 50px;
+}
+
+.add_album__addFile_btn{
+	display: flex;
+}
+
+.add_album__label {
+	display: block;
+	text-align: center;
+	padding: 10px 15px;
+	border-radius: 25px;
+	color: $colBlue;
+	font-size: 0.825rem;
+	font-family: 'pantonbold';
+	border: 2px solid $colBlue;
+	width: 165px;
+	margin-right: 20px;
+}
+.add_album__addFile__span {
+	display: block;
+	width: 50%;
+	font-family: 'proxima_novalight_italic';
+  font-weight: bold;
+  color: #323232;
+}
+
+.remove_btn {
+	position: relative;
+}
+#add__btn__remove {	
+	border: none;
+	color: #fff;
+	background-color: #ee4634;
+	padding-left: 40px;
+}
+
+.svg-delete-dims {
+	position: absolute;
+	top: 10px;
+	left:15px;
+}

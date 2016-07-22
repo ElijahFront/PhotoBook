@@ -10,7 +10,7 @@ $colGray: #848484;
 @import 'common/album';
 @import 'common/icons';
 @import 'common/search';
-//@import 'common/test';
+@import 'common/add_album';
 
 html{
 	font-size: 16px;
@@ -69,6 +69,7 @@ button {
 
 	&[type=reset] {
 		color: $colBlue;
+		background-color: transparent;
 		border: transparent;
 		&:hover {
 			border: $colBlue;
@@ -108,4 +109,3 @@ h1,h2 {
  	margin-right: 10px;
  	align-self: flex-start;
  }
-
