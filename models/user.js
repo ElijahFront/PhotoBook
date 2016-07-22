@@ -35,6 +35,9 @@ var userSchema = new Schema({
     backgroundPath:{
         type: String,
         required: true
+    },
+    albums: {
+        type: [String]
     }
 });
 

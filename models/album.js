@@ -2,6 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var albumSchema = new Schema({
+    author:{
+        required: true,
+        type: String
+    },
     name:{
         required: true,
         type: String
