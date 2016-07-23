@@ -18,6 +18,7 @@
 .main_content {
 	flex:1;
 	justify-content: center;
+	align-items: center;
 }
 
 .footer_auth {
@@ -86,6 +87,7 @@
 			padding: 10px 45px;
 			width: 100%;
 			font-size: 1rem;
+			border: none;
 		}	
 		
 }

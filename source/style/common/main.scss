@@ -6,9 +6,7 @@
 	width: 100%;
 }
 
-.wraper {
-	position: relative;
-}
+
 
 .main_content{
 	flex: 1;
@@ -28,7 +26,9 @@
 	align-item: center;
 }
 
-
+// .wraper {
+// 	position: relative;
+// }
 //========footer====================
 .footer {
 	background-color: rgba(#000,.6);
@@ -214,6 +214,7 @@
 	width: 100%;
 	padding: 10px 10px 10px 50px;
 	border-radius: 20px;	
+	border: none;
 }
 
 .search__btn{
@@ -332,6 +333,7 @@
 
 .news__more {
 	margin: auto;
+	font-family: 'pantonbold';
 }
 
 .news__img__name {
