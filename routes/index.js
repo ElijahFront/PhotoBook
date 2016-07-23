@@ -30,7 +30,7 @@ module.exports = function (app) {
     app.post('/createAlbum', createAlb.array('addAlbum'), require('./newAlbum').post);
     
     app.get(['/confirm/:conf'], require('./confirm'));
-    app.get('/main', checkAuth, require('./render'));
+    app.get('/main', checkAuth, require('./main'));
     app.get('/user/:id', require('./users').get);
     app.get('/user/:id/albums/:album', checkAuth, require('./albums').get);
     app.get('/search', checkAuth, require('./render'));
