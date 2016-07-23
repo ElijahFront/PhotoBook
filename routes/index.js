@@ -32,7 +32,7 @@ module.exports = function (app) {
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));
     app.get('/user/:id', require('./users').get);
-    app.get('/user/:id/albums/:album', checkAuth, require('./albums').get);
+    app.get('/albums/:album', checkAuth, require('./albums').get);
     app.get('/search', checkAuth, require('./render'));
     app.get('/album', checkAuth, require('./render'));
     app.get(['/', '/index'], require('./render'));

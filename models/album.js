@@ -17,6 +17,9 @@ var albumSchema = new Schema({
     coverID:{
         required: true,
         type: String
+    },
+    photos:{
+        type: [Number]
     }
 });
 

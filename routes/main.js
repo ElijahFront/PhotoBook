@@ -18,7 +18,8 @@ module.exports = function (req, res) {
         Album.find({_id:userAlbums}, function (err, album) {
             if (err) return next(err);
             var albums = album,
-                albumID = album._id;
+                albumID = album._id,
+                numberOfPhotos = album.photos;
 
             Photos.find({}, function (err, photos) {
                 var photos = photos;
@@ -29,8 +30,8 @@ module.exports = function (req, res) {
                     avatar:userAva,
                     cover:userBack,
                     albums:albums,
-                    photos:photos
-
+                    photos:photos,
+                    amountOfPhotos:numberOfPhotos
                 })
             })
          })
