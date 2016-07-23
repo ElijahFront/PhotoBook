@@ -1,0 +1,35 @@
+.add_photos
+	.main__container
+			form.add_album__form#addAlbum(name='add_album_form' enctype='multipart/form-data')
+				
+				.add_album__caption
+					h2.section_title Добавить альбом
+					+icon('close','svg-close-dims')
+			
+				.add_album__inputs
+					
+					.add_album__desc
+						span.add_album__span Название
+						input.add_album__input#addAlbumName(name='addAlbumName' type='text' placeholder='Мой альбом')
+					
+					.add_album__desc
+						span.add_album__span Описание
+						textarea.add_album__textarea#addAlbumDesc(name='addAlbumDesc') Как я провёл лето. Чтобы было красиво описание должно быть на несколько строк. Убедитесь сами!
+					
+					.add_album__desc
+						.add_album__wrap
+							img.add_album__wrap(src='./assets/img/photos/ph_hh_l.jpg')
+
+						.add_album__addFile_btn
+							label.add_album__label Загрузить обложку
+								input.add_album__addFile#addAlbumAddFile(name='addAlbumAddFile' type='file' hidden)
+							span.add_album__addFile__span (файл должен быть размером не более 1024 КБ)
+				
+				.add_album__btn
+					.add_album__btn__block
+						button.edit__btn#add__btn__save(type='submit') Сохранить
+						button.edit__btn(type='reset') Отменить
+
+					.remove_btn
+						button.edit__btn#add__btn__remove(type='button') Удалить
+						+icon('delete','svg-delete-dims')
