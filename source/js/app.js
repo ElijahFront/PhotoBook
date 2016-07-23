@@ -172,3 +172,32 @@
     });
 
 }());
+
+
+/*
+ * Albums creating
+ */
+
+(function () {
+    function sendXHR(route, data){
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: data,
+            processData: false,
+            contentType: false
+
+        })
+    }
+
+    $('#add__btn__save').on('click', function (e) {
+
+        e.preventDefault();
+
+        var albumData = new FormData($('#addAlbum')[0]);
+
+        sendXHR('/createAlbum', albumData)
+
+    })
+
+}());
