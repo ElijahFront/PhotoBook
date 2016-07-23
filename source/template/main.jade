@@ -167,77 +167,19 @@ include common/_body_head
 								+icon('add','svg-add-dims')
 						.albums
 							ul.albums__list
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph11.jpg')
-										.albums__name
-											.albums__name__title	Поход в горы
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Горы, реки, леса и поля
-											.albums__amount_photo 10 фотографий
-
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph22.jpg')
-										.albums__name
-											.albums__name__title	Животные
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Собаки, кошки, лошади
-											.albums__amount_photo 10 фотографий
-
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph33.jpg')
-										.albums__name
-											.albums__name__title	 Прогулки на лодке
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Лодки, реки
-											.albums__amount_photo 10 фотографий
-
+								each album in albums
 									li.albums__item
 										.albums__block
 											.albums__img__wrap
-												img.albums__img(src='./assets/img/photos/ph44.jpg')
+												img.albums__img(src='./assets/img/photos/ph11.jpg')
 											.albums__name
-												.albums__name__title	 Море и серфинг
+												.albums__name__title #{album.name}
 												a.albums__edit(href='#') редактировать альбом
 													+icon('edit','svg-edit-dims')
 											a.albums__desc(href='./album.html')
-												.albums__about Море, серфинг, пляж, лето
-												.albums__amount_photo 10 фотографий
+												.albums__about #{album.description}
+												.albums__amount_photo #{album.amountOfPhotos} фотографий
 
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph55.jpg')
-										.albums__name
-											.albums__name__title	 Ущелье и горные хребты
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Горы, реки, леса и поля
-											.albums__amount_photo 10 фотографий
-
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph66.jpg')
-										.albums__name 
-											.albums__name__title	 Лесной выезд
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about природа, леса, еноты и олени
-											.albums__amount_photo 10 фотографий
 
 				.footer__main
 						include common/_footer
