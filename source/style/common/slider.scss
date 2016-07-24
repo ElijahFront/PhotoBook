@@ -1,17 +1,21 @@
-.view_photo {
+.view_photo,
+.add_album,
+.add_photos  {
 	position: absolute;
-	top: 0;
-	left: -99999px;
+	top: 0;	
 	width: 100%;
 	bottom: 0;
 	z-index: 3;
 	background-color: rgba(#000,.9);
-	padding: 100px 0 85px;
+	padding: 100px 0;
 	
 	 .main__container {	 	
 		justify-content: center;
 		align-items: center;
 	 }	
+}
+.view_photo {
+	left: -99999px;
 }
 
 .slider{
@@ -105,7 +109,7 @@
 }
 .photos__like {
  border-radius: 20px;
- background-color: #ee4634; 
+ background-color: $colRed; 
  padding: 8px 15px 10px 50px;
  color: #fff;
  font-family: 'pantonbold';
@@ -118,7 +122,11 @@
  			top: 28%;
  			left: 18px;
  		}
+ 		&:hover {
+ 			background-color: $colDarkRed; 
+ 		}
   } 
+
 
   .photos__desc__block {
   	padding: 0 20px 40px;

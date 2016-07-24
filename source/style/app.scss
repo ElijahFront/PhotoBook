@@ -1,5 +1,7 @@
 $colBlue: #28bbef;
 $colGray: #848484;
+$colDarkRed: #d94130;
+$colRed: #ee4634;
 
 
 @import 'common/fonts'; 
@@ -11,6 +13,8 @@ $colGray: #848484;
 @import 'common/icons';
 @import 'common/search';
 @import 'common/add_album';
+@import 'common/add_photo';
+
 
 html{
 	font-size: 16px;
@@ -22,8 +26,7 @@ html,body{
 	padding: 0;
 	box-sizing: border-box;
 	height: 100%;
-	width: 100%;
-	
+	width: 100%;	
 	min-width: 320px;
 }
 
@@ -41,11 +44,11 @@ a {
 	text-decoration: none;
 }
 
-input {
+input, textarea {
 	outline: none;
-	border: none;
 	padding: 10px;
 	border-radius: 20px;
+	resize: none;
 }
 
  *,*:before,*:after {
@@ -54,7 +57,7 @@ input {
 button {
 	padding: 10px 20px;
 	border-radius: 30px;
-	font-family: 'pantonbold';
+	font-family: 'proxima_nova_ltsemibold';
 	font-size: 0.875rem;
 	color: $colBlue;
 	outline: none;
