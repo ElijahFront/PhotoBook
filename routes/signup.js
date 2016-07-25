@@ -1,9 +1,10 @@
 var User = require('../models/user').User;
+var nconf = require('nconf');
 var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://loftschool.photobook%40gmail.com:ekb96reg@smtp.gmail.com');
+var transporter = nodemailer.createTransport(nconf.get('email:transport'));
 
 
 
@@ -15,15 +16,15 @@ exports.post = function (req, res, next) {
     var emailconf = crypto.createHash('md5')
         .update(name)
         .digest('hex');
-
+    var emaillink = nconf.get('email:confirmlink') + emailconf;
 
 // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: '"Photo Book" <loftschool.photobook@gmail.com>', // sender address
+        from: '"' + nconf.get('email:from') + '" <' + nconf.get('email:email') + '>', // sender address
         to: login, // list of receivers
         subject: 'Подтвердите пароль', // Subject line
-        text: 'Подтвердите пароль по ссылке http://localhost:3035/confirm/' + emailconf, // plaintext body
-        html: 'Подтвердите пароль по ссылке <a href="http://localhost:3035/confirm/' + emailconf + '">http://localhost:3035/confirm/' + emailconf +'</a>' // html body
+        text: 'Подтвердите пароль по ссылке ' + emaillink, // plaintext body
+        html: 'Подтвердите пароль по ссылке <a href="' + emaillink + '">' + emaillink +'</a>' // html body
     };
 
 

@@ -38,6 +38,10 @@ var userSchema = new Schema({
     },
     albums: {
         type: [String]
+    },
+    restorepassword: {
+        type: String,
+        required: false
     }
 });
 
