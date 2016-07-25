@@ -34,8 +34,8 @@ app.use(session({
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
-
-console.log(nconf.get('name'));
+//todo закоментил, чтобы не вылезал первый андефайн
+//console.log(nconf.get('name'));
 
 app.use(express.static('build'));
 
