@@ -1,5 +1,6 @@
 var User = require('../models/user').User;
 var Album = require('../models/album').Album;
+var Photo = require('../models/album').Photo;
 
 module.exports = function (req, res) {
     res.type('html');
@@ -21,7 +22,7 @@ module.exports = function (req, res) {
                 albumID = album._id,
                 numberOfPhotos = album.photos;
 
-            Photos.find({}, function (err, photos) {
+            Photo.find({}, function (err, photos) {
                 var photos = photos;
 
                 res.render('main', {
