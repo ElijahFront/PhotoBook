@@ -6,5 +6,11 @@
       "maxAge": null,
       "httpOnly": true
     }
+  },
+  "email":{
+    "transport": "smtps://loftschool.photobook%40gmail.com:ekb96reg@smtp.gmail.com",
+    "from" : "Photo Book",
+    "email" : "loftschool.photobook@gmail.com",
+    "confirmlink": "http://localhost:3035/confirm/"
   }
 }

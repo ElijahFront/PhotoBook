@@ -34,6 +34,11 @@ app.use(session({
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
+<<<<<<< HEAD
+=======
+//todo закоментил, чтобы не вылезал первый андефайн
+//console.log(nconf.get('name'));
+>>>>>>> Backend
 
 app.use(express.static('build'));
 
