@@ -1,17 +1,73 @@
-.header__content_a {
-	background-color: rgba(#000,.55);
+.header__album,
+.footer__album {
+	background-image: url(../img/photos/ph_hh1.jpg);
+	background-size: 100% auto;
+	background-position: auto center;
+	.header {
+		background-image: none;
+		background-color: rgba(#000,.6);
+	
+}
+}
+
+.header__btn__album{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.stat__header__btn{	
+	width: 150px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;	
+		.header__btn {
+
+			margin-left: 0;
+		}
+}
+.header__content {
+	.user__name {
+		align-items: flex-start;
+	}
+}
+.header__user {
+	.user {
+		align-items: flex-start;
+		
+	}
+	.user__name {
+		color: rgba(#fff,.8);
+	}
 }
 .stat {
 	height: 60px;
-	background-color: #dbdbdc;
+	background-color: rgba(#dbdbdc,.9);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: auto;
 }
-.stat__list {
+
+.stat__album__title,
+.stat__list				 {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	color: #323232;
+}
+
+.stat__album__title {
+	margin-top: 0;
+}
+
+.stat__list {
+	z-index: 3;
+	margin-left: 10px;
+	justify-content: center;
+	
 }
 
 .stat__item {
@@ -28,37 +84,38 @@
 	margin: 0 10px;
 	order: 1;
 }
-.user__ava_a {
+.user__ava_h {
 	width: 60px;
 	height: 60px;
 }
+
 .album__title {
 	font-family: 'proxima_nova_ltsemibold';
 	font-size: 1.3125rem;
 	color: rgba(#fff,0.9); 
+	padding-bottom: 10px;
 }
 
-.user,
-.header__btn__album{
-	flex: 1;
-	display: flex;
-	align-items: flex-start;
-}
-.header__btn___album {
-	justify-content: flex-start;
-}
+
 .album__about {
 	flex: 4;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	align-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 35px 0 40px;
 }
 .albums__photos,
  .albums__photos__list{
 	display: flex;
 	flex-wrap: wrap;	
 }
+.albums__photos {
+	padding: 20px 0 40px;
+}
+
+
 .albums__photos__list {
 	align-items: center;
 	justify-content: space-beetween;
@@ -74,8 +131,37 @@
 	width: 380;
 	height: 250px;
 	overflow: hidden;
+	position: relative;
+
+	.comments__likes__block {
+		z-index: 3;
+		position: absolute;
+		left: 22px;
+		bottom: 15px;
+		color: #fff;
+		
+		.svg-comments-dims,
+		.svg-like-dims {
+			fill: #fff;
+		}
+	}
+
 }
 
 .albums__photos__img {
 	width: 380px;
+}
+
+.albums__photos__title {
+	display: flex;
+	justify-content: flex-end;
+}
+.albums__photos__item {
+	margin: 0 20px 20px 0;
+}
+.albums__photos__name__wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	align-items: center;
 }

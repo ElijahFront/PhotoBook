@@ -29,6 +29,29 @@
 }());
 
 /*
+ * Logout requset
+ */
+
+(function () {
+    function sendXHR(route){
+        $.ajax({
+            type: 'POST',
+            url: route
+        })
+    }
+
+    $('#header_exit').on('click', function (e) {
+
+        e.preventDefault();
+
+        sendXHR('/logout')
+
+    })
+
+}())
+
+
+/*
  * XmlHttpRequests from authorization page
  */
 
@@ -134,6 +157,7 @@
 
 }());
 
+
 /*
  * XmlHttpRequests from the main page
  */
@@ -158,5 +182,34 @@
 
         sendXHR('/profileUpload', profileData)
     });
+
+}());
+
+
+/*
+ * Albums creating
+ */
+
+(function () {
+    function sendXHR(route, data){
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: data,
+            processData: false,
+            contentType: false
+
+        })
+    }
+
+    $('#add__btn__save').on('click', function (e) {
+
+        e.preventDefault();
+
+        var albumData = new FormData($('#addAlbum')[0]);
+
+        sendXHR('/createAlbum', albumData)
+
+    })
 
 }());

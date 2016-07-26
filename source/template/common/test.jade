@@ -1,0 +1,34 @@
+.edit
+	.container
+		.edit__profile__container
+					form.edit__profile
+							.edit__header
+								.edit__user
+									.edit__user__avatar
+										label.user__avatar__label
+											input.user__avatar__input(type='file' hidden)
+											.user__avatar__mask
+												+icon('cam','svg-cam-dims')
+												span Изменить фото
+
+									.edit__user__info
+										input.edit__user__input(type='text' value='Антон Черепов')
+										textarea.edit__user__textarea(type='text' value='Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.')
+										
+								
+								.edit__background__block
+									label.edit__background__label
+										input.edit__background__input(type='file' hidden)
+										span Изменить фон
+										+icon('cam','svg-cam-dims')
+
+							.edit__btn_block
+								button.edit__btn(type='reset') Отменить
+								button.edit__btn(type='submit') Сохранить
+
+					.edit__socials
+							include ./socials_e
+
+			
+						
+

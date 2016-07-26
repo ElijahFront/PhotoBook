@@ -1,10 +1,11 @@
 mixin comments_likes(c_count,l_count)
-	.comments
-		.commennts__icon
-		.comments__count #{c_count}
-	.like
-		.like__icon
-		.like__count #{l_count}
+	.comments__likes__block
+		.comments
+			+icon('comments','svg-comments-dims')
+			.comments__count #{c_count}
+		.like
+			+icon('like','svg-like-dims')
+			.like__count #{l_count}
 
 
 
@@ -12,11 +13,17 @@ mixin comments_likes(c_count,l_count)
 
 
 mixin icon(name, c_name)
-	svg(role="img" class="#{c_name}"+" "+".social_svg_h")
+	svg(role="img" class="#{c_name}")
 		use(xlink:href="#{svg}##{name}")
 
 mixin user(name,name_photo)
 	.user
-		.user__ava.user__ava_a
+		.user__ava
 				img.user__ava__img(src='./assets/img/users/'+'#{name_photo}')
-		.user__name #{name}	
+		.user__name #{name}
+
+mixin userH(name,name_photo)
+	.user
+		.user__ava_h
+				img.user__ava__img(src='./assets/img/users/'+'#{name_photo}')
+		.user__name #{name}		
