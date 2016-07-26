@@ -129,9 +129,11 @@ include common/_body_head
 											a.albums__edit(href='#') редактировать
 												+icon('edit','svg-edit-dims')
 											.albums__photos__name	Мечтательный взгляд вдаль поверх гл...
-		.footer__album
-			include common/_footer
+		.container									
+			.footer__album
+				include common/_footer
 		include common/_slider
 		include common/_edit_header
-		include common/_add_photos	
+		include common/_add_photos
+		include common/_edit_photo
 	include common/_scripts

@@ -1,50 +1,48 @@
-.view_photo,
-.add_album,
-.add_photos  {
-	position: absolute;
-	top: 0;	
-	width: 100%;
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	bottom: 0;
-	z-index: 3;
 	background-color: rgba(#000,.9);
-	padding: 100px 0;
-	
-	 .main__container {	 	
-		justify-content: center;
-		align-items: center;
-	 }	
+	z-index: 100;
 }
-.view_photo {
-	left: -99999px;
+
+.close {
+	display: none;
 }
 
 .slider{
-	max-width: 980px;
+	width: 675px;
 	background-color: #fff;
-	position: relative;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 110;
 	 
 	 .svg-close-dims {
-		 	width: 30px;
-		 	height: 30px;
+		 	width: 25px;
+		 	height: 25px;
 		 	position: absolute;
-		 	top: -30px;
-		 	right: -60px;
+		 	top: -26px;
+		 	right: -68px;
 	 }
 }
 
 .photos__wrap {
-	width: 980px;	
+	width: 675px;	
 	position: relative;
 
 	.svg-arrow_left-dims {
 		position: absolute;
-		top: 50%;
-		left: -60px;
+		top: 49%;
+		left: -64px;
 	}
 	.svg-arrow_right-dims {
 		position: absolute;
-		top: 50%;
-		right: -60px;
+		top: 49%;
+		right: -64px;
 	}
 }
 
@@ -56,7 +54,7 @@
 
 
 .photos__after {
-	padding: 20px;
+	padding: 20px 20px 10px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -87,7 +85,7 @@
 }
 .comments__title{
 	font-family: 'proxima_nova_ltsemibold';
-	padding: 20px 20px 0;
+	padding: 10px 20px 0;
 		.svg-arrow_right-dims {
 			transform: rotate(90deg);
 			fill: #cfcfcf;
@@ -129,7 +127,7 @@
 
 
   .photos__desc__block {
-  	padding: 0 20px 40px;
+  	padding: 0 20px 30px;
   }
 
   .photos__name {
@@ -139,10 +137,10 @@
   }
 
 .comments__add {
-	padding: 20px;
+	padding: 10px 20px 15px;
 	display: flex;
 	.user {
-		margin-left: 55px;
+		margin-left: 50px;
 	}	
 }
 #comments_add_form,
@@ -155,17 +153,17 @@
 
 .comments__author {
 	font-family: 'proxima_nova_ltsemibold';
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }	
 
 .comments__add__input {
 	border: 1px solid #d8d6d6;
 	width: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .comments__item {
-	padding: 20px;
+	padding: 15px 20px;
 	border-top: 1px solid #e1e1e1;
 	display: flex;
 	 .user{
