@@ -172,7 +172,7 @@ include common/_body_head
 										li.albums__item
 											.albums__block
 												.albums__img__wrap
-													img.albums__img(src='./assets/img/photos/ph11.jpg')
+													img.albums__img(src='./build/tmp/my-uploads/photos/#{album.coverID}')
 												.albums__name
 													.albums__name__title #{album.name}
 													a.albums__edit(href='#') редактировать альбом
@@ -182,8 +182,7 @@ include common/_body_head
 													.albums__amount_photo #{album.amountOfPhotos} фотографий
 								else
 									p  Еще нет альбомов
-
-
+									
 		.container
 			.footer__main
 				include common/_footer
