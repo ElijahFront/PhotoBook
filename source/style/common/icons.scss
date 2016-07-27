@@ -54,7 +54,10 @@
 .svg-top-dims {
 	width: 30px;
 	height: 30px;
-	fill:#fff;					
+	fill: rgba(#fff,.6);
+	&:hover {
+		fill: #fff;
+	}					
 
 }
 

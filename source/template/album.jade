@@ -1,8 +1,8 @@
 include common/_mixins
 include common/_body_head
 	.wraper
-		.main_content
-			.container
+		.container
+			.main_content			
 				.header__album
 					header.header
 						.main__container
@@ -39,27 +39,32 @@ include common/_body_head
 												+icon('home','svg-home-dims')
 
 				section.albums__photos
-					.main__container
-						.albums__photos__title
-							a.add__albums(href='#') Добавить
-								+icon('add','svg-add-dims')
-						ul.albums__photos__list
-							//for photo in photos
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
-												+comments_likes(9,15)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name #{photo.name}
+						.main__container
+							.albums__photos__title
+								a.add__albums(href='#') Добавить
+									+icon('add','svg-add-dims')
+							ul.albums__photos__list
+								if photos
+									each photo in photos
+										li.albums__photos__item
+											.albums__photos__block
+												.albums__photos__wrap
+														img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
+														+comments_likes(9,15)
+														a.news__mask(href='#') посмотреть фото
+															+icon('loupe','svg-loupe-dims')
+												.albums__photos__name__wrap
+													a.albums__edit(href='#') редактировать
+														+icon('edit','svg-edit-dims')
+													.albums__photos__name #{photo.name}
+								else
+									p Нет фотографий
 
 		.footer__album
 			include common/_footer
+
 		include common/_slider
 		include common/_edit_header
-		include common/_add_photos	
+		include common/_add_photos
+		include common/_edit_photo
 	include common/_scripts

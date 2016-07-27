@@ -1,19 +1,18 @@
 .edit {
-	background-color: rgba(#fff,.9);
-	position: absolute;
-	top: 0;
-	left: -9999px;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	z-index: 3;
+	
 	
 }
+.overlay_w {
+		background-color: rgba(#fff,.9);
+	}
 .edit__profile__container {
-		position: relative;
+		position: fixed;
+		top:15%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		width: 80%;
 		margin: 0 auto;
+		z-index: 110;
 	}
 
 .edit__profile {

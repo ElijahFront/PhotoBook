@@ -3,7 +3,7 @@ header.header
 		.header__content
 				.user_header
 					.user_header__avatar
-						img.user_header__avatar__img(src='../#{avatar}')
+						img.user_header__avatar__img(src='./build/tmp/my-uploads/users/#{avatar}')
 					.user_header__info
 						.user_header__name #{name}
 						.user_header__desc  #{info}
@@ -20,7 +20,7 @@ header.header
 
 	.search
 		.main__container
-			form.search__wrap
+			form.search__form
 				input.search__input(name='search' type='text' placeholder='Исследовать мир')
 				button.search__btn(name='search_btn' type='submit')
 					+icon('search','svg-search-dims')
