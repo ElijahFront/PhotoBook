@@ -48,7 +48,7 @@
 
     })
 
-}())
+}());
 
 
 /*
@@ -144,6 +144,23 @@
 
 }());
 
+/*
+ * Opening header editing mode
+ */
+
+(function () {
+
+    $('#edit__profile_header').on('click', function (e) {
+        e.preventDefault();
+        var window = $('.edit');
+
+        if (!window.hasClass('opened')){
+            window.addClass('opened').show();
+        }
+    })
+
+}());
+
 
 /*
  * XmlHttpRequests from the main page
@@ -186,7 +203,6 @@
             data: data,
             processData: false,
             contentType: false
-
         })
     }
 
@@ -200,4 +216,22 @@
 
     })
 
+}());
+
+/*
+ * Closing the album creating modal window
+ */
+
+(function () {
+
+    $('#close__album_adding').on('click', function (e) {
+
+        e.preventDefault();
+
+        var window = $('.add_album');
+
+        if (window.hasClass('active')){
+            window.removeClass('active').css('left', '-9999px')
+        }
+    })
 }());
