@@ -2,7 +2,7 @@ var checkAuth = require('./auth');
 var multer  = require('multer');
 var userStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './tmp/my-uploads/users')
+        cb(null, './builder/my-uploads/users')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));
@@ -11,7 +11,7 @@ var userStorage = multer.diskStorage({
 });
 var albStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './tmp/my-uploads/photos')
+        cb(null, './builder/my-uploads/photos')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));
@@ -20,7 +20,7 @@ var albStorage = multer.diskStorage({
 });
 
 var uploadUser = multer({ storage: userStorage });
-var createAlb = multer({storage:albStorage});
+var createAlb = multer({ storage: albStorage });
 
 
 module.exports = function (app) {
@@ -29,6 +29,7 @@ module.exports = function (app) {
     app.post('/signUp', require('./signup').post);
     app.post('/profileUpload', uploadUser.array('edit__profile_inp'), require('./profileUpload').post);
     app.post('/createAlbum', createAlb.array('addAlbum'), require('./newAlbum').post);
+    app.post('/albums/:id/addPhoto', createAlb.single('addPhoto'), require('./newPhoto').post);
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));

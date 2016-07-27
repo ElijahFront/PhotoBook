@@ -5,8 +5,8 @@ exports.post = function (req, res, next){
 
     var author = req.session.user,
         name = req.body.addAlbumName,
-        description = req.body.addAlbumDesc;
-        //coverID = '../tmp/my-uploads/photos' + req.file.filename;
+        description = req.body.addAlbumDesc,
+        coverID = req.files[0].filename;
 
     var album = new Album({
         author: author,
@@ -23,11 +23,10 @@ exports.post = function (req, res, next){
             console.log(alName);
 
             User.findByIdAndUpdate(author, {$push :{albums:alName}}, function (er, num) {
+
                 if (er) return next(er);
                 console.log(num)
-                }
-
-            );
+            });
 
             res.sendStatus(200)
         }

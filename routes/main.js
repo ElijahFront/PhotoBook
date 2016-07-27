@@ -25,7 +25,7 @@ module.exports = function (req, res, next) {
                         albumID = album._id,
                         numberOfPhotos = album.photos;
 
-                    if (numberOfPhotos){    // Если есть фотографии, то рендерим с фото, в противном случае - без них
+                    if (numberOfPhotos) {    // Если есть фотографии, то рендерим с фото, в противном случае - без них
 
                         Photo.find({}, function (err, photos) {
                             if (err) {
@@ -54,14 +54,12 @@ module.exports = function (req, res, next) {
                             albums: albums
                         });
 
+
                     }
+
+
                 }
-
-
-
-
-            });
-
+            })
         } else {
             res.render('main', {
                 name: userName,
@@ -71,7 +69,5 @@ module.exports = function (req, res, next) {
             });
             console.log(userName);
         }
-
-        });
-
+    })
 };
