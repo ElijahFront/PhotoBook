@@ -2,7 +2,7 @@ var checkAuth = require('./auth');
 var multer  = require('multer');
 var userStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './builder/my-uploads/users')
+        cb(null, './build/my-uploads/users')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));
@@ -11,7 +11,7 @@ var userStorage = multer.diskStorage({
 });
 var albStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './builder/my-uploads/photos')
+        cb(null, './build/my-uploads/photos')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));

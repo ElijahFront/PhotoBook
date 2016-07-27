@@ -172,6 +172,7 @@
 
     $('#edit__profile_header').on('click', function (e) {
         e.preventDefault();
+        console.log('click');
         var window = $('.edit');
 
         if (!window.hasClass('opened')){
