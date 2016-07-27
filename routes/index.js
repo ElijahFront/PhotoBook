@@ -24,7 +24,7 @@ var createAlb = multer({storage:albStorage});
 
 
 module.exports = function (app) {
-    app.post('/login', checkAuth,  require('./login').post);
+    app.post('/login', require('./login').post);
     app.post('/logout', checkAuth, require('./logout').post);
     app.post('/signUp', require('./signup').post);
     app.post('/profileUpload', uploadUser.array('edit__profile_inp'), require('./profileUpload').post);
@@ -32,13 +32,13 @@ module.exports = function (app) {
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));
-    app.get('/user/:id', require('./users').get);
-    app.get('/albums/:album', checkAuth, require('./albums').get);
+    app.get('/user/:id', require('./users'));
+    app.get('/albums/:album', checkAuth, require('./albums'));
     app.get('/search', checkAuth, require('./render'));
     app.get('/album', checkAuth, require('./render'));
     app.get(['/', '/index'], require('./render'));
 
-    app.route('/repass')
-        .get(require('./repassGet'))
-        .post(require('./repass'));
+    // app.route('/repass')
+    //     .get(require('./repassGet'))
+    //     .post(require('./repass'));
 };

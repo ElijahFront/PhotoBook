@@ -36,9 +36,7 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
-    albums: {
-        type: [String]
-    },
+    albums: [String],
     restorepassword: {
         type: String,
         required: false

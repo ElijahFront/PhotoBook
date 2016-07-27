@@ -8,16 +8,17 @@ var albumSchema = new Schema({
     },
     name:{
         required: true,
-        type: String
+        type: String,
+        unique: true
     },
     description:{
         required: true,
         type: String
     },
-    coverID:{
-        required: true,
-        type: String
-    },
+    // coverID:{
+    //     required: true,
+    //     type: String
+    // },
     photos:{
         type: [Number]
     }

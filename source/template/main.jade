@@ -23,7 +23,7 @@ include common/_body_head
 												img.news__author__img(src='./assets/img/users/us1.jpg')
 												a.news__author__mask(href='./user.html') о пользователе
 													+icon('more','svg-more-dims')
-													
+
 											.other
 												.news__img__name Путешествие на лодке по озеру
 												+comments_likes(9,25)
@@ -68,7 +68,7 @@ include common/_body_head
 											+icon('album','svg-album-dims')
 
 								li.news__item
-									.news__block 
+									.news__block
 										img.news__img(src='./assets/img/photos/ph4.jpg')
 										a.news__mask(href='#') посмотреть фото
 												+icon('loupe','svg-loupe-dims')
@@ -149,7 +149,7 @@ include common/_body_head
 												img.news__author__img(src='./assets/img/users/us3.jpg')
 												a.news__author__mask(href='./user.html') о пользователе
 													+icon('more','svg-more-dims')
-													
+
 											.other
 												.news__img__name Горы-горы
 												+comments_likes(9,25)
@@ -163,22 +163,25 @@ include common/_body_head
 					.main__container
 						.my_albums__title
 							h2.section_title Мои альбомы
-							a.add__albums(href='#') Добавить
+							a.add__albums#add__new_album_main(href='#') Добавить
 								+icon('add','svg-add-dims')
 						.albums
 							ul.albums__list
-								each album in albums
-									li.albums__item
-										.albums__block
-											.albums__img__wrap
-												img.albums__img(src='./assets/img/photos/ph11.jpg')
-											.albums__name
-												.albums__name__title #{album.name}
-												a.albums__edit(href='#') редактировать альбом
-													+icon('edit','svg-edit-dims')
-											a.albums__desc(href='./album.html')
-												.albums__about #{album.description}
-												.albums__amount_photo #{album.amountOfPhotos} фотографий
+								if albums
+									each album in albums
+										li.albums__item
+											.albums__block
+												.albums__img__wrap
+													img.albums__img(src='./assets/img/photos/ph11.jpg')
+												.albums__name
+													.albums__name__title #{album.name}
+													a.albums__edit(href='#') редактировать альбом
+														+icon('edit','svg-edit-dims')
+												a.albums__desc(href='./album.html')
+													.albums__about #{album.description}
+													.albums__amount_photo #{album.amountOfPhotos} фотографий
+								else
+									p  Еще нет альбомов
 
 
 		.container

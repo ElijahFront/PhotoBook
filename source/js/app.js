@@ -36,7 +36,14 @@
     function sendXHR(route){
         $.ajax({
             type: 'POST',
-            url: route
+            url: route,
+            statusCode:{200: function () {
+                window.location.href = '/'
+            }
+            
+            
+        }
+            
         })
     }
 
@@ -48,7 +55,7 @@
 
     })
 
-}())
+}());
 
 
 /*
@@ -187,10 +194,32 @@
 
 
 /*
+* album popup
+ */
+
+(function () {
+
+    
+    $('#add__new_album_main').on('click', function (e) {
+        e.preventDefault();
+        var popup = $('.add_album');
+
+        if (!popup.hasClass('active')){
+            popup.addClass('active').css('left', '0')
+        } else {
+            popup.removeClass('active').css('left', '-9999')
+        }
+    })
+})
+
+
+/*
  * Albums creating
  */
 
 (function () {
+
+
     function sendXHR(route, data){
         $.ajax({
             type: 'POST',

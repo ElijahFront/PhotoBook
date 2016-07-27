@@ -20,7 +20,6 @@ include common/_body_head
 
 						.stat
 							.main__container
-
 								ul.stat__list
 									li.stat__item
 										.stat__photo Фотографий
@@ -32,32 +31,31 @@ include common/_body_head
 										.stat__photo Комментария
 										.stat__photo__count 4
 
-								//- .stat__album__title
-								//- 	+user('Антон Черепов','us.jpg')
-								//- 	.album__title Лесные прогулки
-								//- 	.stat__header__btn
-								//- 		a.header__btn.header__btn_l(href='./main.html') На главную
-								//- 				+icon('home','svg-home-dims')		
+								.stat__album__title
+									+user('Антон Черепов','us.jpg')
+									.album__title Лесные прогулки
+									.stat__header__btn
+									a.header__btn.header__btn_l(href='./main.html') На главную
+												+icon('home','svg-home-dims')
 
 				section.albums__photos
-						.main__container
-							.albums__photos__title
-								a.add__albums(href='#') Добавить
-									+icon('add','svg-add-dims')
-							ul.albums__photos__list
-								for photo in photos
-									li.albums__photos__item
-										.albums__photos__block
-											.albums__photos__wrap
-													img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
-													+comments_likes(9,15)
-													a.news__mask(href='#') посмотреть фото
-														+icon('loupe','svg-loupe-dims')
-
-											.albums__photos__name__wrap
-												a.albums__edit(href='#') редактировать
-													+icon('edit','svg-edit-dims')
-												.albums__photos__name #{photo.name}
+					.main__container
+						.albums__photos__title
+							a.add__albums(href='#') Добавить
+								+icon('add','svg-add-dims')
+						ul.albums__photos__list
+							//for photo in photos
+								li.albums__photos__item
+									.albums__photos__block
+										.albums__photos__wrap
+												img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
+												+comments_likes(9,15)
+												a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+										.albums__photos__name__wrap
+											a.albums__edit(href='#') редактировать
+												+icon('edit','svg-edit-dims')
+											.albums__photos__name #{photo.name}
 
 		.footer__album
 			include common/_footer
