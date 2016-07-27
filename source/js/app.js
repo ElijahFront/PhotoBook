@@ -175,9 +175,9 @@
         console.log('click');
         var window = $('.edit');
 
-        if (!window.hasClass('opened')){
-            window.addClass('opened').css('left', '0');
-        }
+        if (window.hasClass('close')){
+            window.removeClass('close');
+        } 
     })
 
 }());
