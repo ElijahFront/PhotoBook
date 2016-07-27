@@ -218,6 +218,7 @@
 
 }());
 
+
 /*
  * Closing the album creating modal window
  */
@@ -235,3 +236,23 @@
         }
     })
 }());
+
+ /*
+ *  function scroll_btn
+ */
+
+  (function(){
+
+       $('.btn_up').on('click',function(){
+        
+
+        $('html,body').animate(
+            {
+              'scrollTop': 0  },
+               '900ms'
+            ); 
+         
+
+       });
+   
+  }());

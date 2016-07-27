@@ -2,11 +2,10 @@ include common/_mixins
 include common/_body_head
 
 	.wraper
-		.main_content
-			.container
+		.container
+			.main_content
 				.header__main.header__main_user
 					include common/_header_user
-					
 				section.my_albums
 					.main__container
 						.my_albums__title
@@ -15,8 +14,8 @@ include common/_body_head
 								+icon('add','svg-add-dims')
 						.albums
 							ul.albums__list
+
 		
-		.container
 			.footer__main.footer__main_user
 				include common/_footer
 	include common/_scripts

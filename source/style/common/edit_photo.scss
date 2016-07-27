@@ -1,0 +1,29 @@
+
+.delete_note{
+	width: 350px;
+	top: 40%;
+	display: none;
+} 
+
+.delete_note__text{
+	font-family: 'proxima_nova_ltsemibold';	
+	font-size: 1.3125rem;
+	padding: 20px;
+}
+
+.delete_note__btn{
+	background-color: #f1f1f1;
+	padding: 10px 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.del__btn {
+	border: none;
+	background-color: $colRed;
+	color: #fff;
+
+	 &[type='reset'] {
+	 	color:$colGray;
+	 }
+}

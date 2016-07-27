@@ -1,27 +1,29 @@
-.add_album {
-	left: -9999px;
-	button {
-		font-size: 1rem;
-	}
-}
-
-.add_album__form,
-.add_photos__form {
-	margin: auto;
+.modal__form {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 110;	
 	width: 680px;
 	background-color: #fff;
 	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	.section_title {
-		font-size: 1.3125rem;
-		line-height: 1;
-		padding: 10px 0;
-	}
-	.sv-close-dims {
-		fill: #a0a09f;
-	}
+	
+		.section_title {
+			font-size: 1.3125rem;
+			line-height: 1;
+			padding: 10px 0;
+		}
+
+		.sv-close-dims {
+			fill: #a0a09f;
+		}
+
+		button {
+			font-size: 1rem;
+		}
 }
 
 .add_album__caption {
@@ -31,15 +33,17 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
 .add_album__inputs {
 	padding: 35px 20px;
 }
+
 .add_album__desc {
 	display: flex;
 	margin-bottom: 15px;
 	align-items: center;
-
 }
+
 .add_album__span {
 	padding: 0 25px 0 30px;
 	font-family: 'proxima_nova_ltsemibold';
