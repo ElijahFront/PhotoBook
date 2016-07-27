@@ -201,3 +201,17 @@
     })
 
 }());
+
+ // /*
+ // *  function close modal
+ // */
+
+ //  var closeModal = (function(elem){
+
+ //    var cl_btn = elem;
+ //    $(cl_btn).on('click',function(e){
+        
+ //    });
+
+
+ //  }());

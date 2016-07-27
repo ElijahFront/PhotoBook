@@ -2,244 +2,243 @@ include common/_mixins
 include common/_body_head
 
 	.wraper
-		.main_content
-			.container
-				.header__main
-					include common/_header
+		.container
+			.main_content			
+					.header__main
+						include common/_header
 
-						//========section new world========
-				section.new_world
-					.main__container
-						h1.section_title Новое в мире
-						.news
-							ul.news__list
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph1.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us1.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
-													
-											.other
-												.news__img__name Путешествие на лодке по озеру
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#') Прогулки по воде
-											+icon('album','svg-album-dims')
+							//========section new world========
+					section.new_world
+						.main__container
+							h1.section_title Новое в мире
+							.news
+								ul.news__list
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph1.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us1.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
+														
+												.other
+													.news__img__name Путешествие на лодке по озеру
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Прогулки по воде
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph2.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us2.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph2.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us2.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
 
-											.other
-												.news__img__name Отдых в палатке
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#')  Палаточный лагерь
-											+icon('album','svg-album-dims')
+												.other
+													.news__img__name Отдых в палатке
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#')  Палаточный лагерь
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph3.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us4.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph3.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us4.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
 
-											.other
-												.news__img__name Любимые лошадки
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#')  Животные
-											+icon('album','svg-album-dims')
+												.other
+													.news__img__name Любимые лошадки
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#')  Животные
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block 
-										img.news__img(src='./assets/img/photos/ph4.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us5.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
+									li.news__item
+										.news__block 
+											img.news__img(src='./assets/img/photos/ph4.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us5.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
 
-											.other
-												.news__img__name Мечтательный взгляд вдаль пове...
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#') Пустыня
-											+icon('album','svg-album-dims')
+												.other
+													.news__img__name Мечтательный взгляд вдаль пове...
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Пустыня
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph5.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us6.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph5.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us6.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
 
-											.other
-												.news__img__name Я лежу в гамаке, как это прекрасно
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#') Отдых
-											+icon('album','svg-album-dims')
+												.other
+													.news__img__name Я лежу в гамаке, как это прекрасно
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Отдых
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph6.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us7.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph6.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us7.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
 
-											.other
-												.news__img__name Велопутешествие
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#') Дорога
-											+icon('album','svg-album-dims')
+												.other
+													.news__img__name Велопутешествие
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Дорога
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph7.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us7.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph7.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us7.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
 
-											.other
-												.news__img__name Черничка, вкусная
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#') Дорога
-											+icon('album','svg-album-dims')
+												.other
+													.news__img__name Черничка, вкусная
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Дорога
+												+icon('album','svg-album-dims')
 
-								li.news__item
-									.news__block
-										img.news__img(src='./assets/img/photos/ph8.jpg')
-										a.news__mask(href='#') посмотреть фото
-												+icon('loupe','svg-loupe-dims')
-										.news__desc
-											.news__author
-												img.news__author__img(src='./assets/img/users/us3.jpg')
-												a.news__author__mask(href='./user.html') о пользователе
-													+icon('more','svg-more-dims')
-													
-											.other
-												.news__img__name Горы-горы
-												+comments_likes(9,25)
-										.news__album
-											a.news__album__name(href='#') Путешествие
-											+icon('album','svg-album-dims')
-						button.news__more(type='button') Показать еще
+									li.news__item
+										.news__block
+											img.news__img(src='./assets/img/photos/ph8.jpg')
+											a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/us3.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
+														
+												.other
+													.news__img__name Горы-горы
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Путешествие
+												+icon('album','svg-album-dims')
+							button.news__more(type='button') Показать еще
 
-						//======section My album===========
-				section.my_albums
-					.main__container
-						.my_albums__title
-							h2.section_title Мои альбомы
-							a.add__albums(href='#') Добавить
-								+icon('add','svg-add-dims')
-						.albums
-							ul.albums__list
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph11.jpg')
-										.albums__name
-											.albums__name__title	Поход в горы
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Горы, реки, леса и поля
-											.albums__amount_photo 10 фотографий
-
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph22.jpg')
-										.albums__name
-											.albums__name__title	Животные
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Собаки, кошки, лошади
-											.albums__amount_photo 10 фотографий
-
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph33.jpg')
-										.albums__name
-											.albums__name__title	 Прогулки на лодке
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Лодки, реки
-											.albums__amount_photo 10 фотографий
+							//======section My album===========
+					section.my_albums
+						.main__container
+							.my_albums__title
+								h2.section_title Мои альбомы
+								a.add__albums(href='#') Добавить
+									+icon('add','svg-add-dims')
+							.albums
+								ul.albums__list
+									li.albums__item
+										.albums__block
+											.albums__img__wrap
+												img.albums__img(src='./assets/img/photos/ph11.jpg')
+											.albums__name
+												.albums__name__title Поход в горы
+												a.albums__edit(href='#') редактировать альбом
+													+icon('edit','svg-edit-dims')
+											a.albums__desc(href='./album.html')
+												.albums__about Горы, реки, леса и поля
+												.albums__amount_photo 10 фотографий
 
 									li.albums__item
 										.albums__block
 											.albums__img__wrap
-												img.albums__img(src='./assets/img/photos/ph44.jpg')
+												img.albums__img(src='./assets/img/photos/ph22.jpg')
 											.albums__name
-												.albums__name__title	 Море и серфинг
+												.albums__name__title Животные
 												a.albums__edit(href='#') редактировать альбом
 													+icon('edit','svg-edit-dims')
 											a.albums__desc(href='./album.html')
-												.albums__about Море, серфинг, пляж, лето
+												.albums__about Собаки, кошки, лошади
 												.albums__amount_photo 10 фотографий
 
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph55.jpg')
-										.albums__name
-											.albums__name__title	 Ущелье и горные хребты
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about Горы, реки, леса и поля
-											.albums__amount_photo 10 фотографий
+									li.albums__item
+										.albums__block
+											.albums__img__wrap
+												img.albums__img(src='./assets/img/photos/ph33.jpg')
+											.albums__name
+												.albums__name__title Прогулки на лодке
+												a.albums__edit(href='#') редактировать альбом
+													+icon('edit','svg-edit-dims')
+											a.albums__desc(href='./album.html')
+												.albums__about Лодки, реки
+												.albums__amount_photo 10 фотографий
 
-								li.albums__item
-									.albums__block
-										.albums__img__wrap
-											img.albums__img(src='./assets/img/photos/ph66.jpg')
-										.albums__name 
-											.albums__name__title	 Лесной выезд
-											a.albums__edit(href='#') редактировать альбом
-												+icon('edit','svg-edit-dims')
-										a.albums__desc(href='./album.html')
-											.albums__about природа, леса, еноты и олени
-											.albums__amount_photo 10 фотографий
-		
-		.container
+										li.albums__item
+											.albums__block
+												.albums__img__wrap
+													img.albums__img(src='./assets/img/photos/ph44.jpg')
+												.albums__name
+													.albums__name__title Море и серфинг
+													a.albums__edit(href='#') редактировать альбом
+														+icon('edit','svg-edit-dims')
+												a.albums__desc(href='./album.html')
+													.albums__about Море, серфинг, пляж, лето
+													.albums__amount_photo 10 фотографий
+
+									li.albums__item
+										.albums__block
+											.albums__img__wrap
+												img.albums__img(src='./assets/img/photos/ph55.jpg')
+											.albums__name
+												.albums__name__title Ущелье и горные хребты
+												a.albums__edit(href='#') редактировать альбом
+													+icon('edit','svg-edit-dims')
+											a.albums__desc(href='./album.html')
+												.albums__about Горы, реки, леса и поля
+												.albums__amount_photo 10 фотографий
+
+									li.albums__item
+										.albums__block
+											.albums__img__wrap
+												img.albums__img(src='./assets/img/photos/ph66.jpg')
+											.albums__name 
+												.albums__name__title Лесной выезд
+												a.albums__edit(href='#') редактировать альбом
+													+icon('edit','svg-edit-dims')
+											a.albums__desc(href='./album.html')
+												.albums__about природа, леса, еноты и олени
+												.albums__amount_photo 10 фотографий
+			
 			.footer__main
 				include common/_footer
 
