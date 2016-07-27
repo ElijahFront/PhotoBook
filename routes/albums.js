@@ -1,4 +1,5 @@
 var Album = require('../models/album').Album;
+var Photo = require('../models/album').Photo;
 
 module.exports = function (req, res){
       var albumID = req.params.album;
@@ -7,7 +8,7 @@ module.exports = function (req, res){
         var albumName = album.name,
             albumInfo = album.description;
 
-        Photos.find({album_id:albumID}, function (err, photo) {
+        Photo.find({album: {$in: albumID}}, function (err, photo) {
             if (err) return next(err);
 
             var photos = photo;

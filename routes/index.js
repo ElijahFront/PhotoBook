@@ -35,9 +35,9 @@ module.exports = function (app) {
     app.get('/user/:id', require('./users').get);
     app.get('/albums/:album', checkAuth, require('./albums').get);
     app.get('/search', checkAuth, require('./render'));
-    app.get('/album', checkAuth, require('./render'));
+    //app.get('/album', checkAuth, require('./render'));
     app.get(['/', '/index'], require('./render'));
-    app.get('/albums/:id', require('./albums'));
+    //app.get('/albums/:id', require('./albums'));
 
     app.route('/repass')
         .get(require('./repassGet'))
