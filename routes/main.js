@@ -53,7 +53,7 @@ module.exports = function (req, res, next) {
                             cover: userBack,
                             albums: albums
                         });
-
+                        console.log(albums)
 
                     }
 

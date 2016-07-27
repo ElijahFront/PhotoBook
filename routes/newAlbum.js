@@ -11,8 +11,8 @@ exports.post = function (req, res, next){
     var album = new Album({
         author: author,
         name:name,
-        description: description
-        //coverID:coverID
+        description: description,
+        coverID:coverID
     });
 
     album.save(function(err, alb) {

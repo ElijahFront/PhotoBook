@@ -176,7 +176,7 @@
         var window = $('.edit');
 
         if (!window.hasClass('opened')){
-            window.addClass('opened').show();
+            window.addClass('opened').css('left', '0');
         }
     })
 

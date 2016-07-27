@@ -15,10 +15,10 @@ var albumSchema = new Schema({
         required: true,
         type: String
     },
-    // coverID:{
-    //     required: true,
-    //     type: String
-    // },
+    coverID:{
+        required: true,
+        type: String
+    },
     photos:{
         type: [Number]
     }
