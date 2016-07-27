@@ -6,7 +6,7 @@ exports.post = function (req, res, next){
     var author = req.session.user,
         name = req.body.addAlbumName,
         description = req.body.addAlbumDesc,
-        coverID = req.file.filename;
+        coverID = req.files[0].filename;
 
     var album = new Album({
         author: author,
