@@ -48,7 +48,7 @@
 
     })
 
-}())
+}());
 
 
 /*
@@ -202,16 +202,22 @@
 
 }());
 
- // /*
- // *  function close modal
- // */
+ /*
+ *  function scroll_btn
+ */
 
- //  var closeModal = (function(elem){
+  (function(){
 
- //    var cl_btn = elem;
- //    $(cl_btn).on('click',function(e){
+       $('.btn_up').on('click',function(){
         
- //    });
 
+        $('html,body').animate(
+            {
+              'scrollTop': 0  },
+               '900ms'
+            ); 
+         
 
- //  }());
+       });
+   
+  }());

@@ -53,6 +53,7 @@
 	flex: 1;
 	font-size: 0;
 	text-align: center;
+	cursor: pointer;
 
 }
 
@@ -204,7 +205,18 @@
 	width: 100%;
 	padding: 10px 10px 10px 50px;
 	border-radius: 20px;	
-	border: none;
+	border: 1px solid transparent;
+	 &:hover {
+	 	border: 1px solid $colBlue;
+		}
+
+	 	.search-btn:hover {
+	 		.svg-search-dimsfill {
+
+	 		fill: $colBlue;
+	 	}
+	 
+	 }
 }
 
 .search__btn{
