@@ -221,3 +221,28 @@
        });
    
   }());
+
+  /*
+  * flip card
+  */
+  (function(){
+    var
+        
+    $('#forgot').on('click', function(e){
+        e.preventDefault();
+
+        var elems =$('.flip').addClass('flipping');
+
+        
+
+    $('#enter').on('click',_unflip);
+
+            
+     var _unflip= function(e) {
+            e.preventDefault();
+            
+            elems.removeClass('flipping');
+            }
+        }); 
+  //  });
+})();
