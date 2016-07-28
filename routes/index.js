@@ -40,6 +40,7 @@ module.exports = function (app) {
     app.get(['/', '/index'], require('./render'));
 
     //app.get('/albums/:id', require('./albums'));
+    app.get('/search/:query', require('./search'));
 
 
     // app.route('/repass')
