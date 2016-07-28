@@ -4,7 +4,7 @@ include common/_body_head
 	.wraper
 		.main_content
 			.container
-				.header__main(stye="backgroundImage: url(./build/tmp/my-uploads/users/#{cover})")
+				.header__main(stye="backgroundImage: url(../tmp/my-uploads/users/#{cover})")
 					include common/_header
 
 						//========section new world========
@@ -167,18 +167,21 @@ include common/_body_head
 								+icon('add','svg-add-dims')
 						.albums
 							ul.albums__list
-								each album in albums
-									li.albums__item
-										.albums__block
-											.albums__img__wrap
-												img.albums__img(src='./build/tmp/my-uploads/photos/#{album.coverID}')
-											.albums__name
-												.albums__name__title #{album.name}
-												a.albums__edit(href='#') редактировать альбом
-													+icon('edit','svg-edit-dims')
-											a.albums__desc(href='./album.html')
-												.albums__about #{album.description}
-												.albums__amount_photo #{album.amountOfPhotos} фотографий
+								if albums
+									each album in albums
+										li.albums__item
+											.albums__block
+												.albums__img__wrap
+													img.albums__img(src='../tmp/my-uploads/photos/#{album.coverID}')
+												.albums__name
+													.albums__name__title #{album.name}
+													a.albums__edit(href='#') редактировать альбом
+														+icon('edit','svg-edit-dims')
+												a.albums__desc(href='./albums/#{album._id}')
+													.albums__about #{album.description}
+													.albums__amount_photo #{album.amountOfPhotos} фотографий
+								else
+									p Еще нет альбомов
 
 
 		.container
