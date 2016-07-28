@@ -38,6 +38,7 @@ app.use(session({
 //console.log(nconf.get('name'));
 
 app.use(express.static('build'));
+app.use(express.static('tmp'));
 
 app.set('views', './build');
 app.set('view engine', 'jade');

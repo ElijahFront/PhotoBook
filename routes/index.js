@@ -38,6 +38,7 @@ module.exports = function (app) {
     //app.get('/album', checkAuth, require('./render'));
     app.get(['/', '/index'], require('./render'));
     //app.get('/albums/:id', require('./albums'));
+    app.get('/search/:query', require('./search'));
 
     app.route('/repass')
         .get(require('./repassGet'))
