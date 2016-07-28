@@ -335,3 +335,27 @@
   //  });
 })();
 
+/*
+ * Открытие окна добавления фото
+ */
+
+(function () {
+
+    $('#add__photo_alb').on('click', function (e) {
+        e.preventDefault();
+        var window = $('.add_photos');
+
+        if (window.hasClass('close')){
+            window.removeClass('close');
+        }
+    });
+    $('#close__adding_photo').on('click', function (e) {
+        e.preventDefault();
+        var window = $('.add_photos');
+
+        if (!window.hasClass('close')){
+            window.addClass('close');
+        }
+    })
+
+}());
