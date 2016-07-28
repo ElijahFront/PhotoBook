@@ -1,7 +1,7 @@
 var Album = require('../models/album').Album;
 var Photo = require('../models/photo').Photo;
 
-module.exports = function (req, res){
+module.exports = function (req, res, next){
       var albumID = req.params.album;
 
     Album.findOne({_id:albumID}, function (err, album) {
