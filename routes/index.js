@@ -2,7 +2,7 @@ var checkAuth = require('./auth');
 var multer  = require('multer');
 var userStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './build/my-uploads/users')
+        cb(null, './tmp/my-uploads/users')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));
@@ -11,7 +11,7 @@ var userStorage = multer.diskStorage({
 });
 var albStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './build/my-uploads/photos')
+        cb(null, './tmp/my-uploads/photos')
     },
     filename: function (req, file, cb) {
         var name = file.originalname.replace((/\s+/g, ''));
@@ -36,8 +36,11 @@ module.exports = function (app) {
     app.get('/user/:id', require('./users'));
     app.get('/albums/:album', checkAuth, require('./albums'));
     app.get('/search', checkAuth, require('./render'));
-    app.get('/album', checkAuth, require('./render'));
+    //app.get('/album', checkAuth, require('./render'));
     app.get(['/', '/index'], require('./render'));
+
+    //app.get('/albums/:id', require('./albums'));
+
 
     // app.route('/repass')
     //     .get(require('./repassGet'))

@@ -1,22 +1,33 @@
 var Album = require('../models/album').Album;
+var Photo = require('../models/album').Photo;
 
 module.exports = function (req, res){
       var albumID = req.params.album;
 
     Album.findOne({_id:albumID}, function (err, album) {
+        if (err) return next(err);
         var albumName = album.name,
             albumInfo = album.description;
 
-        Photos.find({album_id:albumID}, function (err, photo) {
+        Photo.find({album: {$in: albumID}}, function (err, photo) {
             if (err) return next(err);
 
-            var photos = photo;
+            if (photo){
+                var photos = photo;
 
-            res.render('album', {
-                name:albumName,
-                info:albumInfo,
-                photos:photos
-            })
+                res.render('album', {
+                    name:albumName,
+                    info:albumInfo,
+                    photos:photos
+                })
+            } else {
+                res.render('album', {
+                    name:albumName,
+                    info:albumInfo
+                })
+            }
+
+
         })
     })
 };
