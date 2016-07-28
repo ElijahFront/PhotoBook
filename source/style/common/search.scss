@@ -16,9 +16,7 @@
  {
 	 display: flex;
 	 justify-content: center;
-	 align-item: center;
-	
-	 
+	 align-item: center;	 
 }
 
 .header__title {
@@ -29,16 +27,14 @@
 	font-family: 'pantonbold';
 	font-size: 2.64rem;	
 	padding: 0;
-
 }
-
 
 
 .search_s {
 	background-color: rgba (#f6f6f6,.85);
+
 	.main__container {
 		flex-direction: row;
-			 	
 	}
 	.user {
 		align-self: center;
@@ -65,6 +61,10 @@
 
 .search__result{
 	padding: 40px 0;
+		.albums__block {
+			width: 380px;
+		}
+
 }
 
 .result__title {
