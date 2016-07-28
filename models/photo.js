@@ -72,6 +72,8 @@ photoSchema.methods.setlike = function(userID, callback){
     });
 };
 
+photoSchema.index({name:'text', info:'text'});
+
 exports.Photo = mongoose.model('Photo', photoSchema);
 
 /*
