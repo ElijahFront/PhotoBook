@@ -87,7 +87,7 @@
                         alert('Неправильный логин/пароль, попробуйте снова')
                     },
                     200: function () {
-                        window.href.location = '/main'
+                        window.location.href = '/main'
                     }
                 }
             })
@@ -112,7 +112,16 @@
         };
 
         if (name != "" && log != "" && pass != ""){
-            sendXHR('/signUp', loginData)
+            $.ajax({
+                type: 'POST',
+                url: '/signUp',
+                data: loginData,
+                statusCode:{
+                    200: function () {
+                        window.location.href = '/main'
+                    }
+                }
+            })
         } else {
             alert('Заполните все поля!')
         }
@@ -144,6 +153,24 @@
 
 }());
 
+/*
+ * Opening header editing mode
+ */
+
+(function () {
+
+    $('#edit__profile_header').on('click', function (e) {
+        e.preventDefault();
+        console.log('click');
+        var window = $('.edit');
+
+        if (window.hasClass('close')){
+            window.removeClass('close');
+        }
+    })
+
+}());
+
 
 /*
  * XmlHttpRequests from the main page
@@ -156,10 +183,19 @@
             url: route,
             data: data,
             processData: false,
-            contentType: false
+            contentType: false,
+            statusCode:{
+                200: function () {
+                    var window = $('.edit');
 
+                    if (!window.hasClass('close')){
+                        window.addClass('close');
+                    }
+                }
+            }
         })
     }
+
 
     $('#edit__header_save').on('click', function (e) {
         e.preventDefault();
@@ -186,7 +222,6 @@
             data: data,
             processData: false,
             contentType: false
-
         })
     }
 
@@ -200,6 +235,25 @@
 
     })
 
+}());
+
+
+/*
+ * Closing the album creating modal window
+ */
+
+(function () {
+
+    $('#close__album_adding').on('click', function (e) {
+
+        e.preventDefault();
+
+        var window = $('.add_album');
+
+        if (window.hasClass('active')){
+            window.removeClass('active').css('left', '-9999px')
+        }
+    })
 }());
 
  /*
@@ -221,6 +275,7 @@
        });
    
   }());
+
 
   /*
   * flip card

@@ -1,10 +1,11 @@
 .add_album.close
 	.overlay
 	form.modal__form#addAlbum(name='add_album_form' enctype='multipart/form-data')
-				
+
 			.add_album__caption
 				h2.section_title Добавить альбом
-				a.close(href='#'): +icon('close','svg-close-dims')
+				a.close#close__album_adding(href='#'): +icon('close','svg-close-dims')
+
 			
 			.add_album__inputs
 					

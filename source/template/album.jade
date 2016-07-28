@@ -2,7 +2,7 @@ include common/_mixins
 include common/_body_head
 	.wraper
 		.container
-			.main_content
+			.main_content			
 				.header__album
 					header.header
 						.main__container
@@ -10,8 +10,8 @@ include common/_body_head
 								.header__user
 									+user('Антон Черепов','us.jpg')
 								.album__about
-									.album__title Лесные прогулки
-									.album__desc Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
+									.album__title #{name}
+									.album__desc #{info}
 								.header__btn__album
 									a.header__btn.header__btn_l(href='./main.html') На главную
 										+icon('home','svg-home-dims')
@@ -38,100 +38,31 @@ include common/_body_head
 								//- 	.stat__header__btn
 								//- 		a.header__btn.header__btn_l(href='./main.html') На главную
 								//- 				+icon('home','svg-home-dims')		
-
 				section.albums__photos
 						.main__container
 							.albums__photos__title
 								a.add__albums(href='#') Добавить
 									+icon('add','svg-add-dims')
 							ul.albums__photos__list
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
-												+comments_likes(9,15)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-													
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Путешествие на лодке по озеру
+								if photos
+									each photo in photos
+										li.albums__photos__item
+											.albums__photos__block
+												.albums__photos__wrap
+														img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
+														+comments_likes(9,15)
+														a.news__mask(href='#') посмотреть фото
+															+icon('loupe','svg-loupe-dims')
+												.albums__photos__name__wrap
+													a.albums__edit(href='#') редактировать
+														+icon('edit','svg-edit-dims')
+													.albums__photos__name #{photo.name}
+								else
+									p Нет фотографий
 
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph10.jpg')
-												+comments_likes(2,22)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Отдых в палатке
-
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph12.jpg')
-												+comments_likes(4,32)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Любимые лошадки
-
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph13.jpg')
-												+comments_likes(9,21)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Мечтательный взгляд вдаль поверх гл...
-
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph14.jpg')
-												+comments_likes(4,14)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Я лежу в гамаке, как это прекрасно, во...
-
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph15.jpg')
-												+comments_likes(2,28)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Велопутешествие
-
-								li.albums__photos__item
-									.albums__photos__block
-										.albums__photos__wrap
-												img.albums__photos__img(src='./assets/img/photos/ph16.jpg')
-												+comments_likes(9,21)
-												a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-										.albums__photos__name__wrap
-											a.albums__edit(href='#') редактировать
-												+icon('edit','svg-edit-dims')
-											.albums__photos__name Мечтательный взгляд вдаль поверх гл...
-	
 			.footer__album
 				include common/_footer
+
 		include common/_slider
 		include common/_edit_header
 		include common/_add_photos

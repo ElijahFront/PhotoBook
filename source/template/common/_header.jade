@@ -3,15 +3,15 @@ header.header
 		.header__content
 				.user_header
 					.user_header__avatar
-						img.user_header__avatar__img(src='./assets/img/users/us.jpg')
+						img.user_header__avatar__img(src='../tmp/my-uploads/users/#{avatar}')
 					.user_header__info
-						.user_header__name Антон Черепов
-						.user_header__desc  Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+						.user_header__name #{name}
+						.user_header__desc  #{info}
 						.socials
 							include ./_socials
 
 				.header__btn__block
-					a.header__btn.header__btn_l(href='#') Редактировать
+					a.header__btn.header__btn_l#edit__profile_header(href='#') Редактировать
 						+icon('edit','svg-edit-dims')
 
 					a.header__btn#header_exit(href='#') Выйти
