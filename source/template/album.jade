@@ -13,7 +13,7 @@ include common/_body_head
 									.album__title #{name}
 									.album__desc #{info}
 								.header__btn__album
-									a.header__btn.header__btn_l(href='./main.html') На главную
+									a.header__btn.header__btn_l(href='/main') На главную
 										+icon('home','svg-home-dims')
 									a.header__btn.header__btn_l(href='#') Редактировать
 										+icon('edit','svg-edit-dims')
@@ -35,7 +35,7 @@ include common/_body_head
 									+user('Антон Черепов','us.jpg')
 									.album__title Лесные прогулки
 									.stat__header__btn
-									a.header__btn.header__btn_l(href='./main.html') На главную
+									a.header__btn.header__btn_l(href='/main') На главную
 												+icon('home','svg-home-dims')
 
 				section.albums__photos
@@ -60,8 +60,8 @@ include common/_body_head
 								else
 									p Нет фотографий
 
-		.footer__album
-			include common/_footer
+			.footer__album
+				include common/_footer
 
 		include common/_slider
 		include common/_edit_header
