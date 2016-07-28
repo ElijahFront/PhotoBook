@@ -129,7 +129,7 @@
                         alert('Ошибка')
                     },
                     200: function () {
-                        window.href.location = '/main'
+                        window.location.href = '/main'
                     }
                 }
             })
@@ -177,7 +177,7 @@
 
         if (window.hasClass('close')){
             window.removeClass('close');
-        } 
+        }
     })
 
 }());
@@ -194,10 +194,19 @@
             url: route,
             data: data,
             processData: false,
-            contentType: false
+            contentType: false,
+            statusCode:{
+                200: function () {
+                    var window = $('.edit');
 
+                    if (!window.hasClass('close')){
+                        window.addClass('close');
+                    }
+                }
+            }
         })
     }
+
 
     $('#edit__header_save').on('click', function (e) {
         e.preventDefault();
