@@ -1,6 +1,6 @@
 var User = require('../models/user').User;
 var Album = require('../models/album').Album;
-var Photo = require('../models/album').Photo;
+var Photo = require('../models/photo').Photo;
 
 module.exports = function (req, res, next) {
     res.type('html');

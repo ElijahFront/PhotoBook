@@ -1,5 +1,5 @@
 var Album = require('../models/album').Album;
-var Photo = require('../models/album').Photo;
+var Photo = require('../models/photo').Photo;
 
 module.exports = function (req, res){
       var albumID = req.params.album;
