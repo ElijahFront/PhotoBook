@@ -6,6 +6,7 @@ var async = require('async');
 module.exports = function (req, res, next){
     
     var query = req.params.query;
+    console.log(query);
 
     async.parallel([
         function (callback) {
@@ -25,13 +26,13 @@ module.exports = function (req, res, next){
             })
         }
     ], function (e, results) {
-        console.log(results);
         var albums = results[0],
             photos = results[1];
+        
         res.render('search', {
             albums:albums,
             photos:photos
-        })
+        });
     });
 
 };

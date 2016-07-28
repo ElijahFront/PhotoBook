@@ -319,25 +319,27 @@
         if (e.keyCode==13){
             var searchStr = $('#search_field').val();
 
-            $.ajax({
-                type: 'GET',
-                url:'/search/' + searchStr,
-                data: searchStr
-                // processData: false,
-                // contentType: false
-            })
+            // $.ajax({
+            //     type: 'GET',
+            //     url:'/search/' + searchStr,
+            //     data: searchStr,
+            //     processData: false,
+            //     contentType: false
+            // })
+            window.location.href = '/search/'+ searchStr
         } else {
             e.preventDefault();
 
             var searchStr = $('#search_field').val();
 
-            $.ajax({
-                type: 'GET',
-                url:'/search/' + searchStr,
-                data: searchStr
-                // processData: false,
-                // contentType: false
-            })
+            // $.ajax({
+            //     type: 'GET',
+            //     url:'/search/' + searchStr,
+            //     data: searchStr
+            //     // processData: false,
+            //     // contentType: false
+            // })
+            window.location.href = '/search/'+ searchStr
         }
     });
 }());
