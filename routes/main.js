@@ -16,58 +16,67 @@ module.exports = function (req, res, next) {
             userBack = user.backgroundPath,
             userAlbums = user.albums;
 
-        if (userAlbums != "") {    // Есть ли у пользователя альбомы. Если нет, но попытаться найти, то MongoDB выдает оштбку и кладет сервер
-            Album.find({name: {$in: userAlbums}}, function (err, album) {    //Находим всальбомы пользователя
-                if (err) {
-                    return next(err);
-                } else if (album) {
-                    var albums = album,
-                        albumID = album._id,
-                        numberOfPhotos = album.photos;
+        Photo.find({}, function (err, photos) {
+            if (err) {
+                return next(err);
+            } else {
+                var ph = photos;
+                console.log(ph);
 
-                    if (numberOfPhotos) {    // Если есть фотографии, то рендерим с фото, в противном случае - без них
+                if (userAlbums != "") {    // Есть ли у пользователя альбомы. Если нет, но попытаться найти, то MongoDB выдает оштбку и кладет сервер
+                    Album.find({name: {$in: userAlbums}}, function (err, album) {    //Находим всальбомы пользователя
+                        if (err) {
+                            return next(err);
+                        } else if (album) {
+                            var albums = album,
+                                albumID = album._id,
+                                numberOfPhotos;
 
-                        Photo.find({}, function (err, photos) {
-                            if (err) {
-                                return next(err);
-                            } else if (photos) {
-                                var photos = photos;
-                                res.render('main', {
-                                    name: userName,
-                                    info: userInfo,
-                                    avatar: userAva,
-                                    cover: userBack,
-                                    albums: albums,
-                                    photos: photos,
-                                    amountOfPhotos: numberOfPhotos
-                                });
-                            }
-
-
-                        })
-                    } else {
-                        res.render('main', {
-                            name: userName,
-                            info: userInfo,
-                            avatar: userAva,
-                            cover: userBack,
-                            albums: albums
-                        });
-                        console.log(albums)
-
-                    }
+                            res.render('main', {
+                                name: userName,
+                                info: userInfo,
+                                avatar: userAva,
+                                cover: userBack,
+                                albums: albums,
+                                photos: ph,
+                                amountOfPhotos: numberOfPhotos
+                            });
 
 
+                        }
+
+
+                    });
+
+
+                    //console.log(albums);
+
+                    //if (true) {    // Если есть фотографии, то рендерим с фото, в противном случае - без них
+
+
+                    // } else {
+                    //      res.render('main', {
+                    //          name: userName,
+                    //          info: userInfo,
+                    //          avatar: userAva,
+                    //          cover: userBack,
+                    //          albums: albums         //todo закоментил пока
+                    //      });
+                    //  console.log(albums)
+
+                    //}
+
+                } else {
+                    res.render('main', {
+                        name: userName,
+                        info: userInfo,
+                        avatar: userAva,
+                        cover: userBack,
+                        photos:ph
+                    });
+                    // console.log(userName);
                 }
-            })
-        } else {
-            res.render('main', {
-                name: userName,
-                info: userInfo,
-                avatar: userAva,
-                cover: userBack
-            });
-            console.log(userName);
-        }
+            }
+        });
     })
 };

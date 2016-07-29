@@ -1,5 +1,6 @@
 var Album = require('../models/album').Album;
 var Photo = require('../models/photo').Photo;
+var User = require('../models/user').User;
 
 module.exports = function (req, res, next){
       var albumID = req.params.album;
@@ -7,25 +8,42 @@ module.exports = function (req, res, next){
     Album.findOne({_id:albumID}, function (err, album) {
         if (err) return next(err);
         var albumName = album.name,
-            albumInfo = album.description;
+            albumInfo = album.description,
+            albumCover = album.coverID,
+            user = album.author;
 
         Photo.find({album: {$in: albumID}}, function (err, photo) {
             if (err) return next(err);
 
-            if (photo){
-                var photos = photo;
+            User.findById(user, function (e, u) {
+                if (e) return next(e);
 
-                res.render('album', {
-                    name:albumName,
-                    info:albumInfo,
-                    photos:photos
-                })
-            } else {
-                res.render('album', {
-                    name:albumName,
-                    info:albumInfo
-                })
-            }
+                var uName = u.name,
+                    uAva = u.avaPath;
+
+                if (photo){
+                    var photos = photo;
+
+                    res.render('album', {
+                        name:albumName,
+                        info:albumInfo,
+                        cover:albumCover,
+                        photos:photos,
+                        userName:uName,
+                        userAva:uAva
+                    })
+                } else {
+                    res.render('album', {
+                        name:albumName,
+                        info:albumInfo,
+                        cover:albumCover,
+                        userName:uName,
+                        userAva:uAva
+                    })
+                }
+            });
+
+            
 
 
         })

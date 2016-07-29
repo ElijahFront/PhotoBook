@@ -29,7 +29,7 @@ module.exports = function (app) {
     app.post('/signUp', require('./signup').post);
     app.post('/profileUpload', uploadUser.array('edit__profile_inp'), require('./profileUpload').post);
     app.post('/createAlbum', createAlb.array('addAlbum'), require('./newAlbum').post);
-    app.post('/albums/:id/addPhoto', createAlb.single('addPhoto'), require('./newPhoto').post);
+    app.post('/albums/:id/addPhoto', createAlb.single('add_photo'), require('./newPhoto').post);
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));

@@ -1,8 +1,8 @@
 .header__album,
 .footer__album {
 	background-image: url(../img/photos/ph_hh1.jpg);
-	background-size: 100% auto;
-	background-position: auto center;
+	background-size: cover;
+	background-position: center;
 	.header {
 		background-image: none;
 		background-color: rgba(#000,.6);
@@ -99,7 +99,7 @@
 
 .album__about {
 	flex: 4;
-	display: flex;
+	//display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	align-items: center;

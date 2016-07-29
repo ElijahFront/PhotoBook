@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var User = require('./user').User;
-
+//unique: true,
 var photoSchema = new Schema({
     album: {
         type: String,
-        unique: true,
         required: true
     },
     name: {

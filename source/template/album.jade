@@ -3,12 +3,15 @@ include common/_body_head
 	.wraper
 		.container
 			.main_content			
-				.header__album
+				.header__album(style="background-image:url(/my-uploads/photos/#{cover})")
 					header.header
 						.main__container
 							.header__content
 								.header__user
-									+user('Антон Черепов','us.jpg')
+									.user
+										.user__ava
+											img.user__ava__img(src='/my-uploads/users/#{userAva}')
+										.user__name #{userName}
 								.album__about
 									.album__title #{name}
 									.album__desc #{info}
@@ -41,7 +44,7 @@ include common/_body_head
 				section.albums__photos
 						.main__container
 							.albums__photos__title
-								a.add__albums(href='#') Добавить
+								a.add__albums#add_new_photo(href='#') Добавить
 									+icon('add','svg-add-dims')
 							ul.albums__photos__list
 								if photos
@@ -49,7 +52,7 @@ include common/_body_head
 										li.albums__photos__item
 											.albums__photos__block
 												.albums__photos__wrap
-														img.albums__photos__img(src='./assets/img/photos/ph9.jpg')
+														img.albums__photos__img(src='/my-uploads/photos/#{photo.photoLink}')
 														+comments_likes(9,15)
 														a.news__mask(href='#') посмотреть фото
 															+icon('loupe','svg-loupe-dims')
@@ -60,7 +63,7 @@ include common/_body_head
 								else
 									p Нет фотографий
 
-			.footer__album
+			.footer__album(style="background-image:url(/my-uploads/photos/#{cover})")
 				include common/_footer
 
 		include common/_slider

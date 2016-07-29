@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = [
-  './source/js/*.js'
+  './source/js/app.js'
 ];

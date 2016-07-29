@@ -229,13 +229,13 @@
     
     $('#add__new_album_main').on('click', function (e) {
         e.preventDefault();
+        console.log('clicknul');
         var popup = $('.add_album');
 
-        if (!popup.hasClass('active')){
-            popup.addClass('active').css('left', '0')
-        } else {
-            popup.removeClass('active').css('left', '-9999')
+        if (popup.hasClass('close')) {
+            popup.removeClass('close')
         }
+
     })
 })
 
@@ -355,8 +355,6 @@
 
         var elems =$('.flip').addClass('flipping');
 
-        
-
     $('#enter').on('click',_unflip);
 
             
@@ -369,3 +367,50 @@
   //  });
 })();
 
+
+/*
+ * Показывание окна добавления фото
+ */
+
+(function () {
+
+    $('#add_new_photo').on('click', function (e) {
+        e.preventDefault();
+
+        var window = $('.add_photos');
+
+        if (window.hasClass('close')){
+            window.removeClass('close')
+        }
+    })
+
+}());
+
+/*
+ * Отправка добавления фото
+ */
+
+(function () {
+    
+    $('#add__ph__save').on('click', function (e) {
+        e.preventDefault();
+        
+        var data = new FormData($('#add_photo_form')[0]);
+        var href = window.location.href;
+        var alID = href.split("");
+        //console.log(alID);
+        alID = alID.slice(29);
+        //console.log(alID);
+        alID = alID.join("");
+        console.log(alID);
+        
+        $.ajax({
+            type:'POST',
+            url:'/albums/' + alID + '/addPhoto',
+            data: data,
+            processData: false,
+            contentType: false
+        })
+    })
+    
+}());

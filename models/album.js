@@ -20,7 +20,7 @@ var albumSchema = new Schema({
         type: String
     },
     photos:{
-        type: [Number]
+        type: [String]
     }
 });
 

@@ -11,7 +11,10 @@ include common/_body_head
 												+icon('home','svg-home-dims')
 						.search.search_s
 							.main__container
-								+user('Антон Черепов','us.jpg')
+								.user
+									.user__ava
+										img.user__ava__img(src='/my-uploads/users/#{avatar}')
+									.user__name #{username}
 								.search__form_wrap
 									form.search__form
 										input.search__input(name='search' type='text' placeholder='Исследовать мир')
@@ -23,34 +26,34 @@ include common/_body_head
 					section.search__result
 						.main__container
 							.result
-								h2.result__title По запросу "Природа" найдено 0 результатов
+								//h2.result__title По запросу "Природа" найдено 0 результатов
 								.news
 									ul.news__list
 										if photos
 											each photo in photos
 												li.news__item
 													.news__block
-														img.news__img(src='./assets/img/photos/ph1.jpg')
+														img.news__img(src='/my-uploads/photos/#{photo.photoLink}')
 														a.news__mask(href='#') посмотреть фото
 																+icon('loupe','svg-loupe-dims')
 														.news__desc
 															.news__author
-																img.news__author__img(src='./assets/img/users/us1.jpg')
-																a.news__author__mask(href='./user.html') о пользователе
+																img.news__author__img(src='/my-uploads/users/x')
+																a.news__author__mask(href='/user') о пользователе
 																	+icon('more','svg-more-dims')
 
 															.other
 																.news__img__name #{photo.name}
 																+comments_likes(9,25)
 														.news__album
-															a.news__album__name(href='#') Прогулки по воде
+															a.news__album__name(href='#') Название альбома
 															+icon('album','svg-album-dims')
 										else
 											p Найдено 0 фотографий
 											
 
 
-								h2.result__title По запросу "Природа" найдено 0 альбомов
+								//h2.result__title По запросу "Природа" найдено 0 альбомов
 								.albums
 										ul.albums__list
 											if albums

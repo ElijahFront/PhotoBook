@@ -1,6 +1,6 @@
 .add_photos.close
 	.overlay
-	form.modal__form#add_photo(name='add_photo_form' enctype='multipart/form-data')
+	form.modal__form#add_photo_form(name='add_photo_form' enctype='multipart/form-data')
 				
 				.add_album__caption
 					h2.section_title Добавить фотографии
@@ -10,7 +10,7 @@
 					
 					.add_album__desc
 						span.add_album__span Название
-						.add_photos__album_name Как я провел лето
+						input(name='add_photo' type='text' placeholder="Название фото").add_photos__album_name
 					
 					#drop-files.add_photos__block(ondragover="return false")
 						.add_photos__wrap
@@ -48,7 +48,7 @@
 
 				.add_album__btn
 					#upload-button.add_album__btn__block
-						button.edit__btn#add__btn__save.upload(type='submit') Сохранить
+						button.edit__btn#add__ph__save.upload(type='submit') Сохранить
 						button.edit__btn(type='reset') Отменить
 
 
@@ -56,6 +56,6 @@
 			.load_note.modal__form
 				.load_note__text Файлы были загружены
 				.load_note__btn: button(type='button') Закрыть
-//todo скрипты для работы загрузки
-script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js")
-script(src="javascript.js")
+////todo скрипты для работы загрузки
+//script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js")
+//script(src="javascript.js")
