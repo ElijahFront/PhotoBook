@@ -12,8 +12,8 @@ module.exports = function (req, res, next) {
         if (err) return next(err);
         if (conf){
 
-            conf.update({$unset: {emailconf:confmail}}, function (err, res) {
-                res.send("Почта успешно подтверждена");
+            conf.update({$unset: {emailconf:confmail}}, function (err, result) {
+                res.end("Почта успешно подтверждена");
             });
 
 
