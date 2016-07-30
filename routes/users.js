@@ -1,6 +1,6 @@
 var User = require('../models/user').User;
 
-module.exports = function (req, res) {
+module.exports = function (req, res, next) {
 
     var userID = req.params.id;
 
@@ -17,7 +17,7 @@ module.exports = function (req, res) {
                 avaPath = user.avaPath,
                 backgroundPath = user.backgroundPath;
 
-            res.render('main', {
+            res.render('user', {
                 albums:albums,
                 avatar:avaPath,
                 background:backgroundPath,
