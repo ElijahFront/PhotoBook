@@ -196,7 +196,7 @@ $(document).ready(function() {
 		// переменные для работы прогресс бара
 		var totalPercent = 100 / dataArray.length;
 		var x = 0;
-		var locat = location.href + '/addPhoto';
+		var locat = location.pathname + '/addPhoto';
 
 		$('#loading-content').html('Загружен '+dataArray[0].name);
 		// Для каждого файла
