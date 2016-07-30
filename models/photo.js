@@ -5,6 +5,7 @@ var User = require('./user').User;
 var photoSchema = new Schema({
     album: {
         type: String,
+        //unique: true,
         required: true
     },
     name: {

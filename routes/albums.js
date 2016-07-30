@@ -3,7 +3,9 @@ var Photo = require('../models/photo').Photo;
 var User = require('../models/user').User;
 
 module.exports = function (req, res, next){
+
       var albumID = req.params.album;
+
 
     Album.findOne({_id:albumID}, function (err, album) {
         if (err) return next(err);
@@ -22,7 +24,8 @@ module.exports = function (req, res, next){
                     uAva = u.avaPath;
 
                 if (photo){
-                    var photos = photo;
+
+                    var photos = photo.reverse();
 
                     res.render('album', {
                         name:albumName,
@@ -42,10 +45,6 @@ module.exports = function (req, res, next){
                     })
                 }
             });
-
-            
-
-
         })
     })
 };

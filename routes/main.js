@@ -20,7 +20,8 @@ module.exports = function (req, res, next) {
             if (err) {
                 return next(err);
             } else {
-                var ph = photos;
+
+                var ph = photos.reverse();
                 console.log(ph);
 
                 if (userAlbums != "") {    // Есть ли у пользователя альбомы. Если нет, но попытаться найти, то MongoDB выдает оштбку и кладет сервер
@@ -41,30 +42,8 @@ module.exports = function (req, res, next) {
                                 photos: ph,
                                 amountOfPhotos: numberOfPhotos
                             });
-
-
                         }
-
-
                     });
-
-
-                    //console.log(albums);
-
-                    //if (true) {    // Если есть фотографии, то рендерим с фото, в противном случае - без них
-
-
-                    // } else {
-                    //      res.render('main', {
-                    //          name: userName,
-                    //          info: userInfo,
-                    //          avatar: userAva,
-                    //          cover: userBack,
-                    //          albums: albums         //todo закоментил пока
-                    //      });
-                    //  console.log(albums)
-
-                    //}
 
                 } else {
                     res.render('main', {
@@ -74,7 +53,6 @@ module.exports = function (req, res, next) {
                         cover: userBack,
                         photos:ph
                     });
-                    // console.log(userName);
                 }
             }
         });
