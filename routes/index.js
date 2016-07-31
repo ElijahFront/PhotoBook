@@ -29,6 +29,7 @@ module.exports = function (app) {
     app.post('/profileUpload', uploadUser.array('inputs__names'), require('./profileUpload').post);
     app.post('/createAlbum', createAlb.array('addAlbum'), require('./newAlbum').post);
     app.post('/albums/:id/addPhoto', createAlb.single('addPhoto'), require('./newPhoto').post);
+    app.post('/more', require('./more').post);
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));
