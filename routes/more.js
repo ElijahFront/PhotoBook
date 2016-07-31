@@ -54,7 +54,7 @@ exports.post = function (req, res, next) {
                                         albumId +
                                         '" class="news__album__name">' +
                                         albumName +
-                                        '</a>svg role="img" class="svg-album-dims"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/svg-sprite.svg#album"></use></svg></div></div></li>'
+                                        '</a><svg role="img" class="svg-album-dims"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/svg-sprite.svg#album"></use></svg></div></div></li>'
                                     ;
                                     if (i == newPhoto.length-1) {
                                         res.end(html);
