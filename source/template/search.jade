@@ -1,11 +1,10 @@
 include common/_mixins
 include common/_body_head
 	.wraper
-		.container
 			.main_content
 					header.header_search
-						.main__container
-							.header__title
+						.header__title
+							.main__container
 								h1.section_title_s Исследуй мир
 								a.header__btn.header__btn_l(href='./main.html') На главную
 												+icon('home','svg-home-dims')
@@ -27,22 +26,23 @@ include common/_body_head
 								.news
 									ul.news__list
 											li.news__item
-												.news__block
-													img.news__img(src='./assets/img/photos/ph1.jpg')
-													a.news__mask(href='#') посмотреть фото
-															+icon('loupe','svg-loupe-dims')
-													.news__desc
-														.news__author
-															img.news__author__img(src='./assets/img/users/us1.jpg')
-															a.news__author__mask(href='./user.html') о пользователе
-																+icon('more','svg-more-dims')
-																
-														.other
-															.news__img__name Путешествие на лодке по озеру
-															+comments_likes(9,25)
-													.news__album
-														a.news__album__name(href='#') Прогулки по воде
-														+icon('album','svg-album-dims')
+										.news__block
+											.news__img__wrap
+												img.news__img(src='http://lorempixel.com/400/50')
+												a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/ph_us1.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
+														
+												.other
+													.news__img__name Путешествие на лодке по озеру
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Прогулки по воде
+												+icon('album','svg-album-dims')
 											
 
 
@@ -64,5 +64,6 @@ include common/_body_head
 
 			
 			include common/_footer
+include common/preloader
 include common/_scripts
 

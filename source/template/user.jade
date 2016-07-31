@@ -2,7 +2,6 @@ include common/_mixins
 include common/_body_head
 
 	.wraper
-		.container
 			.main_content
 				.header__main.header__main_user
 					include common/_header_user
@@ -10,12 +9,26 @@ include common/_body_head
 					.main__container
 						.my_albums__title
 							h2.section_title Aльбомы
-							a.add__albums(href='#') Добавить
-								+icon('add','svg-add-dims')
 						.albums
 							ul.albums__list
+								if albums
+									each album in albums
+									  	li.albums__item
+											.albums__block
+												.albums__img__wrap
+													img.albums__img(src='./my-uploads/photos/#{album.coverID}')
+												.albums__name
+													.albums__name__title #{album.name}
+													a.albums__edit(href='#') редактировать альбом
+														+icon('edit','svg-edit-dims')
+												a.albums__desc(href='./albums/#{album._id}')
+													.albums__about #{album.description}
+													.albums__amount_photo #{album.amountOfPhotos} фотографий
+								else
+									p Еще нет альбомов
 
 		
 			.footer__main.footer__main_user
 				include common/_footer
+	include common/preloader
 	include common/_scripts

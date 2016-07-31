@@ -1,12 +1,11 @@
 include common/_mixins
 include common/_body_head
 	.wraper
-		.container
-			.main_content			
+			.main_content
 				.header__album
 					header.header
-						.main__container
-							.header__content
+						.header__content
+							.main__container
 								.header__user
 									+user('Антон Черепов','us.jpg')
 								.album__about
@@ -32,12 +31,7 @@ include common/_body_head
 										.stat__photo Комментария
 										.stat__photo__count 4
 
-								//- .stat__album__title
-								//- 	+user('Антон Черепов','us.jpg')
-								//- 	.album__title Лесные прогулки
-								//- 	.stat__header__btn
-								//- 		a.header__btn.header__btn_l(href='./main.html') На главную
-								//- 				+icon('home','svg-home-dims')		
+								
 				section.albums__photos
 						.main__container
 							.albums__photos__title
@@ -67,4 +61,5 @@ include common/_body_head
 		include common/_edit_header
 		include common/_add_photos
 		include common/_edit_photo
+		include common/preloader
 	include common/_scripts

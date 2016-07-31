@@ -1,0 +1,34 @@
+//==========main page=============================================
+.new_world,
+.my_albums 		{
+	
+	.main__container {
+		@include nettop {
+			width: 800px;
+		}
+		@include tablet {
+			width: 740px;
+		}	
+	}
+}
+.news__block{
+	@include nettop {
+			width: 370px;
+		}
+	@include tablet {
+			width: 350px;
+		}	
+}
+
+.user_header__avatar {
+	@include nettop {
+		width: 100px;
+		height: 100px;
+		}
+	}
+
+.user_header__info {	
+	@include nettop {
+		width: 350px;
+	}
+}

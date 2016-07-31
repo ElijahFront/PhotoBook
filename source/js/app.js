@@ -310,29 +310,60 @@
     });
 }());
 
-  /*
-  * flip card
-  */
-  (function(){
-    //var
-        
-    $('#forgot').on('click', function(e){
-        e.preventDefault();
+  // /*
+  // * flip card не допилено, допилить
+  // */
+  // (function(){
 
-        var elems =$('.flip').addClass('flipping');
 
-        
+  //   var forgot   = $('#forgot'),
+  //       enter    = $('#enter'),
+  //       enter_r  = $('#enter_r'),
+  //       registr  = $('#registr'),
+  //       flipElem = $('.flip'),
+  //       blocks   = flipElem.find('.block');
 
-    $('#enter').on('click',_unflip);
 
-            
-     var _unflip= function(e) {
-            e.preventDefault();
-            
-            elems.removeClass('flipping');
-            }
-        }); 
-  //  });
+  //       // function flip card
+  //   var _flip = function(btn) {
+
+  //     btn.on('click', function(e){
+
+  //   //var
+
+  //   $('#forgot').on('click', function(e){
+
+  //       e.preventDefault();
+
+  //       // if clicked button registr or forgot
+  //       //find block with suitable data-id, show this and add
+  //       // class flip_back
+
+  //       if(btn.selector === ('#registr')||('#forgot')){
+  //           $.each(blocks, function(index, val) {
+  //               var block = $(val);
+
+  //               if(btn.selector !== block.data('id')){
+  //                   console.log('yes' + block);
+  //                   block.css('opacity', '0','fast');
+  //               };
+  //           });
+
+
+  //       };
+
+
+  //       flipElem.toggleClass('flipping');
+
+  //      });
+  //   };
+
+
+    _flip(forgot);
+    _flip(enter);
+    _flip(enter_r);
+    _flip(registr);
+
 })();
 
 /*

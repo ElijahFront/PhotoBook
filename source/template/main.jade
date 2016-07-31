@@ -2,7 +2,6 @@ include common/_mixins
 include common/_body_head
 
 	.wraper
-		.container
 			.main_content
 					.header__main(stye="backgroundImage: url(../tmp/my-uploads/users/#{cover})")
 						include common/_header
@@ -15,12 +14,13 @@ include common/_body_head
 								ul.news__list
 									li.news__item
 										.news__block
-											img.news__img(src='./assets/img/photos/ph1.jpg')
-											a.news__mask(href='#') посмотреть фото
+											.news__img__wrap
+												img.news__img(src='http://lorempixel.com/400/50')
+												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
-													img.news__author__img(src='./assets/img/users/us1.jpg')
+													img.news__author__img(src='./assets/img/users/ph_us1.jpg')
 													a.news__author__mask(href='./user.html') о пользователе
 														+icon('more','svg-more-dims')
 														
@@ -33,8 +33,9 @@ include common/_body_head
 
 									li.news__item
 										.news__block
-											img.news__img(src='./assets/img/photos/ph2.jpg')
-											a.news__mask(href='#') посмотреть фото
+											.news__img__wrap
+												img.news__img(src='./assets/img/photos/ph_us.png')
+												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
@@ -51,8 +52,9 @@ include common/_body_head
 
 									li.news__item
 										.news__block
-											img.news__img(src='./assets/img/photos/ph3.jpg')
-											a.news__mask(href='#') посмотреть фото
+											.news__img__wrap
+												img.news__img(src='./assets/img/photos/ph3.jpg')
+												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
@@ -68,9 +70,10 @@ include common/_body_head
 												+icon('album','svg-album-dims')
 
 									li.news__item
-										.news__block 
-											img.news__img(src='./assets/img/photos/ph4.jpg')
-											a.news__mask(href='#') посмотреть фото
+										.news__block
+											.news__img__wrap 
+												img.news__img(src='./assets/img/photos/ph4.jpg')
+												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
@@ -87,8 +90,9 @@ include common/_body_head
 
 									li.news__item
 										.news__block
-											img.news__img(src='./assets/img/photos/ph5.jpg')
-											a.news__mask(href='#') посмотреть фото
+											.news__img__wrap
+												img.news__img(src='./assets/img/photos/ph5.jpg')
+												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
@@ -105,8 +109,9 @@ include common/_body_head
 
 									li.news__item
 										.news__block
-											img.news__img(src='./assets/img/photos/ph6.jpg')
-											a.news__mask(href='#') посмотреть фото
+											.news__img__wrap
+												img.news__img(src='./assets/img/photos/ph6.jpg')
+												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
@@ -121,41 +126,7 @@ include common/_body_head
 												a.news__album__name(href='#') Дорога
 												+icon('album','svg-album-dims')
 
-									li.news__item
-										.news__block
-											img.news__img(src='./assets/img/photos/ph7.jpg')
-											a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-											.news__desc
-												.news__author
-													img.news__author__img(src='./assets/img/users/us7.jpg')
-													a.news__author__mask(href='./user.html') о пользователе
-														+icon('more','svg-more-dims')
-
-												.other
-													.news__img__name Черничка, вкусная
-													+comments_likes(9,25)
-											.news__album
-												a.news__album__name(href='#') Дорога
-												+icon('album','svg-album-dims')
-
-									li.news__item
-										.news__block
-											img.news__img(src='./assets/img/photos/ph8.jpg')
-											a.news__mask(href='#') посмотреть фото
-													+icon('loupe','svg-loupe-dims')
-											.news__desc
-												.news__author
-													img.news__author__img(src='./assets/img/users/us3.jpg')
-													a.news__author__mask(href='./user.html') о пользователе
-														+icon('more','svg-more-dims')
-														
-												.other
-													.news__img__name Горы-горы
-													+comments_likes(9,25)
-											.news__album
-												a.news__album__name(href='#') Путешествие
-												+icon('album','svg-album-dims')
+								
 							button.news__more(type='button') Показать еще
 
 							//======section My album===========
@@ -183,7 +154,6 @@ include common/_body_head
 									else
 										p Еще нет альбомов
 
-
 			.footer__main
 				include common/_footer
 
@@ -191,4 +161,5 @@ include common/_body_head
 		include common/_slider
 		include common/_edit_header
 		include common/_add_album
+		include common/preloader
 	include common/_scripts
