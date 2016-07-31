@@ -11,6 +11,21 @@ include common/_body_head
 							h2.section_title Aльбомы
 						.albums
 							ul.albums__list
+								if albums
+									each album in albums
+									  	li.albums__item
+											.albums__block
+												.albums__img__wrap
+													img.albums__img(src='./my-uploads/photos/#{album.coverID}')
+												.albums__name
+													.albums__name__title #{album.name}
+													a.albums__edit(href='#') редактировать альбом
+														+icon('edit','svg-edit-dims')
+												a.albums__desc(href='./albums/#{album._id}')
+													.albums__about #{album.description}
+													.albums__amount_photo #{album.amountOfPhotos} фотографий
+								else
+									p Еще нет альбомов
 
 		
 			.footer__main.footer__main_user

@@ -12,15 +12,15 @@
 						span.add_album__span Название
 						.add_photos__album_name Как я провел лето
 					
-					.add_photos__block
+					#drop-files.add_photos__block(ondragover="return false")
 						.add_photos__wrap
 							+icon('cam','svg-cam-dims')
 							span.add_photo__span Перетащите фото сюда или  
 								label.add_photo__label выберите файл
-									input.add_album__addFile#add_photo(name='add_photo' type='file' hidden)
+									input.add_album__addFile#uploadbtn(name='add_photo' type='file' multiple  hidden)
 						
 									//отображаем список загруженных фото
-						ul.add_photos__list
+						ul#dropped-files.add_photos__list
 								li.add_photos__item
 									.add_photos__img_wrap
 										.icon_wrap: +icon('close','svg-close-dims')
@@ -47,13 +47,15 @@
 					.error_format.close Выбран неверный формат изображения. Попробуйте снова.
 
 				.add_album__btn
-					.add_album__btn__block
-						button.edit__btn#add__btn__save(type='submit') Сохранить
-						button.edit__btn(type='reset') Отменить
+					#upload-button.add_album__btn__block
+						button.edit__btn#add__btn__save.upload(type='submit') Сохранить
+						button.edit__btn#close__adding_photo(type='reset') Отменить
 
 
 								//сообщение об успешной загрузке
 			.load_note.modal__form
 				.load_note__text Файлы были загружены
 				.load_note__btn: button(type='button') Закрыть
-					
+//todo скрипты для работы загрузки
+script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js")
+script(src="javascript.js")

@@ -3,30 +3,30 @@
 * Authorization blocks changing at the index page
  */
 
-// (function () {
+(function () {
     
-//     $('#forgot').on('click', function (e) {
+    $('#forgot').on('click', function (e) {
         
-//         e.preventDefault();
+        e.preventDefault();
 
-//             $(this).parents('.block').removeClass('block_active');
+            $(this).parents('.block').removeClass('block_active');
 
-//             $('.block').eq(2).addClass('block_active');
+            $('.block').eq(2).addClass('block_active');
         
-//     });
+    });
 
-//     $('#registr').on('click', function (e) {
+    $('#registr').on('click', function (e) {
 
-//         e.preventDefault();
+        e.preventDefault();
 
-//         $(this).parents('.block').removeClass('block_active');
+        $(this).parents('.block').removeClass('block_active');
 
-//         $('.block').eq(1).addClass('block_active');
+        $('.block').eq(1).addClass('block_active');
 
 
-//     });
+    });
     
-// }());
+}());
 
 /*
  * Logout requset
@@ -277,47 +277,86 @@
   }());
 
 
-  /*
-  * flip card не допилено, допилить
-  */
-  (function(){
+/*
+ * Поиск
+ */
 
-    var forgot   = $('#forgot'),
-        enter    = $('#enter'),
-        enter_r  = $('#enter_r'),
-        registr  = $('#registr'),
-        flipElem = $('.flip'),
-        blocks   = flipElem.find('.block');
+(function () {
+
+    $('#start_search').on('click keypress', function (e) {
+        if (e.keyCode==13){
+            var searchStr = $('#search_field').val();
+
+            $.ajax({
+                type: 'GET',
+                url:'/search/' + searchStr,
+                data: searchStr
+                // processData: false,
+                // contentType: false
+            })
+        } else {
+            e.preventDefault();
+
+            var searchStr = $('#search_field').val();
+
+            $.ajax({
+                type: 'GET',
+                url:'/search/' + searchStr,
+                data: searchStr
+                // processData: false,
+                // contentType: false
+            })
+        }
+    });
+}());
+
+  // /*
+  // * flip card не допилено, допилить
+  // */
+  // (function(){
 
 
-        // function flip card
-    var _flip = function(btn) {
+  //   var forgot   = $('#forgot'),
+  //       enter    = $('#enter'),
+  //       enter_r  = $('#enter_r'),
+  //       registr  = $('#registr'),
+  //       flipElem = $('.flip'),
+  //       blocks   = flipElem.find('.block');
+
+
+  //       // function flip card
+  //   var _flip = function(btn) {
       
-      btn.on('click', function(e){
-        e.preventDefault();
+  //     btn.on('click', function(e){
 
-        // if clicked button registr or forgot 
-        //find block with suitable data-id, show this and add
-        // class flip_back 
+  //   //var
+        
+  //   $('#forgot').on('click', function(e){
 
-        if(btn.selector === ('#registr')||('#forgot')){
-            $.each(blocks, function(index, val) {
-                var block = $(val);
+  //       e.preventDefault();
+
+  //       // if clicked button registr or forgot 
+  //       //find block with suitable data-id, show this and add
+  //       // class flip_back 
+
+  //       if(btn.selector === ('#registr')||('#forgot')){
+  //           $.each(blocks, function(index, val) {
+  //               var block = $(val);
                
-                if(btn.selector !== block.data('id')){
-                    console.log('yes' + block);
-                    block.css('opacity', '0','fast');
-                };
-            });
+  //               if(btn.selector !== block.data('id')){
+  //                   console.log('yes' + block);
+  //                   block.css('opacity', '0','fast');
+  //               };
+  //           });
 
 
-        };
+  //       };
                 
         
-        flipElem.toggleClass('flipping');      
+  //       flipElem.toggleClass('flipping');      
         
-       });   
-    };
+  //      });   
+  //   };
 
 
     _flip(forgot);
@@ -327,3 +366,30 @@
      
 })();
 
+<<<<<<< HEAD
+=======
+/*
+ * Открытие окна добавления фото
+ */
+
+(function () {
+
+    $('#add__photo_alb').on('click', function (e) {
+        e.preventDefault();
+        var window = $('.add_photos');
+
+        if (window.hasClass('close')){
+            window.removeClass('close');
+        }
+    });
+    $('#close__adding_photo').on('click', function (e) {
+        e.preventDefault();
+        var window = $('.add_photos');
+
+        if (!window.hasClass('close')){
+            window.addClass('close');
+        }
+    })
+
+}());
+>>>>>>> a43553056d6aabe65e7a98b47e927009e899a342
