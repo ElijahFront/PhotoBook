@@ -359,3 +359,32 @@
     })
 
 }());
+
+
+/*
+ * подзагрузка фотографий с сервера
+ */
+
+(function () {
+    var startn = 1,
+        stepn = 1;
+
+    $('.news__more').click(function (e) {
+        e.preventDefault();
+        console.log(startn);
+        $.ajax({
+            type: "POST",
+            url: "/more",
+            data: {
+                startn: startn,
+                stepn: stepn
+            },
+            success: function(data){
+                startn = startn + stepn;
+                $('.news__list').append( data );
+            }
+        });
+
+    });
+
+}());
