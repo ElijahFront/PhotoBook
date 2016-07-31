@@ -3,30 +3,30 @@
 * Authorization blocks changing at the index page
  */
 
-(function () {
+// (function () {
     
-    $('#forgot').on('click', function (e) {
+//     $('#forgot').on('click', function (e) {
         
-        e.preventDefault();
+//         e.preventDefault();
 
-            $(this).parents('.block').removeClass('block_active');
+//             $(this).parents('.block').removeClass('block_active');
 
-            $('.block').eq(2).addClass('block_active');
+//             $('.block').eq(2).addClass('block_active');
         
-    });
+//     });
 
-    $('#registr').on('click', function (e) {
+//     $('#registr').on('click', function (e) {
 
-        e.preventDefault();
+//         e.preventDefault();
 
-        $(this).parents('.block').removeClass('block_active');
+//         $(this).parents('.block').removeClass('block_active');
 
-        $('.block').eq(1).addClass('block_active');
+//         $('.block').eq(1).addClass('block_active');
 
 
-    });
+//     });
     
-}());
+// }());
 
 /*
  * Logout requset
@@ -278,26 +278,52 @@
 
 
   /*
-  * flip card
+  * flip card не допилено, допилить
   */
   (function(){
-    var
-        
-    $('#forgot').on('click', function(e){
+
+    var forgot   = $('#forgot'),
+        enter    = $('#enter'),
+        enter_r  = $('#enter_r'),
+        registr  = $('#registr'),
+        flipElem = $('.flip'),
+        blocks   = flipElem.find('.block');
+
+
+        // function flip card
+    var _flip = function(btn) {
+      
+      btn.on('click', function(e){
         e.preventDefault();
 
-        var elems =$('.flip').addClass('flipping');
+        // if clicked button registr or forgot 
+        //find block with suitable data-id, show this and add
+        // class flip_back 
 
+        if(btn.selector === ('#registr')||('#forgot')){
+            $.each(blocks, function(index, val) {
+                var block = $(val);
+               
+                if(btn.selector !== block.data('id')){
+                    console.log('yes' + block);
+                    block.css('opacity', '0','fast');
+                };
+            });
+
+
+        };
+                
         
+        flipElem.toggleClass('flipping');      
+        
+       });   
+    };
 
-    $('#enter').on('click',_unflip);
 
-            
-     var _unflip= function(e) {
-            e.preventDefault();
-            
-            elems.removeClass('flipping');
-            }
-        }); 
-  //  });
+    _flip(forgot);
+    _flip(enter);
+    _flip(enter_r);
+    _flip(registr);
+     
 })();
+
