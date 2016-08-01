@@ -196,6 +196,7 @@ $(document).ready(function() {
 		// переменные для работы прогресс бара
 		var totalPercent = 100 / dataArray.length;
 		var x = 0;
+		var locat = location.pathname + '/addPhoto';
 
 		$('#loading-content').html('Загружен '+dataArray[0].name);
 		// Для каждого файла
@@ -205,7 +206,7 @@ $(document).ready(function() {
 			fd.append("addPhoto", addPhoto);
 			$.ajax({
 				type: "POST",
-				url: "/albums/87654567890/addPhoto",
+				url: locat,
 				processData: false,
 				contentType: false,
 				data: fd,

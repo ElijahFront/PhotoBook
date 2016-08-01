@@ -4,7 +4,9 @@ $colDarkRed: #d94130;
 $colRed: #ee4634;
 
 
+@import 'common/mixin';
 @import 'common/fonts'; 
+@import 'common/adjustment';
 @import 'common/login';
 @import 'common/main';
 @import 'common/slider';
@@ -16,103 +18,4 @@ $colRed: #ee4634;
 @import 'common/add_photo';
 @import 'common/edit_photo';
 @import 'common/flip';
-
-
-html{
-	font-size: 16px;
-	font-family: 'proxima_nova_ltlight',arial,sans-serif;
-	line-height: 1.5;
-}
-html,body{
-	margin:0;
-	padding: 0;
-	box-sizing: border-box;
-	height: 100%;
-	width: 100%;	
-	min-width: 320px;
-}
-
-
-ul,p {
-	padding: 0;
-	margin: 0;
-}
-
-li {
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
-}
-
-input, textarea {
-	outline: none;
-	padding: 10px;
-	border-radius: 20px;
-	resize: none;
-}
-
- *,*:before,*:after {
- 	box-sizing: inherit;
- }
-button {
-	padding: 9px 20px;
-	border-radius: 30px;
-	font-family: 'proxima_nova_ltsemibold';
-	font-size: 0.875rem;
-	color: $colBlue;
-	outline: none;
-		cursor: pointer;
-		box-shadow: none;
-		border: 2px solid $colBlue;
-		background-color: #fff;
-		&:hover {
-			background-color: $colBlue;
-			color: #fff;
-		}
-
-	&[type=reset] {
-		color: $colBlue;
-		background-color: transparent;
-		border: transparent;
-		&:hover {
-			border: $colBlue;
-		}
-	}
-}
-h1,h2 {
-  padding: 30px 0;
-	margin: 0;
-	line-height: 1;
-}
-
-.container{
-	max-width: 1920px;
-	min-width: 320px;
-	margin: 0 auto;
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-}
-
-
- .section_title {
- 	font-size: 2.625rem;
- 	font-family: 'pantonbold';
- 	color: #323232;
- }
- .social__link {
- 	font-size: 0;
-
- }
- .social__block {
- 	display: flex;
- 	justify-content: flex-start;
-	
- }
- .social__item {
- 	margin-right: 10px;
- 	align-self: flex-start;
- }
+@import 'common/media';

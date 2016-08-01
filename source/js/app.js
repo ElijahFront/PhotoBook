@@ -344,29 +344,119 @@
     });
 }());
 
-  /*
-  * flip card
-  */
-  (function(){
-    //var
-        
-    $('#forgot').on('click', function(e){
+  // /*
+  // * flip card не допилено, допилить
+  // */
+  // (function(){
+
+
+  //   var forgot   = $('#forgot'),
+  //       enter    = $('#enter'),
+  //       enter_r  = $('#enter_r'),
+  //       registr  = $('#registr'),
+  //       flipElem = $('.flip'),
+  //       blocks   = flipElem.find('.block');
+
+
+  //       // function flip card
+  //   var _flip = function(btn) {
+
+  //     btn.on('click', function(e){
+
+  //   //var
+
+  //   $('#forgot').on('click', function(e){
+
+  //       e.preventDefault();
+
+  //       // if clicked button registr or forgot
+  //       //find block with suitable data-id, show this and add
+  //       // class flip_back
+
+  //       if(btn.selector === ('#registr')||('#forgot')){
+  //           $.each(blocks, function(index, val) {
+  //               var block = $(val);
+
+  //               if(btn.selector !== block.data('id')){
+  //                   console.log('yes' + block);
+  //                   block.css('opacity', '0','fast');
+  //               };
+  //           });
+
+
+  //       };
+
+
+  //       flipElem.toggleClass('flipping');
+
+  //      });
+  //   };
+
+
+//     _flip(forgot);
+//     _flip(enter);
+//     _flip(enter_r);
+//     _flip(registr);
+//
+// })();
+
+/*
+ * Открытие окна добавления фото
+ */     //todo пока закоментил, так как необявленная функция и вообще есть вопросы
+
+// (function () {
+//
+//     $('#add__photo_alb').on('click', function (e) {
+//         e.preventDefault();
+//         var window = $('.add_photos');
+//
+//         if (window.hasClass('close')){
+//             window.removeClass('close');
+//         }
+//     });
+//     $('#close__adding_photo').on('click', function (e) {
+//         e.preventDefault();
+//         var window = $('.add_photos');
+//
+//
+//         $('#enter').on('click',_unflip);
+//
+//         if (!window.hasClass('close')){
+//             window.addClass('close');
+//         }
+//     })
+//
+// }());
+
+
+
+/*
+ * подзагрузка фотографий с сервера
+ */
+
+(function () {
+    var startn = 1,
+        stepn = 1;
+
+    $('.news__more').click(function (e) {
         e.preventDefault();
-
-        var elems =$('.flip').addClass('flipping');
-
-    $('#enter').on('click',_unflip);
-
-            
-     var _unflip= function(e) {
-            e.preventDefault();
-            
-            elems.removeClass('flipping');
+        console.log(startn);
+        $.ajax({
+            type: "POST",
+            url: "/more",
+            data: {
+                startn: startn,
+                stepn: stepn
+            },
+            success: function (data) {
+                startn = startn + stepn;
+                $('.news__list').append(data);
             }
-        }); 
-  //  });
-})();
+        });
+    });
+}());
 
+    
 
 /*
  * Показывание окна добавления фото
@@ -391,10 +481,10 @@
  */
 
 (function () {
-    
+
     $('#add__ph__save').on('click', function (e) {
         e.preventDefault();
-        
+
         var data = new FormData($('#add_photo_form')[0]);
         var href = window.location.href;
         var alID = href.split("");
@@ -403,14 +493,14 @@
         //console.log(alID);
         alID = alID.join("");
         console.log(alID);
-        
+
         $.ajax({
-            type:'POST',
-            url:'/albums/' + alID + '/addPhoto',
+            type: 'POST',
+            url: '/albums/' + alID + '/addPhoto',
             data: data,
             processData: false,
             contentType: false
         })
     })
-    
+
 }());

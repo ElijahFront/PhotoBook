@@ -1,12 +1,14 @@
 include common/_mixins
 include common/_body_head
 	.wraper
+
 		.container
 			.main_content			
 				.header__album(style="background-image:url(/my-uploads/photos/#{cover})")
+
 					header.header
-						.main__container
-							.header__content
+						.header__content
+							.main__container
 								.header__user
 									.user
 										.user__ava
@@ -34,6 +36,7 @@ include common/_body_head
 										.stat__photo Комментария
 										.stat__photo__count 4
 
+
 								//.stat__album__title
 								//	+user('Антон Черепов','us.jpg')
 								//	.album__title Лесные прогулки
@@ -41,10 +44,12 @@ include common/_body_head
 								//	a.header__btn.header__btn_l(href='/main') На главную
 								//				+icon('home','svg-home-dims')
 
+
 				section.albums__photos
 						.main__container
 							.albums__photos__title
-								a.add__albums#add_new_photo(href='#') Добавить
+								a.add__albums#add__photo_alb(href='#') Добавить
+
 									+icon('add','svg-add-dims')
 							ul.albums__photos__list
 								if photos
@@ -70,4 +75,5 @@ include common/_body_head
 		include common/_edit_header
 		include common/_add_photos
 		include common/_edit_photo
+		include common/preloader
 	include common/_scripts

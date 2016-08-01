@@ -1,11 +1,10 @@
 include common/_mixins
 include common/_body_head
 	.wraper
-		.container
 			.main_content
 					header.header_search
-						.main__container
-							.header__title
+						.header__title
+							.main__container
 								h1.section_title_s Исследуй мир
 								a.header__btn.header__btn_l(href='/main') На главную
 												+icon('home','svg-home-dims')
@@ -50,8 +49,6 @@ include common/_body_head
 															+icon('album','svg-album-dims')
 										else
 											p Найдено 0 фотографий
-											
-
 
 								//h2.result__title По запросу "Природа" найдено 0 альбомов
 								.albums
@@ -73,7 +70,7 @@ include common/_body_head
 												p Найдено 0 альбомов
 
 
-			
 			include common/_footer
+include common/preloader
 include common/_scripts
 

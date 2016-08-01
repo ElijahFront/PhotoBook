@@ -27,3 +27,10 @@ mixin userH(name,name_photo)
 		.user__ava_h
 				img.user__ava__img(src='./assets/img/users/'+'#{name_photo}')
 		.user__name #{name}		
+
+mixin modalMessage(message)
+	.modal
+		.overlay
+		.modal__form
+			.modal__message heklks;dfs
+			a#modal_close(href='#'): +icon('close','svg-close-dims')
