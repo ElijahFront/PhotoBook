@@ -402,7 +402,9 @@
 
 /*
  * Открытие окна добавления фото
+
  */     //todo пока закоментил, так как необявленная функция и вообще есть вопросы
+
 
 // (function () {
 //
@@ -418,9 +420,11 @@
 //         e.preventDefault();
 //         var window = $('.add_photos');
 //
+
 //
 //         $('#enter').on('click',_unflip);
 //
+
 //         if (!window.hasClass('close')){
 //             window.addClass('close');
 //         }
@@ -435,8 +439,10 @@
  */
 
 (function () {
-    var startn = 1,
-        stepn = 3;
+
+    var startn = 6,
+        stepn = 1;
+
 
     $('.news__more').click(function (e) {
         e.preventDefault();
