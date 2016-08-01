@@ -436,7 +436,7 @@
 
 (function () {
     var startn = 1,
-        stepn = 1;
+        stepn = 3;
 
     $('.news__more').click(function (e) {
         e.preventDefault();
