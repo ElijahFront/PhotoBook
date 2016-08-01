@@ -359,37 +359,37 @@
   //   };
 
 
-    _flip(forgot);
-    _flip(enter);
-    _flip(enter_r);
-    _flip(registr);
-
-})();
+//     _flip(forgot);
+//     _flip(enter);
+//     _flip(enter_r);
+//     _flip(registr);
+//
+// })();
 
 /*
  * Открытие окна добавления фото
  */
 
-(function () {
-
-    $('#add__photo_alb').on('click', function (e) {
-        e.preventDefault();
-        var window = $('.add_photos');
-
-        if (window.hasClass('close')){
-            window.removeClass('close');
-        }
-    });
-    $('#close__adding_photo').on('click', function (e) {
-        e.preventDefault();
-        var window = $('.add_photos');
-
-        if (!window.hasClass('close')){
-            window.addClass('close');
-        }
-    })
-
-}());
+// (function () {
+//
+//     $('#add__photo_alb').on('click', function (e) {
+//         e.preventDefault();
+//         var window = $('.add_photos');
+//
+//         if (window.hasClass('close')){
+//             window.removeClass('close');
+//         }
+//     });
+//     $('#close__adding_photo').on('click', function (e) {
+//         e.preventDefault();
+//         var window = $('.add_photos');
+//
+//         if (!window.hasClass('close')){
+//             window.addClass('close');
+//         }
+//     })
+//
+// }());
 
 
 /*
@@ -397,7 +397,7 @@
  */
 
 (function () {
-    var startn = 1,
+    var startn = 6,
         stepn = 1;
 
     $('.news__more').click(function (e) {
