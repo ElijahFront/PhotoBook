@@ -33,13 +33,11 @@ module.exports = function (app) {
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));
-    //app.get('/user/:id', require('./users').get);
-    //app.get('/albums/:album', checkAuth, require('./albums').get);
-    app.get('/search', checkAuth, require('./render'));
-    //app.get('/album', checkAuth, require('./render'));
+    app.get('/user/:id', require('./users').get);
+    app.get('/albums/:album', checkAuth, require('./albums').get);
     app.get(['/', '/index'], require('./render'));
-    //app.get('/albums/:id', require('./albums'));
-    //app.get('/search/:query', require('./search'));
+    app.get('/search/:query', require('./search'));
+    app.get('albums/:album/editPhoto#:id', require('./editPhoto'));
 
     app.route('/repass')
         .get(require('./repassGet'))

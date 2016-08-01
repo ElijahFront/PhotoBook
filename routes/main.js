@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
             userBack = user.backgroundPath,
             userAlbums = user.albums;
 
-        Photo.find({}, function (err, photos) {
+        Photo.find({}, null, {  limit: 6 }, function (err, photos) {
             if (err) {
                 return next(err);
             } else {
@@ -56,7 +56,7 @@ module.exports = function (req, res, next) {
                         cover: userBack,
                         photos:ph
                     });
-                    // console.log(userName);
+
                 }
             }
         });
