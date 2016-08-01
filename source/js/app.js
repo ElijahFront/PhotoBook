@@ -441,7 +441,7 @@
 (function () {
 
     var startn = 6,
-        stepn = 1;
+        stepn = 6;
 
 
     $('.news__more').click(function (e) {
@@ -470,7 +470,7 @@
 
 (function () {
 
-    $('#add_new_photo').on('click', function (e) {
+    $('#add__photo_alb').on('click', function (e) {
         e.preventDefault();
 
         var window = $('.add_photos');
