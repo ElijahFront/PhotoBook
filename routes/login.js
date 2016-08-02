@@ -14,7 +14,7 @@ exports.post = function (req, res, next) {
 
     
     User.findOne({login:login}, function (err, user) {
-        console.log(user);
+        //console.log(user);
         if (err) return next(err);
         if (user){
             console.log('smth found');

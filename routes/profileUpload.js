@@ -10,11 +10,17 @@ exports.post = function (req, res, next) {
 
     var id = req.session.user,
         avatar = req.files[0],
-        avatarPath = req.files[0].filename,
+        //avatarPath = req.files[0].filename,
         background = req.files[1],
-        backgroundPath = req.files[1].filename,
+        //backgroundPath = req.files[1].filename,
         username = req.body.edit__profile_inp[0],
         userInfo = req.body.edit__profile_inp[1];
+    if (avatar){
+        var avatarPath = req.files[0].filename
+    }
+    if (background){
+        var backgroundPath = req.files[1].filename
+    }
 
     console.log('username: '+username + ', userInfo: '+userInfo);
 

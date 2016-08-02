@@ -35,8 +35,8 @@ module.exports = function (app) {
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));
-    app.get('/user/:id', require('./users').get);
-    app.get('/albums/:album', checkAuth, require('./albums').get);
+    app.get('/user/:id', require('./users'));
+    app.get('/albums/:album', checkAuth, require('./albums'));
     app.get(['/', '/index'], require('./render'));
     app.get('/search/:query', require('./search'));
     app.get('/albums/:album/editPhoto#:id', require('./editPhoto'));
