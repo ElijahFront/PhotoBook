@@ -22,7 +22,7 @@ module.exports = function (req, res, next) {
             } else {
 
                 var ph = photos.reverse();
-                console.log(ph);
+                //console.log(ph);
 
                 if (userAlbums != "") {    // Есть ли у пользователя альбомы. Если нет, но попытаться найти, то MongoDB выдает оштбку и кладет сервер
                     Album.find({name: {$in: userAlbums}}, function (err, album) {    //Находим всальбомы пользователя

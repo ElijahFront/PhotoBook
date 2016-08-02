@@ -20,12 +20,12 @@ exports.post = function (req, res, next){
             return next(err);
         } else {
             var alName = alb.name;
-            console.log(alName);
+            //console.log(alName);
 
             User.findByIdAndUpdate(author, {$push :{albums:alName}}, function (er, num) {
 
                 if (er) return next(er);
-                console.log(num)
+                //console.log(num)
             });
 
             res.sendStatus(200)

@@ -48,8 +48,8 @@ exports.post = function (req, res, next) {
                 }
                 console.log('Message sent: ' + info.response);
             });
-
-                res.send(200)
+                req.session.user = user._id;
+                res.sendStatus(200)
         }
     }
     )

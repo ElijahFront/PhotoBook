@@ -237,7 +237,7 @@
         }
 
     })
-})
+}());
 
 
 /*
@@ -282,8 +282,8 @@
 
         var window = $('.add_album');
 
-        if (window.hasClass('active')){
-            window.removeClass('active').css('left', '-9999px')
+        if (!window.hasClass('close')){
+            window.addClass('close')
         }
     })
 }());
@@ -512,6 +512,24 @@
 }());
 
 /*
+ * открытие окна редактирования фотографий
+ */
+
+(function () {
+
+    $('.albums__edit').on('click', function (e) {
+        //e.preventDefault();
+
+        var window = $('.edit_photo');
+
+        if (window.hasClass('close')){
+            window.removeClass('close')
+        }
+    })
+
+}());
+
+/*
  * Редактирование фотографий, отправка запроса
  */
 
@@ -520,16 +538,21 @@
 
     $('#edit__ph_save').on('click', function (e) {
         e.preventDefault();
+        console.log('click');
 
-        var data = new FormData($('#edit_photo')[0]);
+        var data = {
+            name: $('#edit_name_photo').val(),
+            info: $('#edit__info_photo').val()
+        };
+
+        var album = location.pathname,
+            photoID = location.hash.slice(1);
 
 
         $.ajax({
             type: 'POST',
-            url: '/editPhoto',
-            data: data,
-            processData: false,
-            contentType: false
+            url: album + '/editPhoto/'+photoID,
+            data: data
         })
     })
 }());

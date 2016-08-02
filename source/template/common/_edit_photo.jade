@@ -1,6 +1,6 @@
 .edit_photo.close
 	.overlay
-	form.modal__form#edit_photo(name='edit_photo' enctype='multipart/form-data')
+	form.modal__form#edit_photo_form(name='edit_photo' enctype='multipart/form-data')
 				
 				.add_album__caption
 					h2.section_title Редактировать фотографию
@@ -14,7 +14,7 @@
 					
 					.add_album__desc
 						span.add_album__span Описание
-						textarea.add_album__textarea#addAlbumDesc(name='addAlbumDesc') Описание фотографии может быть с #хештегами. Чтобы было красиво описание должно быть на несколько строк. Убедитесь сами!
+						textarea.add_album__textarea#edit__info_photo(name='edit__info_photo') Описание фотографии может быть с #хештегами. Чтобы было красиво описание должно быть на несколько строк. Убедитесь сами!
 														
 				.add_album__btn
 					.add_album__btn__block
