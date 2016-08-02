@@ -8,10 +8,9 @@ module.exports = function (req, res, next){
         photoPrev,
         photoNext;
 
-
     Photo.find( { } , function (err, photo) {
         if (err) return next(err);
-        //console.log(photo);
+
         photo.find(function(element, index, array) {
             if (element._id == photoID) {
                 photoN = index;
@@ -29,14 +28,21 @@ module.exports = function (req, res, next){
             photoNext = 0;
         }
 
-        var albumID =  photo[photoN].album;
+
+        var imgName = photo[photoN].name;
+        var imgInfo = photo[photoN].info;
+        var imgLikes = photo[photoN].likes.length;
+        var imgPath = photo[photoN].photoLink;
+
+        var albumID = photo[photoN].album;
+
 
         Album.findOne( { _id : albumID }, function (err, album) {
             if (err) return next(err);
-            var albumName = album.name,
-                albumInfo = album.description,
-                albumCover = album.coverID,
-                user = album.author;
+            // var albumName = album.name,
+            //     albumInfo = album.description,
+            //     albumCover = album.coverID,
+            var user = album.author;
 
 
             User.findById(user, function (e, u) {
@@ -45,25 +51,20 @@ module.exports = function (req, res, next){
                 var uName = u.name,
                     uAva = u.avaPath;
 
-                    res.render('photo', {
-                        imgName: photo[photoN].name,
-                        imgInfo: photo[photoN].info,
-                        imgLikes: photo[photoN].likes.length,
-                        imgPath: photo[photoN].photoLink,
+                res.set('views', './build');
+                res.render('photo', {
+                    imgName: imgName,
+                    imgInfo: imgInfo,
+                    imgLikes: imgLikes,
+                    imgPath: imgPath,
 
-                        userName:uName,
-                        userAva:uAva,
+                    userName:uName,
+                    userAva:uAva,
 
-                        nextImgPath: photo[photoNext]._id,
-                        prevImgPath: photo[photoPrev]._id
-                    })
+                    nextImgPath: "/photo/" + photo[photoNext]._id,
+                    prevImgPath: "/photo/" + photo[photoPrev]._id
+                });
             });
-
         });
-
-
-
-
-
     });
 };
