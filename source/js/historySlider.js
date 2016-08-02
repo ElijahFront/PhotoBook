@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".news__mask").click(function (e) {
-        console.log('click');
+
         e.preventDefault();
         var href = $(this).attr('href');
         historyClick(href);
