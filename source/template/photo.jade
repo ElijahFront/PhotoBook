@@ -9,11 +9,11 @@ include common/_body_head
                 //==========photo section==========
             section.photo_section
                 .photos__wrap
-                    a.history.arrow_left.svg-arrow_left-dims(href="#{prevImgPath}")
-                        +icon('','svg-arrow_left-dims')
-                    img.photo(src='#{imgPath}')
-                    a.history.arrow_right.svg-arrow_right-dims(href="#{nextImgPath}")
-                        +icon('','svg-arrow_right-dims')
+                    a.history.slider_control(href='#{nextImgPath}')
+                        +icon('arrow_left','svg-arrow_left-dims')
+                    img.photo(src='./assets/img/photos/ph1_big.jpg')
+                    a.history.slider_control(href='#{prevImgPath}')
+                        +icon('arrow_right','svg-arrow_right-dims')
                 .photos__after
 
                     +user( userName, userAva )
