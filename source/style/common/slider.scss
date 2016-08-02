@@ -1,0 +1,166 @@
+
+
+.slider{
+	width: 675px;
+	background-color: #fff;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 110;
+	 
+	 .svg-close-dims {
+		 	width: 25px;
+		 	height: 25px;
+		 	position: absolute;
+		 	top: -26px;
+		 	right: -68px;
+	 }
+}
+
+.photos__wrap {
+	width: 675px;	
+	position: relative;
+
+	.svg-arrow_left-dims {
+		position: absolute;
+		top: 49%;
+		left: -64px;
+	}
+	.svg-arrow_right-dims {
+		position: absolute;
+		top: 49%;
+		right: -64px;
+	}
+}
+
+
+.photo {
+	width: 100%;
+	height: 100%;
+}
+
+
+.photos__after {
+	padding: 20px 20px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.user {
+	display: flex;
+	margin: 0;
+		
+}
+
+.user__ava,
+.user__ava_h {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin:  0 20px 0 0;
+}
+.user__ava__img {
+	width: 100%;
+	height: 100%;
+	// max-width: 50px;
+	// max-height: 50px;
+}
+
+.user__name {
+	color: #323232;
+	font-family: 'pantonbold';
+	
+}
+.comments__title{
+	font-family: 'proxima_nova_ltsemibold';
+	padding: 10px 20px 0;
+		.svg-arrow_right-dims {
+			transform: rotate(90deg);
+			fill: #cfcfcf;
+			margin-bottom: -2px;
+			margin-left: 5px;
+			width: 15px;
+			height: 15px;
+		}
+}
+.comments_photo {
+	background-color: #f6f6f6;
+	
+}
+
+.comments__add__input {
+	width: 75%;
+	padding: 10px;
+	border-radius: 20px;
+}
+.photos__like {
+ border-radius: 20px;
+ background-color: $colRed; 
+ padding: 8px 15px 10px 50px;
+ color: #fff;
+ font-family: 'pantonbold';
+ height: 40px;
+ width: 85px;
+ position: relative;
+
+ 		.svg-heart-dims{
+ 			position: absolute;
+ 			top: 28%;
+ 			left: 18px;
+ 		}
+ 		&:hover {
+ 			background-color: $colDarkRed; 
+ 		}
+  } 
+
+
+  .photos__desc__block {
+  	padding: 0 20px 30px;
+  }
+
+  .photos__name {
+  	font-size: 1.3125rem;
+  	font-family: 'proxima_nova_ltsemibold';
+  	margin-bottom: 10px;
+  }
+
+.comments__add {
+	padding: 10px 20px 15px;
+	display: flex;
+	.user {
+		margin-left: 50px;
+	}	
+}
+#comments_add_form,
+.comments__block {
+		flex: 1;
+		display: flex;
+		flex-direction: column;	
+		align-items: flex-start;	
+	}
+
+.comments__author {
+	font-family: 'proxima_nova_ltsemibold';
+	margin-bottom: 10px;
+}	
+
+.comments__add__input {
+	border: 1px solid #d8d6d6;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.comments__item {
+	padding: 15px 20px;
+	border-top: 1px solid #e1e1e1;
+	display: flex;
+	 .user{
+	 	margin-left: 55px;
+	 }
+}
+
+.comments__list {	
+	padding-bottom: 20px;
+	}

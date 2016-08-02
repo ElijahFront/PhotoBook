@@ -1,0 +1,92 @@
+.svg-soc_vk-dims,
+.svg-soc_fb-dims,
+.svg-soc_twitter-dims,
+.svg-social_google-dims,
+.svg-soc_email-dims     {
+	fill: rgba(#fff,.6);
+	width: 20px;
+	height: 20px;
+	transition: 0.3;
+	 &:hover {
+	 	fill: #fff;
+	 }
+
+}
+
+.svg-search-dims,
+.svg-home-dims,
+.svg-edit-dims,
+.svg-off-dims,
+.svg-add-dims {
+	fill: $colGray;
+	width: 20px;
+	height: 20px;
+}
+
+.svg-envelope-dims,
+.svg-password-dims,
+.svg-name-dims 			{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: 30%;
+	left: 7%;
+	fill: #c9c9c9;
+}
+
+.svg-arrow_left-dims,
+.svg-arrow_right-dims,
+.svg-close-dims {
+	width: 30px;
+	height: 30px;
+	fill: $colGray;
+	&:hover {
+		fill: #fff;
+	}
+	
+}
+
+.svg-cam-dims {
+	width: 40px;
+	height: 40px;
+	fill: rgba(#fff,.8);
+}
+.svg-top-dims {
+	width: 30px;
+	height: 30px;
+	fill: rgba(#fff,.6);
+	&:hover {
+		fill: #fff;
+	}					
+
+}
+
+.svg-comments-dims,
+.svg-like-dims,
+.svg-album-dims {
+	fill: #d6d6d6;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.svg-loupe-dims{
+	fill: transparent;
+	width: 45px;
+	height: 45px;
+	margin-top: 25%;
+}
+.svg-more-dims {
+	width: 20px;
+	height: 10px;
+	fill: transparent;
+	margin-top: 18px;
+}
+
+.svg-heart-dims,
+.svg-delete-dims {
+  width: 20px;
+	height: 20px;
+	fill: #fff;
+
+}

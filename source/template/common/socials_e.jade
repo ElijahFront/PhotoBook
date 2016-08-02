@@ -1,0 +1,46 @@
+ul.social__block
+	li.social__item
+		a.social__link(href="https://vk.com") vk
+			+icon('soc_vk','svg-soc_vk-dims')
+		.popup__item
+			form.popup__form#vk_popup
+				input.popup__input(name='vk_pop' type='text')
+				button.popup__btn(name='save_pop' type='submit') Сохранить
+				button.popup__btn(name='reset_pop' type='reset') Отменить
+				
+	li.social__item
+		a.social__link(href="https://facebook.com") facebook
+			+icon('soc_fb','svg-soc_fb-dims')
+		.popup__item
+			form.popup__form#fb_popup
+				input.popup__input(name='fb_pop' type='text')
+				button.popup__btn(name='save_pop' type='submit') Сохранить
+				button.popup__btn(name='reset_pop' type='reset') Отменить
+
+	li.social__item
+		a.social__link(href="https://twitter.com") twitter
+			+icon('soc_twitter','svg-soc_twitter-dims')
+		.popup__item
+			form.popup__form#tw_popup
+				input.popup__input(name='tw_pop' type='text')
+				button.popup__btn(name='save_pop' type='submit') Сохранить
+				button.popup__btn(name='reset_pop' type='reset') Отменить
+
+	li.social__item
+		a.social__link(href="https://plus.google.com") google+
+			+icon('social_google','svg-social_google-dims')
+		.popup__item
+			form.popup__form#google_popup
+				input.popup__input(name='google_pop' type='text')
+				button.popup__btn(name='save_pop' type='submit') Сохранить
+				button.popup__btn(name='reset_pop' type='reset') Отменить
+
+	li.social__item
+		a.social__link(href="#") email
+			+icon('soc_email','svg-soc_email-dims')
+		.popup__item
+			form.popup__form#mail_popup
+				input.popup__input(name='mail_pop' type='text')
+				button.popup__btn(name='save_pop' type='submit') Сохранить
+				button.popup__btn(name='reset_pop' type='reset') Отменить
+

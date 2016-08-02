@@ -1,0 +1,69 @@
+include common/_mixins
+include common/_body_head
+	.wraper
+			.main_content
+					header.header_search
+						.header__title
+							.main__container
+								h1.section_title_s Исследуй мир
+								a.header__btn.header__btn_l(href='./main.html') На главную
+												+icon('home','svg-home-dims')
+						.search.search_s
+							.main__container
+								+user('Антон Черепов','us.jpg')
+								.search__form_wrap
+									form.search__form
+										input.search__input(name='search' type='text' placeholder='Исследовать мир')
+										button.search__btn(name='search_btn' type='submit')
+											+icon('search','svg-search-dims')
+								
+									a.search_new(href='#') Показать новые
+
+					section.search__result
+						.main__container
+							.result
+								h2.result__title По запросу "Природа" найдено 0 результатов
+								.news
+									ul.news__list
+											li.news__item
+										.news__block
+											.news__img__wrap
+												img.news__img(src='http://lorempixel.com/400/50')
+												a.news__mask(href='#') посмотреть фото
+													+icon('loupe','svg-loupe-dims')
+											.news__desc
+												.news__author
+													img.news__author__img(src='./assets/img/users/ph_us1.jpg')
+													a.news__author__mask(href='./user.html') о пользователе
+														+icon('more','svg-more-dims')
+														
+												.other
+													.news__img__name Путешествие на лодке по озеру
+													+comments_likes(9,25)
+											.news__album
+												a.news__album__name(href='#') Прогулки по воде
+												+icon('album','svg-album-dims')
+											
+
+
+								h2.result__title По запросу "Природа" найдено 0 альбомов
+								.albums
+										ul.albums__list
+											li.albums__item
+													.albums__block
+														.albums__img__wrap
+															img.albums__img(src='../assets/img/photos/ph1.jpg')
+														.albums__name
+																.albums__name__title бла-бла
+																a.albums__edit(href='#') редактировать альбом
+																	+icon('edit','svg-edit-dims')
+														a.albums__desc(href='./albums/')
+																.albums__about 
+																.albums__amount_photo  фотографий
+
+
+			
+			include common/_footer
+include common/preloader
+include common/_scripts
+

@@ -1,0 +1,21 @@
+$colBlue: #28bbef;
+$colGray: #848484;
+$colDarkRed: #d94130;
+$colRed: #ee4634;
+
+
+@import 'common/mixin';
+@import 'common/fonts'; 
+@import 'common/adjustment';
+@import 'common/login';
+@import 'common/main';
+@import 'common/slider';
+@import 'common/edit_header';
+@import 'common/album';
+@import 'common/icons';
+@import 'common/search';
+@import 'common/add_album';
+@import 'common/add_photo';
+@import 'common/edit_photo';
+@import 'common/flip';
+@import 'common/media';
