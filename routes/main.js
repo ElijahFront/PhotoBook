@@ -6,7 +6,6 @@ module.exports = function (req, res, next) {
     res.type('html');
 
     var id = req.session.user;
-
     User.findOne({_id:id}, function (err, user) {
         if (err) return next(err);
 

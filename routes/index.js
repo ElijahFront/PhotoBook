@@ -24,7 +24,7 @@ var createAlb = multer({ storage: albStorage });
 
 
 module.exports = function (app) {
-    app.post('/login', checkAuth,  require('./login').post);
+    app.post('/login', require('./login').post);
     app.post('/logout', checkAuth, require('./logout').post);
     app.post('/signUp', require('./signup').post);
     app.post('/profileUpload', uploadUser.array('inputs__names'), require('./profileUpload').post);
