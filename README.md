@@ -1,4 +1,5 @@
-# PhotoBook
+PhotoBook Front-End
+
 
 Getting started:
 

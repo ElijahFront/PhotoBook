@@ -13,7 +13,9 @@ include common/_body_head
 							ul.albums__list
 								if albums
 									each album in albums
+
 										li.albums__item
+
 											.albums__block
 												.albums__img__wrap
 													img.albums__img(src='./my-uploads/photos/#{album.coverID}')
