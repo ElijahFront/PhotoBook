@@ -510,3 +510,25 @@
     })
 
 }());
+
+/*
+ * Редактирование фотографий, отправка запроса
+ */
+
+(function () {
+
+
+    $('#edit__ph_save').on('click', function (e) {
+        e.preventDefault();
+
+        var data = new FormData($('#edit_photo')[0]);
+
+        $.ajax({
+            type: 'POST',
+            url: 
+            data: data,
+            processData: false,
+            contentType: false
+        })
+    })
+}());

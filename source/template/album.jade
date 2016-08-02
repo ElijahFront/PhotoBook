@@ -62,8 +62,9 @@ include common/_body_head
 														a.news__mask(href='#') посмотреть фото
 															+icon('loupe','svg-loupe-dims')
 												.albums__photos__name__wrap
-													a.albums__edit(href='#') редактировать
-														+icon('edit','svg-edit-dims')
+													if editPh
+														a.albums__edit(href='#') редактировать
+															+icon('edit','svg-edit-dims')
 													.albums__photos__name #{photo.name}
 								else
 									p Нет фотографий
