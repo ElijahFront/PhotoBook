@@ -31,17 +31,16 @@ module.exports = function (app) {
     app.post('/createAlbum', createAlb.array('addAlbum'), require('./newAlbum').post);
     app.post('/more', require('./more').post);
     app.post('/albums/:id/addPhoto', createAlb.single('add_photo'), require('./newPhoto').post);
+    app.post('/editPhoto', require('./editPhoto'));
 
     app.get(['/confirm/:conf'], require('./confirm'));
     app.get('/main', checkAuth, require('./main'));
-    app.get('/user/:id', require('./users'));
-    app.get('/albums/:album', checkAuth, require('./albums'));
-    app.get('/search', checkAuth, require('./render'));
-    //app.get('/album', checkAuth, require('./render'));
+    app.get('/user/:id', require('./users').get);
+    app.get('/albums/:album', checkAuth, require('./albums').get);
     app.get(['/', '/index'], require('./render'));
+    app.get('/search/:query', require('./search'));
+    app.get('/albums/:album/editPhoto#:id', require('./editPhoto'));
 
-    //app.get('/albums/:id', require('./albums'));
-    //app.get('/search/:query', require('./search'));
 
 
     // app.route('/repass')

@@ -37,21 +37,50 @@ exports.post = function (req, res, next) {
         },
         function (callback) {
             console.log('updating function');
-            User.update({_id: id}, {
 
-                    avaPath:avatarPath,
-                    backgroundPath:backgroundPath,
-                    name:username,
-                    userInfo:userInfo},
-                function (err, success) {
-                    if (err) return next(err);
-                    console.log('updating succeed')
+            // User.update({_id: id}, {
+            //
+            //         avaPath:avatarPath,
+            //         backgroundPath:backgroundPath,
+            //         name:username,
+            //         userInfo:userInfo},
+            //     function (err, success) {
+            //         if (err) return next(err);
+            //         console.log('updating succeed')
+
+            if (avatarPath && backgroundPath){
+                User.update({_id: id}, {
+                        avaPath:avatarPath,
+                        backgroundPath:backgroundPath,
+                        name:username,
+                        userInfo:userInfo},
+                    function (err) {
+                        if (err) return next(err);
+                        console.log('updating succeed')
+
                 });
-
+            } else if (!backgroundPath){
+                User.update({_id: id}, {
+                        avaPath:avatarPath,
+                        name:username,
+                        userInfo:userInfo},
+                    function (err) {
+                        if (err) return next(err);
+                        console.log('updating succeed')
+                    });
+            } else if (!avatarPath){
+                User.update({_id: id}, {
+                    name: username,
+                    userInfo: userInfo,
+                    backgroundPath: backgroundPath
+                },
+                    function (err) {
+                        if (err) return next(err);
+                        console.log('updating succeed')
+                    });
+            }
         }
     ]);
-
-    // console.log(req.files);
     res.end()
 
 };

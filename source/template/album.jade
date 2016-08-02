@@ -72,7 +72,8 @@ include common/_body_head
 			.footer__album(style="background-image:url(/my-uploads/photos/#{cover})")
 				include common/_footer
 
-		include common/_slider
+		if photos
+			include common/_slider
 		include common/_edit_header
 		include common/_add_photos
 		include common/_edit_photo
