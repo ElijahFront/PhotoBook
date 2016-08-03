@@ -58,7 +58,7 @@ $(document).ready(function() {
 		// Показываем обасть предпросмотра
 		$('#uploaded-holder').show();
 		$('.add_photos__wrap').hide();
-		$('#dropped-files').show();
+		$('#dropped-files').css('display', 'flex');
 
 		// Для каждого файла
 		$.each(files, function(index, file) {

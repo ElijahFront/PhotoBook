@@ -8,6 +8,10 @@ exports.post = function (req, res, next){
         imgName = req.body.add_photo,
         imgInfo = "Добавить описание для фотографий",
         imgLink = req.files[0].filename;
+    console.log(_idALBOM);
+    console.log(imgName);
+    console.log(imgInfo);
+    console.log(imgLink);
 
     var photo = new Photo({
         album: _idALBOM,

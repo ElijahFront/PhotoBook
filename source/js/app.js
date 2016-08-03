@@ -492,17 +492,11 @@
         e.preventDefault();
 
         var data = new FormData($('#add_photo_form')[0]);
-        var href = window.location.href;
-        var alID = href.split("");
-        //console.log(alID);
-        alID = alID.slice(29);
-        //console.log(alID);
-        alID = alID.join("");
-        console.log(alID);
+        var href = location.pathname;
 
         $.ajax({
             type: 'POST',
-            url: '/albums/' + alID + '/addPhoto',
+            url: href + '/addPhoto',
             data: data,
             processData: false,
             contentType: false

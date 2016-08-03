@@ -11,7 +11,7 @@ include common/_body_head
                 .photos__wrap
                     a.history.slider_control(href='#{nextImgPath}')
                         +icon('arrow_left','svg-arrow_left-dims')
-                    img.photo(src='./assets/img/photos/ph1_big.jpg')
+                    img.photo(src='/my-uploads/photos/#{imgPath}')
                     a.history.slider_control(href='#{prevImgPath}')
                         +icon('arrow_right','svg-arrow_right-dims')
                 .photos__after
@@ -24,7 +24,7 @@ include common/_body_head
                         .like__count #{imgLikes}
                 .photos__desc__block
                     .photos__name #{imgName}
-                    .photos__desc #{imgInfo}
+                    .photos__desc !{imgInfo}
 
     script(src="http://code.jquery.com/jquery-1.11.0.min.js")
     script(type='text/javascript').

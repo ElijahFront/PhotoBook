@@ -7,6 +7,7 @@ module.exports = function (req, res, next){
 
     var query = req.params.query,
         id = req.session.user;
+    console.log(query);
 
     User.findOne({_id:id}, function (er, us) {
        if (er) return next(er);

@@ -27,7 +27,7 @@ module.exports = function (app) {
     app.post('/login', require('./login').post);
     app.post('/logout', checkAuth, require('./logout').post);
     app.post('/signUp', require('./signup').post);
-    app.post('/profileUpload', uploadUser.array('inputs__names'), require('./profileUpload').post);
+    app.post('/profileUpload', uploadUser.array('edit__profile_inp'), require('./profileUpload').post);
     app.post('/createAlbum', createAlb.array('addAlbum'), require('./newAlbum').post);
     //app.post('/albums/:id/addPhoto', createAlb.single('addPhoto'), require('./newPhoto').post);
     app.post('/more', require('./more').post);
@@ -39,7 +39,7 @@ module.exports = function (app) {
     app.get('/user/:id', require('./users'));
     app.get('/albums/:album', checkAuth, require('./albums'));
     app.get(['/', '/index'], require('./render'));
-    app.get('/search/:query', require('./search'));
+    app.get(['/search/:query', '/search/#:query'], require('./search'));
     app.post('/albums/:album/editPhoto/:id', require('./editPhoto'));
 
     app.get('/photo/:photo', /*checkAuth,*/ require('./photo'));

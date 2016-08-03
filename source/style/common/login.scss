@@ -32,12 +32,12 @@
 	position: absolute;
 	top:0;
 	left:0;	
-	
+	display:none !important;
 }
 
 .block_active {
 position: static;
-
+display:flex !important;
 }
 
 .hello {

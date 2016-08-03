@@ -3,7 +3,7 @@ include common/_body_head
 		.wraper.wraper_login
 					.main_content
 						.flip
-							.block.block_active.flip_front
+							.block.block_active
 								.hello
 									h1.hello_title Добро пожаловать
 									p.hello_text Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
@@ -26,7 +26,7 @@ include common/_body_head
 										a.login__link#registr(href='#') Зарегистрироваться
 									
 									//форма для регистрации
-							.block(data-id='#registr').flip_back
+							.block(data-id='#registr')
 								.hello
 									h2.hello_title Регистрация	
 
@@ -52,7 +52,7 @@ include common/_body_head
 										a.login__link#enter(href='#') Войти
 
 									// форма для восстановления пароля
-							.block(data-id='#forgot').flip_back
+							.block(data-id='#forgot')
 								.hello
 									h2.hello_title Восстановление пароля
 

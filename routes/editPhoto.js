@@ -11,8 +11,7 @@ module.exports = function (req, res, next) {
         user = req.session.user;
 
     var searchRegExp = info.replace(/#\S+/g, "<a href='/search/$&'>$&</a>"); // Заменяем все слова, начинающиеся с # на ссылки
-
-   // var R = r.replace(/#\S+/, "<a href='/photo$&'>$&</a>" );  // памятка по регэкспу
+    var search = searchRegExp.replace(/search\/#/g, "search/");
 
     User.findOne({album:album}, function (err, foundUser) {
         if (err) return next(err);
@@ -20,7 +19,7 @@ module.exports = function (req, res, next) {
         //if (foundUser._id == user){
             Photo.update({_id: editPhoto}, {
                     name:name,
-                    info:searchRegExp
+                    info:search
                 },
                 function (e) {
                     if (e) return next(e);
