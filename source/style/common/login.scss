@@ -12,14 +12,14 @@
 }
 
 .footer_auth {
-	height: 120px;
+	height: 80px;
 	width: 100%;
 	padding-bottom: 20px;
 	display: flex;
 	align-items: flex-end;
 	text-align: center;
 	z-index: 2;
-	background-image: linear-gradient(to top,rgba(#000,.7),transparent);
+	background: linear-gradient(to top,rgba(#000,.7),transparent);
 
 		.copyright{
 			text-align: center;
@@ -32,6 +32,7 @@
 	position: absolute;
 	top:0;
 	left:0;	
+	width: 100%;
 	
 }
 

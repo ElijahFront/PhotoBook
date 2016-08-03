@@ -15,12 +15,12 @@ include common/_body_head
 									li.news__item
 										.news__block
 											.news__img__wrap
-												img.news__img(src='http://lorempixel.com/400/50')
+												img.news__img(src='./assets/img/photos/ph_us.png')
 												a.news__mask(href='#') посмотреть фото
 													+icon('loupe','svg-loupe-dims')
 											.news__desc
 												.news__author
-													img.news__author__img(src='./assets/img/users/ph_us1.jpg')
+													img.news__author__img(src='./assets/img/users/us1.jpg')
 													a.news__author__mask(href='./user.html') о пользователе
 														+icon('more','svg-more-dims')
 														
@@ -158,8 +158,10 @@ include common/_body_head
 				include common/_footer
 
 						// modal windows
-		include common/_slider
-		include common/_edit_header
-		include common/_add_album
-		include common/preloader
+	include common/preloader
+	include common/modal
+	include common/_slider
+	include common/_edit_header
+	include common/_add_album	
+	
 	include common/_scripts

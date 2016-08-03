@@ -1,32 +1,49 @@
+/*
+* функция вывода сообщения в модальном окне
+*/
+function modalMessage(mes){
+    var modal       = $('.modal'),
+        modText     = modal.find('.modal__text'),
+        btn_close   = modal.find('#modal_close');
+
+    modal.removeClass('close');
+    modText.text(mes);
+
+    btn_close.on('click',function(e){
+        e.preventDefault;
+        modal.addClass('close');
+
+    });
+};
 
 /*
 * Authorization blocks changing at the index page
  */
 
-(function () {
+// (function () {
     
-    $('#forgot').on('click', function (e) {
+//     $('#forgot').on('click', function (e) {
         
-        e.preventDefault();
+//         e.preventDefault();
 
-            $(this).parents('.block').removeClass('block_active');
+//             $(this).parents('.block').removeClass('block_active');
 
-            $('.block').eq(2).addClass('block_active');
+//             $('.block').eq(2).addClass('block_active');
         
-    });
+//     });
 
-    $('#registr').on('click', function (e) {
+//     $('#registr').on('click', function (e) {
 
-        e.preventDefault();
+//         e.preventDefault();
 
-        $(this).parents('.block').removeClass('block_active');
+//         $(this).parents('.block').removeClass('block_active');
 
-        $('.block').eq(1).addClass('block_active');
+//         $('.block').eq(1).addClass('block_active');
 
 
-    });
+//     });
     
-}());
+// }());
 
 /*
  * Logout requset
@@ -84,7 +101,7 @@
                 data: loginData,
                 statusCode:{
                     403: function () {
-                        alert('Неправильный логин/пароль, попробуйте снова')
+                       modalMessage('Неправильный логин/пароль, попробуйте снова')
                     },
                     200: function () {
                         window.location.href = '/main'
@@ -92,7 +109,8 @@
                 }
             })
         } else {
-            alert('Заполните все поля!')
+            //alert('Заполните все поля!')
+            modalMessage('Заполните все поля')
         }
 
     });
@@ -123,7 +141,8 @@
                 }
             })
         } else {
-            alert('Заполните все поля!')
+            //alert('Заполните все поля!')
+            modalMessage('Заполните все поля')
         }
 
     });
@@ -144,9 +163,9 @@
         if (log != "" && re.test(log)){
             sendXHR('/restore', loginData)
         } else if (log == "") {
-            alert('Заполните все поля!')
+            modalMessage('Заполните все поля!')
         }  else if (!re.test(log)) {
-            alert('Вы ввели некорректный email, попробуйте снова')
+            modalMessage('Вы ввели некорректный email, попробуйте снова')
         }
 
     });
@@ -310,61 +329,78 @@
     });
 }());
 
-  // /*
-  // * flip card не допилено, допилить
-  // */
-  // (function(){
+  /*
+  * flip card не допилено, допилить
+  */
+  (function(){
 
 
-  //   var forgot   = $('#forgot'),
-  //       enter    = $('#enter'),
-  //       enter_r  = $('#enter_r'),
-  //       registr  = $('#registr'),
-  //       flipElem = $('.flip'),
-  //       blocks   = flipElem.find('.block');
+    var forgot   = $('#forgot'),
+        enter    = $('#enter'),
+        enter_r  = $('#enter_r'),
+        registr  = $('#registr'),
+        flipElem = $('.flip'),
+        blocks   = flipElem.find('.block');
 
 
-  //       // function flip card
-  //   var _flip = function(btn) {
+        // function flip card
+    var _flip = function(btn) {
 
-  //     btn.on('click', function(e){
+      btn.on('click', function(e){
+  
+        e.preventDefault();
 
-  //   //var
-
-  //   $('#forgot').on('click', function(e){
-
-  //       e.preventDefault();
-
-  //       // if clicked button registr or forgot
-  //       //find block with suitable data-id, show this and add
-  //       // class flip_back
-
-  //       if(btn.selector === ('#registr')||('#forgot')){
-  //           $.each(blocks, function(index, val) {
-  //               var block = $(val);
-
-  //               if(btn.selector !== block.data('id')){
-  //                   console.log('yes' + block);
-  //                   block.css('opacity', '0','fast');
-  //               };
-  //           });
-
-
-  //       };
+        if (btn.selector === '#forgot'){
+             $.each(blocks, function(index, val) {
+                var block = $(val);
+                if(block.data('id')==='#registr'){
+                    block.hide('fast');
+                    console.log('rrrr');
+                };
+             });
+        };     
+        if (btn.selector === '#registr'){
+             $.each(blocks, function(index, val) {
+                var block = $(val);
+                if(block.data('id')==='#forgot'){
+                    block.hide('fast');
+                    console.log('ffff');
+                };
+             });
+        };  
 
 
-  //       flipElem.toggleClass('flipping');
+        flipElem.toggleClass('flipping');
 
-  //      });
-  //   };
+        if (btn.selector === '#enter'){
+             $.each(blocks, function(index, val) {
+                var block = $(val);
+                if(block.data('id')==='#forgot'){
+                    block.show('fast');
+                    console.log('ffff');
+                };
+             });
+        };   
+        if (btn.selector === '#enter_r'){
+             $.each(blocks, function(index, val) {
+                var block = $(val);
+                if(block.data('id')==='#registr'){
+                    block.show('fast');
+                    console.log('ffff');
+                };
+             });
+        };  
+
+       });
+    };
 
 
-//     _flip(forgot);
-//     _flip(enter);
-//     _flip(enter_r);
-//     _flip(registr);
-//
-// })();
+    _flip(forgot);
+    _flip(enter);
+    _flip(enter_r);
+    _flip(registr);
+
+})();
 
 /*
  * Открытие окна добавления фото
@@ -402,7 +438,7 @@
 
     $('.news__more').click(function (e) {
         e.preventDefault();
-        console.log(startn);
+        
         $.ajax({
             type: "POST",
             url: "/more",
@@ -419,3 +455,4 @@
     });
 
 }());
+

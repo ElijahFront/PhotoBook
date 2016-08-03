@@ -36,35 +36,6 @@
 		}
 }
 
-.load_note {
-	
-	width: 330px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;	
-	background-color: #fff;
-	overflow: hidden;
-	display: none;
-}
-
-.load_note__text {
-	padding: 20px;
-	font-family: 'proxima_nova_ltsemibold';	
-	font-size: 1.3125rem;
-}
-
-.load_note__btn {
-
-	background-color: #f1f1f1;
-	padding: 10px;
-	width: 100%;
-	text-align: center;
-	button {
-		background-color: #f1f1f1;
-	}
-}
-
 .add_photo__label {
 	padding-left: 5px;
 	color: $colBlue;

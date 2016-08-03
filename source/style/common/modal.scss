@@ -1,0 +1,83 @@
+//=================modal window==============
+ .overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(#000,.8);
+	z-index: 100;
+}
+
+ //=============preloader==================
+ .spiner{
+	@include centr_modal;
+	width: 200px;
+}
+.round {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #4d4b4b;
+	margin-right: 10px;
+	animation-name:bounce_circleG;		
+	animation-duration:0.9775s;		
+	animation-iteration-count:infinite;		
+	animation-direction:normal;		
+}
+
+.first{
+	animation-delay:0.39s;		
+}
+
+.second{
+	animation-delay:0.52s;		
+}
+
+.third{
+	animation-delay:0.65s;		
+}
+
+@keyframes bounce_circleG{
+	0%{
+		opacity: 1;
+		transform: scale(1.2);
+	}
+
+	50%{
+		opacity: 0.5;
+		transform: scale(1.2);
+	}
+
+	100%{
+		opacity: 0.2;
+		transform: scale(.7);
+	}
+}	
+	//========modal message window ======
+.modal__window {
+ 	@include centr_modal;
+ 	@include flex_col;
+ 	max-width: 330px;
+ 	background-color: #fff;
+ 	justify-content: center;
+ 	align-items: center;
+
+}
+ 
+.modal__text {
+	padding: 20px;
+	font-size: 1.3125rem;
+	font-family: 'proxima_nova_ltsemibold';
+	width: 330px;
+	text-align: center;	
+}
+
+
+.modal__close {
+	background-color: #f1f1f1;
+	padding: 5px;
+	width: 100%;
+	text-align: center;
+	
+}

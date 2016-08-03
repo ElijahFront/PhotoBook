@@ -1,7 +1,7 @@
 //===свойства для флипа================
 .flip {
   flex-basis: 550px;
-  flex-shrink: 2; 
+  flex-shrink: 1; 
   display: flex;
   position: relative;
   perspective: 1000px;    // задаем перспективу
@@ -10,6 +10,7 @@
 //  при добавлении класса разворачиваем оба элемента
 .flip.flipping .flip_back {   
   transform: rotateY(0deg);
+
   
 }
 .flip.flipping .flip_front {
@@ -18,6 +19,7 @@
 
 .flip_front, 
 .flip_back {
+  width: 550px;
   transition: 0.9s;  // скорость анимации
   backface-visibility: hidden; // при развороте скрываем заднюю сторону
   transform-style: preserve-3d; //  создаем трехмерное пространство
