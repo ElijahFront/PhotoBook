@@ -40,9 +40,9 @@ exports.post = function (req, res, next) {
                                 if (err) return next(err);
                                 if (photoUser){
 
-                                    html = html + '<li class="news__item"><div class="news__block"><img src="./my-uploads/photos/' +
+                                    html = html + '<li class="news__item"><div class="news__block"><div class="news__img__wrap"><img src="./my-uploads/photos/' +
                                         imgLink +
-                                        '" class="news__img"><a href="#" class="news__mask">посмотреть фото<svg role="img" class="svg-loupe-dims"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/svg-sprite.svg#loupe"></use></svg></a><div class="news__desc"><div class="news__author"><img src="'+
+                                        '" class="news__img"><a href="#" class="news__mask">посмотреть фото<svg role="img" class="svg-loupe-dims"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/svg-sprite.svg#loupe"></use></svg></a></div><div class="news__desc"><div class="news__author"><img src="'+
                                         photoUser.avaPath +
                                         '" class="news__author__img"><a href="/user/' +
                                         photoUser._id +

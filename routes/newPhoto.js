@@ -26,7 +26,7 @@ exports.post = function (req, res, next){
     console.log(req.files.length);
     req.files.forEach(function (file) {
         var _idALBOM = req.params.id,
-            imgName =  file.originalname,
+            imgName =  req.body.add_photo,
             imgInfo = "Добавить описание для фотографий",
             imgLink = file.filename;
 

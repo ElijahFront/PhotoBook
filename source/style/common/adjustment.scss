@@ -72,7 +72,7 @@ h1,h2 {
 	overflow: hidden;
 	margin: 0 auto;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100%;
 	@include  flex_col;	
 }
 
@@ -321,91 +321,7 @@ h1,h2 {
  }
 
 
- //=================modal window==============
- .modal__win,
- .spiner {
- 	position: fixed;
- 	top: 50%;
- 	left: 60%;
- 	transform: translate(-50%, -50%);
-	z-index: 110;	
-//	background-color: #fff;
-	border-radius: 5px;
-	overflow: hidden;
-	width: 300px;
-	padding: 25px;
-	display: flex;
-		.close_btn {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			z-index: 115;
-		}
-		.svg-close-dims {
-			width: 15px;
-			height: 15px;
-			&:hover {
-				float: $colGray;
-			}
-		}
- }
-
-.overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(#000,.8);
-	z-index: 100;
-}
-
-.close {
+ .close {
 	display: none;
-}
-.round {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	background-color: #4d4b4b;
-	margin-right: 10px;
-	animation-name:bounce_circleG;		
-	animation-duration:0.9775s;		
-	animation-iteration-count:infinite;		
-	animation-direction:normal;		
-}
-
-.first{
-	animation-delay:0.39s;
-	
-		
-}
-.second{
-	animation-delay:0.52s;
-	
-		
-}
-
-.third{
-	animation-delay:0.65s;
-		
-}
-
-
-@keyframes bounce_circleG{
-	0%{
-		opacity: 1;
-		transform: scale(1.2);
-	}
-
-	50%{
-		opacity: 0.5;
-		transform: scale(1.2);
-	}
-
-	100%{
-		opacity: 0.2;
-		transform: scale(.7);
-	}
 }
 

@@ -2,4 +2,5 @@
 
 module.exports = [
   './source/js/*.js'
+
 ];

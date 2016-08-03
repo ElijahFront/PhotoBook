@@ -262,7 +262,12 @@
 	width: 380px;
 	border-radius: 5px;
 	overflow: hidden;
+
 	position: relative;
+
+
+	
+
 }
 
 .news__img__wrap {
@@ -274,8 +279,12 @@
 }
 
 .news__img  {
-	width: 100%;
-	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
 	
 }
 

@@ -56,10 +56,13 @@ include common/_body_head
 												if editPh
 													a.albums__edit(href='##{photo._id}') редактировать
 														+icon('edit','svg-edit-dims')
+
 												.albums__photos__name #{photo.name}
 							else
 								p Нет фотографий
+
 		.footer__album(style="background-image:url(/my-uploads/photos/#{cover})")
+
 			include common/_footer
 		//if photos
 		include common/_slider
@@ -67,4 +70,20 @@ include common/_body_head
 		include common/_add_photos
 		include common/_edit_photo
 		include common/preloader
-	include common/_scripts
+		include common/_scripts
+
+//													.albums__photos__name #{photo.name}
+//								else
+//									p Нет фотографий
+//
+//			.footer__album
+//				include common/_footer
+//
+//		include common/modal
+//	include common/_add_photos
+//	include common/_slider
+//	include common/_edit_header
+//	include common/_edit_photo
+//	include common/preloader
+//>>>>>>> Front
+//	include common/_scripts

@@ -32,9 +32,10 @@ include common/_body_head
 											each photo in photos
 												li.news__item
 													.news__block
-														img.news__img(src='/my-uploads/photos/#{photo.photoLink}')
-														a.news__mask(href='#') посмотреть фото
-																+icon('loupe','svg-loupe-dims')
+														.news__img__wrap
+															img.news__img(src='/my-uploads/photos/#{photo.photoLink}')
+															a.news__mask(href='#') посмотреть фото
+																	+icon('loupe','svg-loupe-dims')
 														.news__desc
 															.news__author
 																img.news__author__img(src='/my-uploads/users/x')
@@ -72,5 +73,6 @@ include common/_body_head
 
 			include common/_footer
 include common/preloader
+include common/modal
 include common/_scripts
 
