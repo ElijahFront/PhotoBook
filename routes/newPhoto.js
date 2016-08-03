@@ -4,30 +4,28 @@ var Album = require('../models/album').Album;
 exports.post = function (req, res, next){
     console.log(req.url);
 
-    var _idALBOM = req.params.id,
-        imgName = req.body.add_photo,
-        imgInfo = "Добавить описание для фотографий",
-        imgLink = req.files[0].filename;
-    console.log(_idALBOM);
-    console.log(imgName);
-    console.log(imgInfo);
-    console.log(imgLink);
+    console.log(req.files.length);
+    req.files.forEach(function (file) {
+        var _idALBOM = req.params.id,
+            imgName =  file.originalname,
+            imgInfo = "Добавить описание для фотографий",
+            imgLink = file.filename;
 
-    var photo = new Photo({
-        album: _idALBOM,
-        name: imgName,
-        info: imgInfo,
-        photoLink: imgLink
-    });
-    photo.save(function (err, ph) {
-        if (err) return next(err);
-        var aID = _idALBOM,
-            phName = ph.photoLink;
-        Album.findByIdAndUpdate(aID, {$push :{photos:phName}}, function (er, num) {
-
-            if (er) return next(er);
-            console.log(num)
+        var photo = new Photo({
+            album: _idALBOM,
+            name: imgName,
+            info: imgInfo,
+            photoLink: imgLink
         });
-        res.end();
+        photo.save(function (err, ph) {
+            if (err) return next(err);
+            var aID = _idALBOM,
+                phName = ph.photoLink;
+            Album.findByIdAndUpdate(aID, {$push :{photos:phName}}, function (er, num) {
+
+                if (er) return next(er);
+                res.end();
+            });
+        });
     });
 };

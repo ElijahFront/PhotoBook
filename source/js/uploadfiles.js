@@ -92,6 +92,8 @@ $(document).ready(function() {
 			}
 			else { alert('Вы не можете загружать больше '+maxFiles+' изображений!'); return; }
 
+			addPhoto.push(file);
+
 			// Создаем новый экземпляра FileReader
 			var fileReader = new FileReader();
 				// Инициируем функцию FileReader
@@ -101,7 +103,7 @@ $(document).ready(function() {
 						// Помещаем URI изображения в массив
 						dataArray.push({name : file.name, value : this.result});
 
-						addPhoto.push(file);
+
 
 						addImage((dataArray.length-1));
 					};
@@ -199,20 +201,23 @@ $(document).ready(function() {
 		var locat = location.pathname + '/addPhoto';
 
 		$('#loading-content').html('Загружен '+dataArray[0].name);
-		// Для каждого файла
-		$.each(addPhoto, function(index, file) {
-			addPhoto = file;
-			var fd = new FormData($('#add_photo_form')[0]);
-			//fd.append("addPhoto", addPhoto);
-			$.ajax({
-				type: "POST",
+
+		// Для Всех файлов
+
+			var fd = new FormData();
+
+			fd.append("add_photo", addPhoto);
+
+		console.log(locat);
+
+		$.post({
 				url: locat,
 				processData: false,
 				contentType: false,
 				data: fd,
 				success: function(data){
 
-						var fileName = addPhoto.name;
+						//var fileName = addPhoto.name;
 						++x;
 
 						// Изменение бара загрузки
@@ -227,24 +232,16 @@ $(document).ready(function() {
 							// если еще продолжается загрузка
 						} else if(totalPercent*(x) < 100) {
 							// Какой файл загружается
-							$('#loading-content').html('Загружается '+fileName);
+							//$('#loading-content').html('Загружается '+fileName);
 						}
 
-						// Формируем в виде списка все загруженные изображения
-						// data формируется в upload.php
-						var dataSplit = data.split(':');
-						if(dataSplit[1] == 'загружен успешно') {
-							$('#uploaded-files').append('<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> загружен успешно</li>');
-
-						} else {
-							$('#uploaded-files').append('<li><a href="images/'+data+'. Имя файла: '+dataArray[index].name+'</li>');
-						}
 
 				}
 			});
 
 
-		});
+		// $.each(addPhoto, function(index, file) {
+		// });
 		// Показываем список загруженных файлов
 		$('#uploaded-files').show();
 		return false;
