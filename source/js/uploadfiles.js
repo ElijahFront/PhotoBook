@@ -202,8 +202,8 @@ $(document).ready(function() {
 		// Для каждого файла
 		$.each(addPhoto, function(index, file) {
 			addPhoto = file;
-			var fd = new FormData($('#add_photo_form')[0]);
-			//fd.append("addPhoto", addPhoto);
+			var fd = new FormData();
+			fd.append("addPhoto", addPhoto);
 			$.ajax({
 				type: "POST",
 				url: locat,

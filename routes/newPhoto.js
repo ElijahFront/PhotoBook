@@ -2,16 +2,12 @@ var Photo = require('../models/photo').Photo;
 var Album = require('../models/album').Album;
 
 exports.post = function (req, res, next){
-    console.log(req.url);
+    console.log('new post request');
 
     var _idALBOM = req.params.id,
         imgName = req.body.add_photo,
         imgInfo = "Добавить описание для фотографий",
         imgLink = req.files[0].filename;
-    console.log(_idALBOM);
-    console.log(imgName);
-    console.log(imgInfo);
-    console.log(imgLink);
 
     var photo = new Photo({
         album: _idALBOM,
@@ -24,9 +20,7 @@ exports.post = function (req, res, next){
         var aID = _idALBOM,
             phName = ph.photoLink;
         Album.findByIdAndUpdate(aID, {$push :{photos:phName}}, function (er, num) {
-
             if (er) return next(er);
-            console.log(num)
         });
         res.end();
     });
